@@ -1,0 +1,5 @@
+{
+  "srcPath":"zhong",
+  "buildPath": "dist",
+  "devPath": "dev"
+}

@@ -1,0 +1,25 @@
+{
+  "concatJs":[
+    {
+      "target":"js/vendor.js",
+      "items":[
+        "js/plugins/layer/layer.js",
+        "js/plugins/layer/layer.config.js",
+        "js/plugins/swiper/js/swiper.js"
+      ]
+    }
+  ],
+  "concatCss":[
+    {
+      "target":"css/vendor.css",
+      "items":[
+        "js/plugins/swiper/css/swiper.css"
+      ]
+    }
+  ],
+  "compressionImage":{
+    "enable":true,
+    "quality":90,
+    "exclude":[]
+  }
+}

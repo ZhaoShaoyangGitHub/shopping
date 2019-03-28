@@ -1,0 +1,64 @@
+include ../variables
+include ../mixins
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='utf-8')
+        if(projectType === 'mobile')
+            meta(name='viewport', content='initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no, minimal-ui')
+        else
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            meta(name='renderer', content='webkit')
+            if (projectType === 'responsive')
+                meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        title #{pageTitle}
+        //- 头部
+        block head
+
+        //- 样式
+        link(rel='stylesheet', href='css/vendor.css')
+        link(rel='stylesheet', href='js/plugins/swiper/css/swiper.css')
+        link(rel='stylesheet', href='css/index.css')
+        block style
+        script(src='js/plugins/adaptive.js')
+        script.
+            var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
+            if (windowwidth < 769) {
+                window['adaptive'].desinWidth = 750;
+                window['adaptive'].baseFont = 14;
+                window['adaptive'].maxWidth = 750;
+                window['adaptive'].minWidth = 320;
+                window['adaptive'].scaleType = 1;
+                window['adaptive'].init();
+            }else {
+                window['adaptive'].desinWidth = 1600;
+                window['adaptive'].baseFont = 16;
+                window['adaptive'].maxWidth = 1600;
+                window['adaptive'].minWidth = 1200;
+                window['adaptive'].scaleType = 1;
+                window['adaptive'].init();
+            }
+        if(compatibleOldBrowser && projectType !== 'mobile')
+            <!--[if lte IE 9]>
+            script(src='js/plugins/respond.min.js')
+            script(src='js/plugins/html5shiv.min.js')
+            <![endif]-->
+    body
+        //- 内容区块
+        block content
+
+        //-底部区块
+        block foot
+
+        //- 脚本区块
+        script(src='js/plugins/jquery.min.js')
+        if(projectType === 'mobile')
+            script(src='js/plugins/layer/mobile/layer.js')
+        else
+            script(src='js/plugins/layer/layer.js')
+
+        if(environment === 'build')
+            //- 此示例中添加“merge='true'”属性，是由于layer.js插件在合并在其他js中时的需要，详情请看 http://www.layui.com/doc/modules/layer.html#full
+            script(src='js/vendor.js', merge='true')
+        block script
