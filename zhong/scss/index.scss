@@ -55,6 +55,12 @@ body {
   background-position: center;
 }
 
+.spark-s1{
+  height: rem(930);
+  position: relative;
+  overflow: hidden;
+}
+
 .spark-s1 .mask-list, .spark-s1 .video-cover-list {
   display: block;
   position: absolute;
@@ -78,7 +84,7 @@ body {
 
 .spark-s1 .mask-list .mask-item {
   height: 100%;
-  width: 25%;
+  width: 33.33%;
   float: left;
   position: relative;
   border-right: 1px solid rgba(51, 51, 51, 0);
@@ -232,7 +238,7 @@ body {
 
 .spark-s1 .video-cover-list .video-cover-item {
   height: 100%;
-  width: 25%;
+  width: 33.33%;
   float: left;
   position: relative;
   transition: opacity .5s ease-in-out
@@ -241,6 +247,9 @@ body {
 .spark-s1 .video-cover-list .video-cover-item .section-bg {
   background-color: #000;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .spark-s1 .video-list {
@@ -264,7 +273,10 @@ body {
 }
 
 .spark-s1 .video-list .video-item .video-bg video, .spark-s1 .video-list .video-item .video-bg video[poster], section {
-  width: 100%
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 
 

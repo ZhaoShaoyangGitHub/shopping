@@ -1,6 +1,6 @@
 extends ../public/pug/layouts/main
 block style
-    link(rel='stylesheet', href='js/banner-spark.css')
+    //link(rel='stylesheet', href='js/banner-spark.css')
 
 
 block content-main
@@ -43,7 +43,7 @@ block content-main
                     .bottom-text
                         h2.title.web-font 轻松拍摄
                         p.web-font 只需在移动设备上轻轻一点，即使你从未接触过无人机，也能拍出精彩的航拍视频。
-                .mask-item(data-target='3', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_04')
+                //.mask-item(data-target='3', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_04')
                     .mask
                     .top-text
                         h2.title.web-font 剪辑分享
@@ -55,13 +55,13 @@ block content-main
                         h2.title.web-font 剪辑分享
                         p.web-font 自动剪辑、加入滤镜、套上模板，全在 DJI GO 4 应用实现，并一键在社交网络上分享。
             .video-cover-list
-                .video-cover-item(data-target='0', style='width: 25%; opacity: 1;')
+                .video-cover-item(data-target='0', style='width: 33.33%; opacity: 1;')
                     .section-bg(style='background-image: url("/images/banner_01.jpg"); opacity: 1;')
-                .video-cover-item(data-target='1', style='width: 25%; opacity: 1;')
+                .video-cover-item(data-target='1', style='width: 33.33%; opacity: 1;')
                     .section-bg(style='background-image: url("/images/banner_02.jpg"); opacity: 1;')
-                .video-cover-item(data-target='2', style='width: 25%; opacity: 1;')
+                .video-cover-item(data-target='2', style='width: 33.33%; opacity: 1;')
                     .section-bg(style='background-image: url("/images/banner_03.jpg"); opacity: 1;')
-                .video-cover-item(data-target='3', style='width: 25%; opacity: 1;')
+                //.video-cover-item(data-target='3', style='width: 25%; opacity: 1;')
                     .section-bg(style='background-image: url("/images/banner_04.jpg"); opacity: 1;')
             .video-list
                 .video-item(data-target='0', style='opacity: 0;')
@@ -73,13 +73,12 @@ block content-main
                 .video-item(data-target='2', style='opacity: 0;')
                     .video-bg
                         video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
-                .video-item(data-target='3', style='opacity: 0;')
+                //.video-item(data-target='3', style='opacity: 0;')
                     .video-bg
                         video(src='/video/04.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
 
 block script-main
     script(src='js/spark.min.js')
-    //script(src='js/analytics.js')
     script.
         $(function () {})
 
