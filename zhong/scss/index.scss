@@ -1,0 +1,283 @@
+// 依赖
+@import "../public/scss/functions";
+@import "../public/scss/variables";
+@import "../public/scss/mixins";
+//基本样重置
+ul, li, ol, li, dl, dd, dt {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  font-family: "微软雅黑";
+  min-width: 1200px!important;
+  font-size: rem(16);
+  &.fuild {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 0.2rem;
+  width: 100%;
+}
+
+.inner-content {
+  max-width: 1240px;
+  padding: 0 0.2rem;
+  margin: 0 auto;
+}
+
+.transition-one {
+  @extend .transition-one;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  font-size: rem(16);
+}
+
+.lazyload {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.spark-s1{
+  height: rem(930);
+  position: relative;
+  overflow: hidden;
+}
+
+.spark-s1 .mask-list, .spark-s1 .video-cover-list {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9
+}
+
+.spark-s1 .video-cover-list {
+  z-index: 8
+}
+
+.spark-s1 .mask-list:after, .spark-s1 .video-cover-list:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both
+}
+
+.spark-s1 .mask-list .mask-item {
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  border-right: 1px solid rgba(51, 51, 51, 0);
+  cursor: pointer;
+  transition: all .5s ease-in-out
+}
+
+.spark-s1 .mask-list .mask-item .mask, .spark-s1 .mask-list .mask-item .section-bg {
+  transition: all .5s ease-in-out
+}
+
+.spark-s1 .mask-list .mask-item .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2
+}
+
+.spark-s1 .mask-list .mask-item .section-bg {
+  opacity: 1;
+  z-index: 1
+}
+
+.spark-s1 .mask-list .mask-item .text, .spark-s1 .mask-list .mask-item .top-text {
+  width: 100%;
+  transition: all .3s ease-in-out;
+  position: absolute;
+  z-index: 3
+}
+
+.spark-s1 .mask-list .mask-item .top-text {
+  bottom: 8%;
+  text-transform: uppercase;
+  left: 15%;
+  opacity: 0
+}
+
+.spark-s1 .mask-list .mask-item .top-text .title {
+  font-size: 24px;
+  color: #fff;
+  font-family: "Gotham", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif
+}
+
+.spark-s1 .mask-list .mask-item .text {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 1
+}
+
+.spark-s1 .mask-list .mask-item .text .number {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 18px
+}
+
+.spark-s1 .mask-list .mask-item .text .title {
+  font-size: 24px !important;
+  color: #fff;
+  font-weight: 300;
+  font-family: "Gotham", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
+  padding: 0 15%
+}
+
+.spark-s1 .mask-list .mask-item .text .icon {
+  margin-bottom: 20px
+}
+
+.spark-s1 .mask-list .mask-item .bottom-text, .spark-s1 .mask-list .mask-item .video-tip {
+  text-align: left;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  padding: 0 15%;
+  display: none;
+  z-index: 3
+}
+
+.spark-s1 .mask-list .mask-item .bottom-text {
+  bottom: 5%;
+  line-height: 28px;
+  font-size: 16px
+}
+
+.spark-s1 .mask-list .mask-item .bottom-text .title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Gotham", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif
+}
+
+.spark-s1 .mask-list .mask-item .video-tip {
+  font-size: 14px;
+  top: 5%;
+  opacity: .5;
+  font-family: "Open Sans", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif
+}
+
+.spark-s1 .mask-list:hover .mask-item {
+  border-right: 1px solid rgba(112, 116, 115, .7)
+}
+
+.spark-s1 .mask-list:hover .mask-item .section-bg {
+  opacity: 0
+}
+
+.spark-s1 .mask-list:hover .mask-item .mask {
+  background: rgba(0, 0, 0, .4)
+}
+
+.spark-s1 .mask-list:hover .mask-item .top-text {
+  opacity: .5
+}
+
+.spark-s1 .mask-list:hover .mask-item .text {
+  opacity: 0
+}
+
+.spark-s1 .mask-list:hover .mask-item .bottom {
+  display: none
+}
+
+.spark-s1 .mask-list .mask-item.active {
+  color: #ddd
+}
+
+.spark-s1 .mask-list .mask-item.active .top-text {
+  opacity: 0
+}
+
+.spark-s1 .mask-list .mask-item.active .bottom-text {
+  display: block;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
+.spark-s1 .mask-list .mask-item.active .video-tip {
+  display: block
+}
+
+.spark-s1 .video-cover-list .video-cover-item {
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  transition: opacity .5s ease-in-out
+}
+
+.spark-s1 .video-cover-list .video-cover-item .section-bg {
+  background-color: #000;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.spark-s1 .video-list {
+  width: 100%;
+  height: 100%
+}
+
+.spark-s1 .video-list .video-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0
+}
+
+.spark-s1 .video-list .video-item .video-bg {
+  position: relative;
+  height: 100%;
+  overflow: hidden
+}
+
+.spark-s1 .video-list .video-item .video-bg video, .spark-s1 .video-list .video-item .video-bg video[poster], section {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+
+

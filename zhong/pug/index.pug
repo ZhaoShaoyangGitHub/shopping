@@ -1,9 +1,84 @@
 extends ../public/pug/layouts/main
 block style
+    //link(rel='stylesheet', href='js/banner-spark.css')
+
 
 block content-main
+    .zs-home
+        section.spark-s1.dji-edit-module
+            .mask-list
+                .mask-item.ga-data(data-target='0', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_01')
+                    .mask
+                    .top-text
+                        h2.title.web-font 快速启动
+                    .text
+                        .icon
+                            .svg-s1-icon1.svg-s1-icon1-dims
+                        h2.common-title.title.web-font 快速启动
+                    .bottom-text
+                        h2.title.web-font 快速启动
+                        p.web-font
+                            | 开机后 25 秒内准备就绪，放上手掌
+                            sup 3
+                            | 开启人脸检测，解锁后启动升空，随时为你拍照。
+                .mask-item(data-target='1', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_02')
+                    .mask
+                    .top-text
+                        h2.title.web-font 简单操控
+                    .text
+                        .icon
+                            .svg-s1-icon2.svg-s1-icon2-dims
+                        h2.common-title.title.web-font 简单操控
+                    .bottom-text
+                        h2.title.web-font 简单操控
+                        p.web-font 飞行、拍摄、返航，这些原本需要移动设备或遥控器的操作，现在挥挥手也可以完成。
+                .mask-item(data-target='2', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_03')
+                    .mask
+                    .top-text
+                        h2.title.web-font 轻松拍摄
+                    .text
+                        .icon
+                            .svg-s1-icon3.svg-s1-icon3-dims
+                        h2.common-title.title.web-font 轻松拍摄
+                    .bottom-text
+                        h2.title.web-font 轻松拍摄
+                        p.web-font 只需在移动设备上轻轻一点，即使你从未接触过无人机，也能拍出精彩的航拍视频。
+                //.mask-item(data-target='3', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_04')
+                    .mask
+                    .top-text
+                        h2.title.web-font 剪辑分享
+                    .text
+                        .icon
+                            .svg-s1-icon4.svg-s1-icon4-dims
+                        h2.common-title.title.web-font 剪辑分享
+                    .bottom-text
+                        h2.title.web-font 剪辑分享
+                        p.web-font 自动剪辑、加入滤镜、套上模板，全在 DJI GO 4 应用实现，并一键在社交网络上分享。
+            .video-cover-list
+                .video-cover-item(data-target='0', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/banner_01.jpg"); opacity: 1;')
+                .video-cover-item(data-target='1', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/banner_02.jpg"); opacity: 1;')
+                .video-cover-item(data-target='2', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/banner_03.jpg"); opacity: 1;')
+                //.video-cover-item(data-target='3', style='width: 25%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/banner_04.jpg"); opacity: 1;')
+            .video-list
+                .video-item(data-target='0', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/01.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+                .video-item(data-target='1', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/02.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+                .video-item(data-target='2', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+                //.video-item(data-target='3', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/04.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
 
 block script-main
+    script(src='js/spark.min.js')
     script.
         $(function () {})
 
