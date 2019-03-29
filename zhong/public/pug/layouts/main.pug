@@ -3,6 +3,96 @@ extends ./base
 //- 头部
 block head
     block head-main
+    -
+        var navArray = [{
+        "navName": "首页",
+        "url": "index.html",
+        "active": "homePage"
+        },{
+        "navName": "关于我们",
+        "url": "about.html",
+        "active": "about",
+        "children": [{
+        "navName": "企业介绍",
+        "url": "activity.html",
+        "src": "../images/two_nav_img01.png"
+        },{
+        "navName": "公司资质",
+        "url": "meeting.html",
+        "src": "../images/two_nav_img02.png"
+        },{
+        "navName": "新闻动态",
+        "url": "celebration.html",
+        "src": "../images/two_nav_img03.png"
+        },{
+        "navName": "人才招聘",
+        "url": "brand.html",
+        "src": "../images/two_nav_img04.png"
+        }]
+        },{
+        "navName":"联系我们",
+        "url":"insight.html",
+        "active": "insight",
+        "children": [{
+        "navName": "联系客服",
+        "url": "insight.html",
+        "src": "../images/two_nav_img01.png"
+        },{
+        "navName": "商务合作",
+        "url": "insight.html",
+        "src": "../images/two_nav_img02.png"
+        },{
+        "navName": "媒体联系",
+        "url": "insight.html",
+        "src": "../images/two_nav_img03.png"
+        }]
+        },{
+        "navName":"帮助中心",
+        "url":"story.html",
+        "active": "about",
+        "children": [{
+        "navName": "线下门店",
+        "url": "story.html",
+        "src": "../images/two_nav_img04.png"
+        },{
+        "navName": "防伪查询",
+        "url": "team.html",
+        "src": "../images/two_nav_img05.png"
+        },{
+        "navName": "购买说明",
+        "url": "join.html",
+        "src": "../images/two_nav_img06.png"
+        },{
+        "navName": "物流说明",
+        "url": "team.html",
+        "src": "../images/two_nav_img05.png"
+        },{
+        "navName": "售后服务",
+        "url": "join.html",
+        "src": "../images/two_nav_img06.png"
+        }]
+        },{
+        "navName":"皂石食器",
+        "url":"contact.html",
+        "active": "contact",
+        "children": [{
+        "navName": "墨域系列",
+        "url": "story.html",
+        "src": "../images/two_nav_img04.png"
+        },{
+        "navName": "墨工系列",
+        "url": "team.html",
+        "src": "../images/two_nav_img05.png"
+        },{
+        "navName": "墨韵系列",
+        "url": "join.html",
+        "src": "../images/two_nav_img06.png"
+        },{
+        "navName": "定制",
+        "url": "team.html",
+        "src": "../images/two_nav_img05.png"
+        }]
+        }]
 block style
     block style-main
 block content
@@ -33,12 +123,39 @@ block content
 
 
 
+        .clearfix.mb-head
+            a(href="index.html").pull-left.logo-box
+                img(src="images/logo.png")
+            .pull-right.nav-icon.js-nav-icon
+                .icon-item
+                .icon-item
+                .icon-item
+            .mb-aside-nav
+                .mb-aside-nav-left
+                .nav-list
+                    .nav-head.clearfix
+                        .close-icon.js-close-icon
+                            img(src="images/close-icon.png")
+                    .list-box
+                        each $val in navArray
+                            .list-item(class=($val.active == $active ? " active" : ""))
+                                if($val.children)
+                                    .list-name.js-list-name=$val.navName
+                                    each $value in $val.children
+                                        .sub-list
+                                            a(href=$value.url).item=$value.navName
+                                else
+                                    .list-name.js-list-name
+                                        a(href=$val.url)=$val.navName
+
     block content-main
 
 block foot
 
 block script
     script(src='js/plugins/swiper/js/swiper.js')
+    script(src='js/plugins/lazyload.min.js')
+    script(src='js/index.js')
     script.
         $(function () {})
     block script-main

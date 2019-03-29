@@ -166,6 +166,119 @@ body {
   }
 }
 
+.mb-head{
+  display: none;
+}
+
+//移动端头部
+@media (max-width: 768px){
+  .header{
+    display: none;
+  }
+  .mb-head{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    height: rem(120);
+    line-height: rem(120);
+    background: #FFFFFF;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mb-head .logo-box{
+    line-height: rem(120);
+    height: rem(120);
+    width: 85%;
+  }
+  .mb-head .logo-box img{
+    width: rem(230);
+  }
+  .mb-head .icon-item{
+    margin: 5px 0;
+    width: 25px;
+    height: 3px;
+    background: #333333;
+  }
+  .index-swiper .swiper-pagination-bullets{
+    display: none;
+  }
+  .mb-aside-nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,.6);
+    display: none;
+  }
+  .mb-aside-nav-left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 23%;
+  }
+  .mb-aside-nav .nav-list{
+    position: absolute;
+    right: -77%;
+    top: 0;
+    bottom: 0;
+    width: 77%;
+    background: #fff;
+    overflow: scroll;
+    z-index: 99999;
+  }
+  .mb-aside-nav .nav-list .close-icon{
+    margin-right: 20px;
+    height: 65px;
+    line-height: 65px;
+    float: right;
+  }
+  .mb-aside-nav .nav-list .close-icon img{
+    width: 21px;
+  }
+  .mb-aside-nav .list-name{
+    padding: 0 40px;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    color: #333;
+    font-size: 18px;
+  }
+  .mb-aside-nav .list-name a{
+    color: #333;
+    font-size: 18px;
+    display: block;
+  }
+  .mb-aside-nav .sub-list{
+    display: none;
+  }
+  .mb-aside-nav .sub-list .item{
+    padding: 0 40px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #999;
+    height: 50px;
+    line-height: 50px;
+    background: #F5F5F5;
+  }
+  .mb-aside-nav .list-item.active .list-name{
+    background: $base-color;
+    color: #fff;
+  }
+  .mb-aside-nav .list-item.active .list-name a{
+    background: $base-color;
+    color: #fff;
+  }
+}
+
 .spark-s1{
   height: rem(930);
   position: relative;
