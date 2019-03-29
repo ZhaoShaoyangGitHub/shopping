@@ -55,6 +55,117 @@ body {
   background-position: center;
 }
 
+
+//头部
+.zs-header{
+  .header{
+    height: rem(150);
+    background: #FFFFFF;
+    .header-box{
+      max-width: rem(1600);
+      height: 100%;
+      margin: 0 auto;
+      .header-left{
+        height: 100%;
+        line-height: 1.5rem;
+        cursor: pointer;
+        .catalog{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .iconfont{
+            font-size: rem(30);
+            color: #080808;
+          }
+          .title{
+            font-size: rem(14);
+            color: #080808;
+            margin-left: rem(10);
+          }
+        }
+        .phone{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-left: rem(48);
+          .iconfont{
+            font-size: rem(27);
+            color: #080808;
+          }
+          .title{
+            font-size: rem(18);
+            color: #080808;
+            margin-left: rem(10);
+          }
+        }
+      }
+
+      .header-center{
+        height: 100%;
+        line-height: 1.5rem;
+        margin-left: rem(360);
+        .logo{
+
+          img{
+            max-width: rem(330);
+          }
+        }
+      }
+
+      .header-right{
+        height: 100%;
+        line-height: 1.5rem;
+        .search{
+          margin-left: rem(50);
+          .iconfont{
+            font-size: rem(27);
+            color: #080808;
+            cursor: pointer;
+          }
+        }
+        .user{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .iconfont{
+            font-size: rem(27);
+            color: #080808;
+            margin-right: rem(13);
+          }
+          .user-text{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .login{
+              font-size: rem(14);
+              color: #080808;
+            }
+            .register{
+              font-size: rem(14);
+              color: #666666;
+              margin-left: rem(18);
+              position: relative;
+              &:before{
+                content: '/';
+                width: rem(9);
+                height: rem(11);
+                color: #666666;
+                position: absolute;
+                left: rem(-13);
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1620px) {
+      padding-left: rem(20);
+      padding-right: rem(20);
+    }
+  }
+}
+
 .spark-s1{
   height: rem(930);
   position: relative;
