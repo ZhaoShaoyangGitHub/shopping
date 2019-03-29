@@ -14,82 +14,82 @@ block head
         "active": "about",
         "children": [{
         "navName": "企业介绍",
-        "url": "activity.html",
+        "url": "introduce.html",
         "src": "../images/two_nav_img01.png"
         },{
         "navName": "公司资质",
-        "url": "meeting.html",
+        "url": "aptitude.html",
         "src": "../images/two_nav_img02.png"
         },{
         "navName": "新闻动态",
-        "url": "celebration.html",
+        "url": "news.html",
         "src": "../images/two_nav_img03.png"
         },{
         "navName": "人才招聘",
-        "url": "brand.html",
+        "url": "recruit.html",
         "src": "../images/two_nav_img04.png"
         }]
         },{
         "navName":"联系我们",
-        "url":"insight.html",
-        "active": "insight",
+        "url":"contact.html",
+        "active": "contact",
         "children": [{
         "navName": "联系客服",
-        "url": "insight.html",
+        "url": "customer.html",
         "src": "../images/two_nav_img01.png"
         },{
         "navName": "商务合作",
-        "url": "insight.html",
+        "url": "cooperation.html",
         "src": "../images/two_nav_img02.png"
         },{
         "navName": "媒体联系",
-        "url": "insight.html",
+        "url": "media.html",
         "src": "../images/two_nav_img03.png"
         }]
         },{
         "navName":"帮助中心",
-        "url":"story.html",
-        "active": "about",
+        "url":"help.html",
+        "active": "help",
         "children": [{
         "navName": "线下门店",
-        "url": "story.html",
+        "url": "help.html",
         "src": "../images/two_nav_img04.png"
         },{
         "navName": "防伪查询",
-        "url": "team.html",
+        "url": "help.html",
         "src": "../images/two_nav_img05.png"
         },{
         "navName": "购买说明",
-        "url": "join.html",
+        "url": "help.html",
         "src": "../images/two_nav_img06.png"
         },{
         "navName": "物流说明",
-        "url": "team.html",
+        "url": "help.html",
         "src": "../images/two_nav_img05.png"
         },{
         "navName": "售后服务",
-        "url": "join.html",
+        "url": "help.html",
         "src": "../images/two_nav_img06.png"
         }]
         },{
         "navName":"皂石食器",
-        "url":"contact.html",
-        "active": "contact",
+        "url":"food-utensils.html",
+        "active": "food",
         "children": [{
         "navName": "墨域系列",
-        "url": "story.html",
+        "url": "mouyu.html",
         "src": "../images/two_nav_img04.png"
         },{
         "navName": "墨工系列",
-        "url": "team.html",
+        "url": "mogong.html",
         "src": "../images/two_nav_img05.png"
         },{
         "navName": "墨韵系列",
-        "url": "join.html",
+        "url": "moyun.html",
         "src": "../images/two_nav_img06.png"
         },{
         "navName": "定制",
-        "url": "team.html",
+        "url": "custom.html",
         "src": "../images/two_nav_img05.png"
         }]
         }]
@@ -147,6 +147,10 @@ block content
                                 else
                                     .list-name.js-list-name
                                         a(href=$val.url)=$val.navName
+
+
+    .backtop.js-backtop
+        .iconfont.iconjiantou1
 
     block content-main
 

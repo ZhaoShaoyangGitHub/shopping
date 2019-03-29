@@ -1,0 +1,113 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "homePage"
+    -var $index = 0
+block style-main
+
+
+block content-main
+    .zs-help
+        .inner-content
+            .zs-title 帮助中心
+            .zs-help-content.js-help
+                .sort #{$index}
+                .help-item
+                    .name-box
+                        .name 线下门店
+                        .line
+                            .line-h
+                            .line-s
+                    .item-main.row
+                        .tuwen-box.col-md-8
+                            .img(style="background-image: url('/images/img_01.jpg')")
+                            .bottom
+                                .b-name 七宝
+                                .b-address 上海市闵行区漕宝路 3366 号七宝万科广场
+                                .b-phone 4006171324
+                        .tuwen-box.col-md-8
+                            .img(style="background-image: url('/images/img_02.jpg')")
+                            .bottom
+                                .b-name 上海环贸 iapm
+                                .b-address 上海市徐汇区淮海中路 999 号环贸 iapm 商场
+                                .b-phone 4006171324
+                        .tuwen-box.col-md-8
+                            .img(style="background-image: url('/images/img_03.jpg')")
+                            .bottom
+                                .b-name 五角场
+                                .b-address 五角场上海市杨浦区翔殷路 1099 号上海合生汇
+                                .b-phone 4006139771
+                .help-item
+                    .name-box
+                        .name 防伪查询
+                        .line
+                            .line-h
+                            .line-s
+                    .item-main
+                        .text-box
+                            .text
+                                p 请通过微信搜索并关注我们的公众号“皂石石器“ / “皂石时代“，点击防伪查询来验证您购买的产品。 您也可以通过微信 / 支付宝
+                .help-item
+                    .name-box
+                        .name 购买说明
+                        .line
+                            .line-h
+                            .line-s
+                    .item-main
+                        .text-box
+                            .text
+                                p 1)  选择商品，点击购买
+                                p 2)  结算
+                                p 3)  填写收货信息和支付信息等内容并提交订单
+                                p 4)  按照网页指示付款
+                .help-item
+                    .name-box
+                        .name 物流说明
+                        .line
+                            .line-h
+                            .line-s
+                    .item-main
+                        .text-box
+                            .text
+                                p 中国大陆地区，全场默认发顺丰陆运，暂时不支持空运服务。
+                                p 顺丰快递网点覆盖不到的地方，我司则会选择用EMS安排。
+                                p 具体覆盖网点请参考：顺丰官网/EMS官网。
+
+                                .text-black
+                                    p 2)  结算
+                                    p 3)  填写收货信息和支付信息等内容并提交订单
+                                    p 4)  按照网页指示付款
+                .help-item
+                    .name-box
+                        .name 售后服务
+                        .line
+                            .line-h
+                            .line-s
+                    .item-main
+                        .text-box
+                            .text
+                                p 1)  本公司为本产品提供3个月质保服务。
+                                p 2)  产品在保质期内如果出现任何质量问题，将按“三包”原则免费更换。
+                                p 3)  质保过期后，本公司将继续为其提供长期咨询服务。
+                                p 4)  请保证每月至少使用并保养一次石锅，以延长使用寿命。保养方法请在官网或说明书中查看。
+
+
+
+
+block script-main
+    script.
+        $(function () {
+            var $index = $(".sort").text();
+            if($(".js-help").length){
+                $(".help-item").eq($index).addClass('active');
+                $(".name-box").click(function () {
+                    if($(this).parent().hasClass('active')){
+                        $(this).parent().removeClass('active').siblings().removeClass('active');
+                        $(this).siblings(".item-main").slideUp("slow");
+                    }else{
+                        $(this).parent().addClass('active').siblings().removeClass('active');
+                        $(this).siblings(".item-main").slideDown("slow");
+                    }
+                })
+            }
+        })
+
