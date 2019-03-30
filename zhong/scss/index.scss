@@ -19,7 +19,6 @@ a:hover {
 
 body {
   font-family: "微软雅黑";
-  min-width: 1200px!important;
   font-size: rem(16);
   &.fuild {
     width: 100%;
@@ -54,6 +53,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
 
 
 
@@ -521,14 +522,29 @@ body {
   }
 }
 
+.title-classify{
+  border-bottom: 1px #bbbbbb solid;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: rem(20);
+  .left{
+    font-size: rem(24);
+    color: #666666;
+  }
+  .right{
+    font-size: rem(14);
+    color: #1c7acc;
+  }
+}
+.zs-title{
+  font-size: rem(40);
+  color: #080808;
+}
+
 //帮助中心
 .zs-help{
   background-color: #f8f8f8;
   padding: rem(80) 0 rem(100);
-  .zs-title{
-    font-size: rem(40);
-    color: #080808;
-  }
   .zs-help-content{
     margin-top: rem(65);
     .sort{
@@ -659,6 +675,15 @@ body {
         display: flex;
       }
     }
+  }
+}
+
+//补充送货信息
+.zs-delivery{
+  background-color: #f8f8f8;
+  padding: rem(40) 0 rem(100);
+  .delivery-content{
+    padding-top: rem(80);
   }
 }
 
