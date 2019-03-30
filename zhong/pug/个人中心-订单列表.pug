@@ -1,0 +1,31 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = ""
+    -
+        var order = [{
+            'title':'待支付',
+            'href':'订单详情-待支付.html'
+        },{
+            'title':'待发货',
+            'href':'订单详情-待发货.html'
+        },{
+            'title':'已送达',
+            'href':'订单详情-已送达.html'
+        },{
+            'title':'待收货',
+            'href':'订单详情-待收货.html'
+        },{
+            'title':'已收货',
+            'href':'订单详情-已收货.html'
+        }]
+block style-main
+block content-main
+    .personal-orderList
+        .container
+            .title 您已订购的产品
+            +order(order)
+            .clearfix
+                .float-left.helpPhone 需要关于订单的帮助？请致电
+                    a(Tel="400-800-1098") 400-800-1098
+                .float-right
+                    include ../public/pug/pagination

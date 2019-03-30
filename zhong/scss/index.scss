@@ -158,7 +158,12 @@ body {
   }
 }
 .backtop{
-  padding: rem(16) rem(14);
+  width: rem(45);
+  height: rem(45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   background-color: $base-color;
   position: fixed;
   right: rem(50);
@@ -166,14 +171,27 @@ body {
   z-index: 999;
   cursor: pointer;
   .iconfont{
-    font-size: rem(27);
+    font-size: rem(18);
     color: #FFFFFF;
-    line-height: 1;
+    line-height: rem(10);
   }
 }
 .mb-head{
   display: none;
 }
+
+.footer {
+  .footer-top {
+    padding: rem(60) 0 rem(130);
+  }
+  .footer-copy {
+    font-size: 12px;
+    line-height: 1;
+    padding: rem(30);
+    color: #999999;
+  }
+}
+
 
 //移动端头部
 @media (max-width: 768px){

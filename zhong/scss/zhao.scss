@@ -3,6 +3,10 @@
 @import "../public/scss/variables";
 @import "../public/scss/mixins";
 
+.transform-one {
+  transition: all 0.3s linear;
+}
+
 .com-more {
   font-size: rem(14);
   color: #1c7acc;
@@ -16,10 +20,77 @@
   line-height: 1;
 }
 
+.pagination {
+  li {
+    margin: 0 rem(10);
+    width: rem(36);
+    height: rem(36);
+    flex: 0 0 rem(36);
+    text-align: center;
+    >a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      line-height: rem(36);
+      font-size: rem(16);
+      color: #999999;
+      @extend .transform-one
+    }
+    &.prev-page>a {
+      background-image: url("../images/icon_arrow_prev.png");
+    }
+    &.next-page>a {
+      background: url("../images/icon_arrow_next.png");
+    }
+    &.prev-page,&.next-page {
+      width: rem(70);
+      flex: 0 0 rem(70);
+      >a {
+        background-color: #FFFFFF;
+        background-repeat: no-repeat;
+        background-size: rem(16);
+        background-position: center;
+      }
+    }
+    &.active,&:hover {
+      >a {
+        background-color: $base-color;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
 .lazyload {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.font-sm {
+  font-size: rem(14)
+}
+.font-md {
+  font-size: rem(18);
+}
+.font-lg {
+  font-size: rem(30);
+}
+
+.color-1 {
+  color: #080808;
+}
+
+.color-2 {
+  color: #666666;
+}
+
+.color-3 {
+  color: $base-color;
+}
+
+.fontArial {
+  font-family: Arial;
 }
 
 //  个人中心
@@ -46,13 +117,14 @@
     }
     .order-body {
       border: 1px solid #dddddd;
+      background-color: #FFFFFF;
       border-top: 0;
-      padding: rem(30);
+      padding: rem(28) rem(30);
       line-height: 1;
       .order-status {
         font-size: rem(18);
         color: #080808;
-        margin-bottom: rem(10);
+        margin-bottom: rem(14);
       }
       .order-date {
         font-size: rem(12);
@@ -173,7 +245,99 @@
     }
   }
 }
-.edit-layer {
+
+.personal-orderList {
+  background-color: #f8f8f8;
+  padding: rem(80) 0 rem(100);
+  .title {
+    font-size: rem(40);
+    line-height: 1;
+    color: #080808;
+    margin-bottom: rem(50);
+  }
+  .order-list {
+    margin-bottom: rem(35);
+  }
+  .helpPhone {
+    font-size: rem(18);
+    color: #080808;
+    line-height: rem(36);
+    a {
+      color: #1c7acc;
+      font-family: Arial;
+      letter-spacing: rem(2);
+      padding-left: rem(5);
+    }
+  }
+}
+
+.order-detail {
+  background-color: #f8f8f8;
+  padding: rem(80) 0 rem(60);
+  line-height: rem(26);
+  .title {
+    font-size: rem(40);
+    color: #080808;
+    line-height: 1;
+    margin-bottom: rem(60);
+  }
+  .product-top {
+    padding-bottom: rem(80);
+    .img {
+      max-width: rem(340);
+    }
+    .info {
+      padding-left: rem(30);
+      line-height: rem(36);
+      .name {
+        @extend .font-lg;
+        @extend .color-1;
+        margin-bottom: rem(30);
+        line-height: 1;
+      }
+      .w-title {
+        width: rem(92);
+        display: inline-block;
+      }
+      .w-txt {
+        width: rem(125);
+        display: inline-block;
+      }
+      .warning {
+        font-size: 12px;
+        color: $base-color;
+        padding-left: rem(20);
+      }
+    }
+  }
+  .order-content {
+    .w-title {
+      width: rem(82);
+      display: inline-block;
+    }
+    >div {
+      border-top: 1px solid #dddddd;
+      padding: rem(80) 0 rem(75);
+      &.total {
+        padding: rem(40) 0;
+        line-height: 1;
+      }
+    }
+    .order-title {
+      @extend .font-lg;
+      @extend .color-1;
+      line-height: 1;
+    }
+    .paddingLeft {
+      padding-left: rem(30);
+    }
+    .marginBottom {
+      margin-bottom: rem(20);
+    }
+  }
+}
+
+.password-layer {
   width: rem(800);
   height: rem(640);
   overflow: hidden;
@@ -188,17 +352,122 @@
     .form-group {
       margin-bottom: rem(20);
       position: relative;
+      .send-code {
+        width: rem(120);
+        height: rem(44);
+        line-height: rem(44);
+        background-color: $base-color;
+        border-radius: rem(22);
+        font-size: rem(12);
+        color: #ffffff;
+        position: absolute;
+        top: 50%;
+        margin-top: rem(-22);
+        right: rem(20);
+        z-index: 2;
+        text-align: center;
+        cursor: pointer;
+        padding: 0;
+        border: 0;
+      }
       .label {
         position: absolute;
-        font-size: 12px;
+        font-size: rem(18);
         color: #999999;
         left: rem(20);
-        top: rem(25);
+        top: 50%;
+        transform: translateY(-50%);
+        transition-property: all;
+        transition-timing-function: ease-in;
+        transition-duration: .125s;
       }
       .form-control {
-        padding: rem(40) rem(20) rem(20);
+        height: 0.9rem;
+        padding: rem(40) rem(140) rem(20) rem(20);
         font-size: rem(18);
         line-height: rem(28);
+        color: #080808;
+        &:focus ~ .label {
+          top: rem(20);
+          font-size: rem(12);
+          transform: none;
+        }
+      }
+    }
+    .form-btn {
+      margin-top: rem(70);
+      .btn {
+        height: rem(90);
+        text-align: center;
+        padding: 0;
+        font-size: rem(18);
+      }
+      .reset {
+        background-color: #f0f0f0;
+        color: #999999;
+      }
+      .submit {
+        color: #ffffff;
+        background-color: $base-color;
+      }
+    }
+  }
+}
+
+.edit-layer {
+  width: rem(800);
+  height: rem(750);
+  overflow: hidden;
+  padding: rem(50) rem(80) rem(55);
+  .title {
+    font-size: rem(24);
+    line-height: 1;
+    color: #080808;
+    margin-bottom: rem(40);
+  }
+  .form {
+    .form-group {
+      margin-bottom: rem(20);
+      position: relative;
+      .label {
+        position: absolute;
+        font-size: rem(18);
+        color: #999999;
+        left: rem(20);
+        top: 50%;
+        transform: translateY(-50%);
+        transition-property: all;
+        transition-timing-function: ease-in;
+        transition-duration: .125s;
+      }
+      .form-control {
+        height: 0.9rem;
+        padding: rem(40) rem(140) rem(20) rem(20);
+        font-size: rem(18);
+        line-height: rem(28);
+        color: #080808;
+        &:focus ~ .label {
+          top: rem(20);
+          font-size: rem(12);
+          transform: none;
+        }
+      }
+    }
+    .form-btn {
+      margin-top: rem(70);
+      .btn {
+        height: rem(90);
+        text-align: center;
+        padding: 0;
+        font-size: rem(18);
+      }
+      .reset {
+        background-color: #f0f0f0;
+        color: #999999;
+      }
+      .submit {
+        color: #ffffff;
+        background-color: $base-color;
       }
     }
   }

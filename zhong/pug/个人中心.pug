@@ -1,6 +1,17 @@
 extends ../public/pug/layouts/main
 block head-main
     -var $active = ""
+    -
+        var order = [{
+            'title':'待支付',
+            'href':'订单详情-待支付.html'
+        },{
+            'title':'待发货',
+            'href':'订单详情-待发货.html'
+        },{
+            'title':'已送达',
+            'href':'订单详情-已送达.html'
+        }]
 block style-main
 block content-main
     .personal-center
@@ -16,9 +27,9 @@ block content-main
             .container
                 .title.d-flex.align-items-end
                     h5 你的订单
-                    a.more(href="javascript:;")
+                    a.more(href="个人中心-订单列表.html")
                         span 查看更多
-                +order
+                +order(order)
         .container
             .account-settings.row
                 .col-md-8.col-24.first
@@ -39,30 +50,63 @@ block content-main
             .password-security
                 h5 密码安全
                 btn.btn.password-btn.js-reset-password(type="btn") 设置新的登录密码
+    .password-layer#passwordBox(style="display:none")
+        .title 设置新的登录密码
+        form.form
+            .form-group
+                input.form-control(type="password" value="" name="password" id="password")
+                label.label 新的密码
+            .form-group
+                input.form-control(type="text" value="" name="phone" id="phone")
+                .send-code.btn.js-send 发送验证码
+                label.label 您的当前手机号为
+            .form-group
+                input.form-control(type="password" value="" name="code" id="code")
+                label.label 输入验证码
+            .form-btn.row.justify-content-between
+                button.btn.reset.col-10(type="reset") 取消
+                button.btn.submit.col-13(type="submit") 确定修改
     .edit-layer#editBox(style="display:none")
         .title 设置新的登录密码
         form.form
             .form-group
-                label.label 新的密码
-                input.form-control(type="password" value="" name="password" id="password")
+                input.form-control(type="text" value="" name="" id="name")
+                label.label 您的姓名
             .form-group
-                label.label 您的当前手机号为
-                input.form-control(type="text" value="" name="phone" id="phone")
+                input.form-control(type="text" value="" name="" id="phone1")
+                label.label 您的电话
             .form-group
-                label.label 输入验证码
-                input.form-control(type="password" value="" name="code" id="code")
-            .form-btn
-                button.btn(type="reset") 取消
-                button.btn(type="submit") 确定修改
+                .form-control
+                label.label 省份/城镇/城市/区
+            .form-group
+                input.form-control(type="text" value="" name="" id="address")
+                label.label 详细地址
+            .form-btn.row.justify-content-between
+                button.btn.reset.col-10(type="reset") 取消
+                button.btn.submit.col-13(type="submit") 保存并使用
 block script-main
     script.
         $(function () {
-            $('.js-edit').click(function () {
+            $('.js-reset-password').click(function () {
                 layer.open({
                     title: '',
                     type: 1,
                     area: ['8rem','6.4rem'],
+                    content: $('#passwordBox'),
+                    shade: 0.4,
+                    shadeClose: true,
+                    closeBtn: 0
+                })
+            })
+            $('.js-edit').click(function () {
+                layer.open({
+                    title: '',
+                    type: 1,
+                    area: ['8rem', '7.5rem'],
                     content: $('#editBox'),
+                    shade: 0.4,
+                    shadeClose: true,
+                    closeBtn: 0
                 })
             })
         })
