@@ -1,7 +1,7 @@
 extends ../public/pug/layouts/main
 block head-main
     -var $active = "homePage"
-
+    -var $hasInvoice = false
 block style-main
 
 
@@ -19,13 +19,88 @@ block content-main
                             img(src="/images/img_04.jpg")
                     .center.col-md-8
                         .title 纯天然墨脱石锅
-                        .number-box
+                        .number-box.row
+                            .name 购买数量
+                            .count
+                                a#sub(href='javascript:void(0)', onclick="show('sub')") -
+                                #num 1
+                                a#sum(href='javascript:void(0)', onclick="show('sum')") +
 
 
                     .right.col-md-8
                         .money
                             span RMB
                             span 3600.00
+                .content2.row
+                    .col-md-8.col-24.first
+                        h5 送货详情
+                        a.edit.js-edit(href="javascript:;")
+                            span 更改
+                    .col-md-8.col-12.address
+                        .a-title 送货地址：
+                        .txt
+                            p 上海，虹口区
+                            p 广粤路835弄，1号楼601室
+                    .col-md-8.col-12.info
+                        .a-title 联系信息：
+                        .txt
+                            p 王泽祥
+                            p 17521035241
+                .content2.row
+                    .col-md-8.col-24.first
+                        h5 发票
+                        a.edit.js-edit(href="javascript:;")
+                            span 更改
+                    .col-md-8.col-12.address
+                        if($hasInvoice)
+                            .no-invoice
+                                p 您已选择不开具发票
+                        else
+                            .has-invoice
+                                .title 增值税专用发票
+                                .main
+                                    p 今日捷财
+                                    p xxxxxxxxxxxxxxxxxxxxxx
+                                    p 上海市，虹口区，凉城，广粤路835弄1号楼601
+                                    p 400-088-11
+                                    p 上海交通银行凉城支行
+                                    p xxxxxxxxxxxxxxxxxxxxxx
+                .content3
+                    .row
+                        .left.col-md-13
+                            .remarks-box
+                                .title 订单备注
+                                input.text(type="text" value="如需备注，请输入.." placeholder="如需备注，请输入..")
+
+                    .total-box.row
+                        .left.col-md-8
+                            span 总计
+                        .right.col-md-16
+                            .main
+                                .item.row
+                                    .title 运费：
+                                    .text RMB 100.00
+                                .item.row
+                                    .title 商品价格：
+                                    .text RMB 3600.00
+
+                .content4.row
+                    .col-md-8
+                    .right.col-md-16
+                        .top.row
+                            .top-l 合计
+                            .top-r
+                                .money
+                                    span RMB
+                                    span 3700.00
+                        .center.row
+                            .name 选择支付方式
+                            .choose.active
+                                img(src="/images/icon_zfb.png")
+                            .choose
+                                img(src="/images/icon_wx.png")
+                        .bottom
+                            input.submit-btn(type="submit" value="立即支付")
 
 
 
@@ -41,5 +116,23 @@ block script-main
                 }
 
             }
+
+
+
         })
+
+        var x = 1;
+        function show(state) {
+            if (state == "sub") {
+                if (x <= 0) {
+                    document.getElementById('num').innerHTML = "0";
+                } else {
+                    x--;
+                    document.getElementById('num').innerHTML = x;
+                }
+            } else if (state == "sum") {
+                x++;
+                document.getElementById('num').innerHTML = x;
+            }
+        }
 

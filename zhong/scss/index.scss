@@ -23,6 +23,13 @@ body {
   color: #080808;
 }
 
+.com-more {
+  font-size: rem(14);
+  color: #1c7acc;
+  padding-right: rem(14);
+  background: url("../images/icon_logout.png") no-repeat center right/rem(5);
+}
+
 .container {
   width: 100%;
 }
@@ -95,9 +102,10 @@ body {
       .header-center{
         height: 100%;
         line-height: 1.5rem;
-        margin-left: rem(360);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         .logo{
-
           img{
             max-width: rem(330);
           }
@@ -944,24 +952,27 @@ body {
       .btn-main{
         padding-right: rem(50);
       }
-      .submit-btn{
-        width: 100%;
-        height: rem(90);
-        font-size: rem(18);
-        color: #ffffff;
-        font-weight: bold;
-        background-color: $base-color;
-        border: none;
-        border-radius: 5px;
-      }
       @media (max-width: 576px){
         .btn-main{
           padding-right: 0;
-          .submit-btn{
-            height: rem(120);
-          }
         }
       }
+    }
+  }
+}
+
+.submit-btn{
+  width: 100%;
+  height: rem(90);
+  font-size: rem(18);
+  color: #ffffff;
+  font-weight: bold;
+  background-color: $base-color;
+  border: none;
+  border-radius: 5px;
+  @media (max-width: 576px){
+    .submit-btn{
+      height: rem(120);
     }
   }
 }
@@ -991,6 +1002,39 @@ body {
         .title{
           font-size: rem(30);
         }
+        .number-box{
+
+          margin-top: rem(30);
+          .name{
+            font-size: rem(18);
+            margin-right: rem(20);
+          }
+          a{
+            width: rem(30);
+            height: rem(30);
+            text-decoration:none;
+            color: #080808;
+            display: inline-block;
+          }
+          .count{
+            width: rem(120);
+            height: rem(30);
+            line-height: rem(28);
+            text-align:center;
+            border:1px solid #dddddd;
+            border-radius: 3px;
+            display: inline-flex;
+            overflow: hidden;
+          }
+          #num{
+            width: rem(58);
+            height: rem(30);
+            display:inline-block;
+            border-right:1px solid #dddddd;
+            border-left:1px solid #dddddd;
+          }
+
+        }
       }
       .right{
         display: flex;
@@ -999,6 +1043,166 @@ body {
           font-size: rem(30);
           font-weight: bold;
           margin-left: rem(13);
+        }
+      }
+    }
+    .content2{
+      padding: rem(80) 0;
+      border-bottom: 1px solid #dddddd;
+      .first {
+        >h5 {
+          margin-bottom: rem(20);
+        }
+        >p {
+          font-size: rem(18);
+          color: #080808;
+          line-height: 1;
+          margin-bottom: rem(20);
+        }
+        .edit {
+          @extend .com-more;
+          line-height: 1;
+        }
+      }
+      .a-title {
+        font-size: rem(18);
+        color: #080808;
+        line-height: 1;
+        margin-bottom: rem(24);
+      }
+      .txt {
+        font-size: rem(14);
+        line-height: rem(26);
+        color: #666666;
+      }
+      .address {
+        padding-left: rem(30);
+      }
+      .info {
+        padding-left: rem(20);
+      }
+      .no-invoice{
+        p{
+          font-size: rem(18);
+          color: #666666;
+        }
+      }
+      .has-invoice{
+        .title{
+          font-size: rem(18);
+          font-weight: bold;
+        }
+        .main{
+          font-size: rem(14);
+          color: #666666;
+          margin-top: rem(20);
+        }
+      }
+    }
+    .content3{
+      padding: rem(80) 0 rem(20);
+      border-bottom: 1px solid #dddddd;
+      .left{
+        .remarks-box{
+          height: rem(90);
+          border:1px #bbbbbb solid;
+          border-radius: 5px;
+          padding: 0 rem(20);
+          margin-bottom: rem(20);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .title{
+            font-size: rem(12);
+            color: #999999;
+          }
+          .text{
+            font-size: rem(18);
+            color: #080808;
+            border: none;
+            background-color: transparent;
+          }
+        }
+      }
+      .total-box{
+        .left{
+          font-size: rem(30);
+          font-weight: bold;
+        }
+        .right{
+          padding-left: rem(30);
+          .main{
+            .item{
+              font-size: rem(14);
+              margin-bottom: rem(18);
+              .title{
+                color: #666666;
+                width: rem(80);
+              }
+              .text{
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+    .content4{
+      padding-top: rem(35);
+      .right{
+        padding-left: rem(30);
+        .top{
+          justify-content: space-between;
+          .top-l{
+            font-size: rem(30);
+            font-weight: bold;
+          }
+          .top-r{
+            font-size: rem(30);
+            font-weight: bold;
+            span{
+              margin-left: rem(13);
+            }
+          }
+        }
+        .center{
+          align-items: center;
+          justify-content: center;
+          margin-top: rem(40);
+          .name{
+            font-size: rem(18);
+            margin-right: rem(15);
+            font-weight: bold;
+          }
+          .choose{
+            width: rem(150);
+            height: rem(50);
+            border:1px #bbbbbb solid;
+            text-align: center;
+            line-height: rem(44);
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-left: rem(15);
+            img{
+               height: rem(36);
+            }
+          }
+          .active{
+            border:2px $base-color solid;
+          }
+        }
+        .bottom{
+          margin-top: rem(80);
+          padding-left: rem(210);
+          .pay-btn{
+            width: 100%;
+            height: rem(90);
+            background-color: $base-color;
+            color: #FFFFFF;
+            font-size: rem(18);
+            font-weight: bold;
+            border: none;
+          }
         }
       }
     }
