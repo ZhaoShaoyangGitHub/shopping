@@ -164,9 +164,11 @@ body {
   right: rem(50);
   bottom: rem(50);
   z-index: 999;
+  cursor: pointer;
   .iconfont{
     font-size: rem(27);
     color: #FFFFFF;
+    line-height: 1;
   }
 }
 .mb-head{
@@ -175,6 +177,9 @@ body {
 
 //移动端头部
 @media (max-width: 768px){
+  .zs-header{
+    margin-bottom: rem(120);
+  }
   .header{
     display: none;
   }
@@ -668,12 +673,317 @@ body {
   }
 }
 
-//补充送货信息
+//补充送货信息,选择新地址，普通发票
 .zs-delivery{
   background-color: #f8f8f8;
   padding: rem(40) 0 rem(100);
   .delivery-content{
     padding-top: rem(80);
+    .address-box{
+      margin-top: rem(50);
+      .address-title{
+        font-size: rem(24);
+        color: #080808;
+        line-height: 1.5;
+      }
+      .address-main{
+        margin-top: rem(28);
+        padding-bottom: rem(80);
+        border-bottom: 1px #dddddd solid;
+        .left{
+          padding-right: rem(50);
+          .address-default{
+            border:1px #bbbbbb solid;
+            border-radius: 5px;
+            padding: rem(15) rem(20);
+            align-items: center;
+            justify-content: space-between;
+            .default-l{
+              .name{
+                font-size: rem(18);
+                color: #080808;
+                line-height: 1.5;
+                font-weight: bold;
+              }
+              .info{
+                font-size: rem(12);
+                color: #999999;
+                line-height: 1.3;
+              }
+              .phone{
+                font-size: rem(12);
+                color: #999999;
+                line-height: 1.3;
+              }
+            }
+            .default-r{
+              font-size: rem(14);
+              font-weight: bold;
+              color: #080808;
+            }
+          }
+          .modify-btn{
+            margin: rem(18) 0 rem(27);
+          }
+          .address-new{
+            border:1px #bbbbbb solid;
+            border-radius: 5px;
+            padding: 0 rem(20);
+            margin-bottom: rem(20);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .use{
+              font-size: rem(18);
+              color: #080808;
+              font-weight: bold;
+            }
+            .title{
+              font-size: rem(12);
+              color: #999999;
+            }
+            .text{
+              font-size: rem(18);
+              color: #080808;
+              border: none;
+              background-color: transparent;
+            }
+            .phone{
+              font-family: 'Arial';
+            }
+            .detail{
+              font-size: rem(18);
+              color: #999999;
+              border: none;
+              background-color: transparent;
+            }
+            select{
+              font-size: rem(18);
+              color: #080808;
+              border: none;
+              background-color: transparent;
+              margin: 0 rem(-5);
+              option{
+                color: #080808;
+              }
+            }
+          }
+          .address-border{
+            height: rem(90);
+            box-sizing: border-box;
+            &:hover{
+              border: 2px #1d6650 solid;
+            }
+          }
+          .active{
+            border: 2px #1d6650 solid;
+          }
+        }
+        .right{
+          padding-left: rem(250);
+          .attention{
+            width: rem(350);
+            float: right;
+            .attention-title{
+              font-size: rem(18);
+              line-height: 1.5;
+              color: #080808;
+              font-weight: bold;
+            }
+            .attention-main{
+              margin-top: rem(28);
+              .item{
+                margin-bottom: rem(30);
+                .img{
+                  flex: 0 1 rem(20);
+                  width: rem(20);
+                  height: rem(20);
+                  background: url("../images/icon_yuan.png") no-repeat center/contain;
+                  margin: rem(4) rem(20) 0 0;
+                }
+                .text{
+                  flex: 1;
+                  font-size: rem(14);
+                  color: #999999;
+                  line-height: 1.5;
+                }
+              }
+
+            }
+          }
+        }
+        @media (max-width: 576px){
+          .left{
+            padding-right: 0;
+            .address-border{
+              height: rem(120);
+            }
+          }
+          .right{
+            padding-left: 0;
+            margin-top: rem(30);
+            .attention{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .invoice-box{
+      padding-top: rem(80);
+      .invoice-main{
+        padding-bottom: rem(80);
+        border-bottom: 1px #dddddd solid;
+        margin-top: rem(50);
+        .left {
+           padding-right: rem(50);
+          .invoice-item{
+            height: rem(90);
+            border:1px #bbbbbb solid;
+            border-radius: 5px;
+            padding: rem(34) rem(20);
+            margin-bottom: rem(20);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &:hover{
+              border: 2px #1d6650 solid;
+            }
+            .use{
+              font-weight: bold;
+              font-size: rem(18);
+              color: #080808;
+            }
+          }
+          .invoice-detail{
+            padding: rem(25);
+            background-color: #f0f0f0;
+            .title{
+              font-size: rem(18);
+            }
+            .detail-main{
+              margin-top: rem(24);
+              .invoice-item{
+                background-color: #FFFFFF;
+              }
+            }
+          }
+          .company-box{
+            margin-top: rem(20);
+            .company{
+              height: rem(65);
+              margin-bottom: rem(20);
+              border:1px #bbbbbb solid;
+              border-radius: 5px;
+              background-color: #FFFFFF;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 0 rem(15);
+              &:hover{
+                border:1px $base-color solid;
+              }
+              .name{
+                font-size: rem(12);
+                color: #999999;
+              }
+              .text{
+                font-size: rem(18);
+                border: none;
+                background-color: transparent;
+              }
+              select{
+                border: none;
+                color: #999999;
+                height: 100%;
+                option{
+                  color: #080808;
+                }
+              }
+            }
+            .active{
+              border: 2px #1d6650 solid;
+            }
+          }
+        }
+        @media (max-width: 576px) {
+          .left {
+            padding-right: 0;
+            .invoice-item {
+              height: rem(120);
+            }
+            .company-box{
+              .company{
+                height: rem(90);
+              }
+            }
+          }
+        }
+      }
+    }
+    .delivery-bottom{
+      margin-top: rem(80);
+      .btn-main{
+        padding-right: rem(50);
+      }
+      .submit-btn{
+        width: 100%;
+        height: rem(90);
+        font-size: rem(18);
+        color: #ffffff;
+        font-weight: bold;
+        background-color: $base-color;
+        border: none;
+        border-radius: 5px;
+      }
+      @media (max-width: 576px){
+        .btn-main{
+          padding-right: 0;
+          .submit-btn{
+            height: rem(120);
+          }
+        }
+      }
+    }
+  }
+}
+
+//支付订单
+.zs-payment-order{
+  background-color: #f8f8f8;
+  padding: rem(40) 0 rem(100);
+  .payment-order-content{
+    padding-top: rem(75);
+    .content1{
+      align-items: center;
+      padding: rem(65) 0 rem(80);
+      border-bottom: 1px #dddddd solid;
+      .left{
+        padding-right: rem(60);
+        .img{
+          img{
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+          }
+        }
+      }
+      .center{
+        padding-left: rem(30);
+        .title{
+          font-size: rem(30);
+        }
+      }
+      .right{
+        display: flex;
+        justify-content: flex-end;
+        span{
+          font-size: rem(30);
+          font-weight: bold;
+          margin-left: rem(13);
+        }
+      }
+    }
   }
 }
 
