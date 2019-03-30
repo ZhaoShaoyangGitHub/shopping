@@ -13,14 +13,92 @@ block content-main
                 .right 如需帮助，请拨打 400-666-888
             .delivery-content
                 .zs-title 你的送货地址是哪里？
+                .address-box
+                    .address-title 选择地址：
+                    .address-main.row
+                        .left.col-md-12
+                            .address-default.address-border.row
+                                .default-l
+                                    .name 王泽祥
+                                    .info 上海市，虹口区，广粤路835弄1号楼601室
+                                    .phone 17521035241
+                                .default-r 默认地址
+                            .modify-btn
+                                a.d-block(href="javascript:;") 修改地址
+                            a.address-new.address-border.js-address(href="javascript:;")
+                                .use 使用新的地址
+                            .new-address-main
+                                .address-new.address-border
+                                    .title 您的姓名
+                                    input.text(type="text" value="王泽祥" placeholder="请输入您的姓名")
+                                .address-new.address-border
+                                    .title 您的电话
+                                    input.text.phone(type="phone" value="17521035241" placeholder="请输入您的电话")
+                                .address-new.address-border
+                                    .title 省份/城镇/城市/区
+                                    select.select-box
+                                        option(value="上海市，虹口区") 上海市，虹口区
+                                        option(value="上海市，宝山区") 上海市，宝山区
+                                        option(value="上海市，静安区") 上海市，静安区
+                                .address-new.address-border
+                                    input.detail(type="text" value="" placeholder="详细地址")
 
 
+                        .right.col-md-12
+                            .attention
+                                .attention-title 请注意以下几点：
+                                .attention-main
+                                    .item.row
+                                        .img
+                                        .text 我们将使用收件人手机号码来发送有关送货状态更新的短信。
+                                    .item.row
+                                        .img
+                                        .text 我们将使用联系人电话号码来沟通有关订单或付 款方面的事宜。
+                                    .item.row
+                                        .img
+                                        .text 请核实您输入的联系方式是否正确，下单后将无法修改。
+
+
+                .invoice-box
+                    .zs-title 你是否需要开具发票？
+                    .invoice-main.row
+                        .left.col-md-12
+                            .invoice-item
+                                .use 无需发票
+                            .invoice-item.active
+                                .use 无需发票
+                            .invoice-detail
+                                .title 选择发票抬头
+                                .detail-main
+                                    .invoice-item
+                                        .use 个人
+                                    .invoice-item.active
+                                        .use 其他发票抬头
+                                .title 请输入详细的发票抬头
+                                .company-box
+                                    .company
+                                        .name 发票抬头/公司
+                                        input.text(type="text" value="墨脱石锅文化产业有限公司" placeholder="请输入您的公司名称")
+                                    .company
+                                        select
+                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选)
+                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选1)
+                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选2)
+
+                .delivery-bottom.row
+                    .btn-main.col-md-12
+                        input.submit-btn(type="submit" value="继续支付订单")
 
 
 
 block script-main
     script.
         $(function () {
+            if($(".js-address").length){
+                if($(this).hasClass('active')){
+                    $(this).siblings('.new-address-main').show(500);
+                }
 
+            }
         })
 

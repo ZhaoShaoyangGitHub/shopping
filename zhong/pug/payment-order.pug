@@ -1,0 +1,45 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "homePage"
+
+block style-main
+
+
+block content-main
+    .zs-payment-order
+        .inner-content
+            .title-classify.row
+                .left 结账
+                .right 如需帮助，请拨打 400-666-888
+            .payment-order-content
+                .zs-title 请确保以下信息均准确无误。
+                .content1.row
+                    .left.col-md-8
+                        .img
+                            img(src="/images/img_04.jpg")
+                    .center.col-md-8
+                        .title 纯天然墨脱石锅
+                        .number-box
+
+
+                    .right.col-md-8
+                        .money
+                            span RMB
+                            span 3600.00
+
+
+
+
+
+
+block script-main
+    script.
+        $(function () {
+            if($(".js-address").length){
+                if($(this).hasClass('active')){
+                    $(this).siblings('.new-address-main').show(500);
+                }
+
+            }
+        })
+
