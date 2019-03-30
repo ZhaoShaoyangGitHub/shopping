@@ -1,1 +1,11 @@
-//- 以下写你的公共代码
+// 订单列表
+mixin order
+    .order-list.row
+        each item in ['待支付','已收货','待发货']
+            .col-md-8.col-sm-12
+                a.list-item(href="订单详情.html")
+                    .order-img
+                        .img.lazyload(data-src="images/product.png")
+                    .order-body
+                        .order-status=item
+                        .order-date 2019 / 03 / 10

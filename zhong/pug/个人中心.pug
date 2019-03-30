@@ -1,0 +1,68 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = ""
+block style-main
+block content-main
+    .personal-center
+        .container
+            .personal-top.d-flex.justify-content-between.align-items-center
+                h4 个人中心
+                a.logout(href="javascript:;")
+                    span 退出登录
+            .personal-info
+                .personal-name 欢迎来到皂石
+                .personal-phone 17521035241
+        .personal-order
+            .container
+                .title.d-flex.align-items-end
+                    h5 你的订单
+                    a.more(href="javascript:;")
+                        span 查看更多
+                +order
+        .container
+            .account-settings.row
+                .col-md-8.col-24.first
+                    h5 账户设置
+                    p 送货
+                    a.edit.js-edit(href="javascript:;")
+                        span 编辑
+                .col-md-8.col-12.address
+                    .a-title 送货地址：
+                    .txt
+                        p 上海，虹口区
+                        p 广粤路835弄，1号楼601室
+                .col-md-8.col-12.info
+                    .a-title 联系信息：
+                    .txt
+                        p 王泽祥
+                        p 17521035241
+            .password-security
+                h5 密码安全
+                btn.btn.password-btn.js-reset-password(type="btn") 设置新的登录密码
+    .edit-layer#editBox(style="display:none")
+        .title 设置新的登录密码
+        form.form
+            .form-group
+                label.label 新的密码
+                input.form-control(type="password" value="" name="password" id="password")
+            .form-group
+                label.label 您的当前手机号为
+                input.form-control(type="text" value="" name="phone" id="phone")
+            .form-group
+                label.label 输入验证码
+                input.form-control(type="password" value="" name="code" id="code")
+            .form-btn
+                button.btn(type="reset") 取消
+                button.btn(type="submit") 确定修改
+block script-main
+    script.
+        $(function () {
+            $('.js-edit').click(function () {
+                layer.open({
+                    title: '',
+                    type: 1,
+                    area: ['8rem','6.4rem'],
+                    content: $('#editBox'),
+                })
+            })
+        })

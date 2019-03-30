@@ -4,29 +4,30 @@ $font-size-base:              0.16rem !default;
 //html{ font-size: $root-size + px!important;}
 
 // 定制bootstrap
-
 $border-radius:               .048rem !default;
 $border-radius-lg:            .04rem !default;
 $border-radius-sm:            .032rem !default;
-
-$line-height-base:1.5 !default;
+$line-height-base:            1.5 !default;
 $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
 //网站基础色
 $base-color: #1d6650;
+$input-btn-focus-box-shadow: 0 0 0 rem(2) rgba(29,102,80,0.2);
+$input-btn-focus-color: $base-color;
+$input-border-color: #dddddd;
 $grid-breakpoints: (
   xs: 0,
-  sm: 768px,
-  md: 990px,
-  lg: 1220px,
-  xl: 1500px
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1250px
 ) !default;
 $container-max-widths: (
-  sm: 750px,
-  md: 1100px,
-  lg: 1200px,
-  xl: 1460px
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
 ) !default;
 
 $paragraph-margin-bottom: 0;
@@ -49,9 +50,6 @@ $pagination-active-color: #707070;
 $pagination-active-bg: transparent;
 $pagination-hover-bg: transparent;
 $card-border-width: 0;
-
-
-
 
 // bootstrap定制变量说明 http://v4.bootcss.com/customize//#less-variables
 @import "../../../node_modules/bootstrap/scss/variables";
