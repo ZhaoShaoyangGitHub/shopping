@@ -12,55 +12,56 @@ block content-main
             .zs-help-content.js-help
                 .sort #{$index}
                 .help-item
-                    .name-box
+                    .name-box(data-toggle="collapse" data-target="#helpOne" aria-expanded="true")
                         .name 线下门店
                         .line
                             .line-h
                             .line-s
-                    .item-main.row
-                        .tuwen-box.col-md-8
-                            a.d-block(href="javascript:;")
-                                .img-box
-                                    .img(style="background-image: url('/images/img_01.jpg')")
-                                .bottom
-                                    .b-name 七宝
-                                    .b-address 上海市闵行区漕宝路 3366 号七宝万科广场
-                                    .b-phone 4006171324
-                        .tuwen-box.col-md-8
-                            a.d-block(href="javascript:;")
-                                .img-box
-                                    .img(style="background-image: url('/images/img_02.jpg')")
-                                .bottom
-                                    .b-name 上海环贸 iapm
-                                    .b-address 上海市徐汇区淮海中路 999 号环贸 iapm 商场
-                                    .b-phone 4006171324
-                        .tuwen-box.col-md-8
-                            a.d-block(href="javascript:;")
-                                .img-box
-                                    .img(style="background-image: url('/images/img_03.jpg')")
-                                .bottom
-                                    .b-name 五角场
-                                    .b-address 五角场上海市杨浦区翔殷路 1099 号上海合生汇
-                                    .b-phone 4006139771
+                    .item-main#helpOne.collapse.show
+                        .row
+                            .tuwen-box.col-md-8
+                                a.d-block(href="javascript:;")
+                                    .img-box
+                                        .img(style="background-image: url('/images/img_01.jpg')")
+                                    .bottom
+                                        .b-name 七宝
+                                        .b-address 上海市闵行区漕宝路 3366 号七宝万科广场
+                                        .b-phone 4006171324
+                            .tuwen-box.col-md-8
+                                a.d-block(href="javascript:;")
+                                    .img-box
+                                        .img(style="background-image: url('/images/img_02.jpg')")
+                                    .bottom
+                                        .b-name 上海环贸 iapm
+                                        .b-address 上海市徐汇区淮海中路 999 号环贸 iapm 商场
+                                        .b-phone 4006171324
+                            .tuwen-box.col-md-8
+                                    a.d-block(href="javascript:;")
+                                        .img-box
+                                            .img(style="background-image: url('/images/img_03.jpg')")
+                                        .bottom
+                                            .b-name 五角场
+                                            .b-address 五角场上海市杨浦区翔殷路 1099 号上海合生汇
+                                            .b-phone 4006139771
                 .help-item
-                    .name-box
+                    .name-box.collapsed(data-toggle="collapse" data-target="#helpTwo" aria-expanded="false")
                         .name 防伪查询
                         .line
                             .line-h
                             .line-s
-                    .item-main
+                    .item-main#helpTwo.collapse
                         .text-box
                             .text
                                 p 请通过微信搜索并关注我们的公众号“皂石石器” / “皂石时代”，点击防伪查询来验证您购买的产品。
                                 p 您也可以通过微信 / 支付宝 / 浏览器中的二维码识别功能，扫描产品的二维码来验证您购买的产品。
                                 p 如需帮助请拨打：400-800-1098
                 .help-item
-                    .name-box
+                    .name-box.collapsed(data-toggle="collapse" data-target="#helpThree" aria-expanded="false")
                         .name 购买说明
                         .line
                             .line-h
                             .line-s
-                    .item-main
+                    .item-main#helpThree.collapse
                         .text-box
                             .text
                                 p 1)  选择商品，点击购买
@@ -68,12 +69,12 @@ block content-main
                                 p 3)  填写收货信息和支付信息等内容并提交订单
                                 p 4)  按照网页指示付款
                 .help-item
-                    .name-box
+                    .name-box.collapsed(data-toggle="collapse" data-target="#helpFour" aria-expanded="false")
                         .name 物流说明
                         .line
                             .line-h
                             .line-s
-                    .item-main
+                    .item-main#helpFour.collapse
                         .text-box
                             .text
                                 p 中国大陆地区，全场默认发顺丰陆运，暂时不支持空运服务。
@@ -97,12 +98,12 @@ block content-main
                                     p 5) 收件人地址为机关、单位等机构，而周六、周日和公众节假日不接收邮件、包裹，造成延误的;
                                     p 7) 收件人学校、单位或住宅小区不允许投递人员入内，或买家代收方原因，导致造成延误的。
                 .help-item
-                    .name-box
+                    .name-box.collapsed(data-toggle="collapse" data-target="#helpFive" aria-expanded="false")
                         .name 售后服务
                         .line
                             .line-h
                             .line-s
-                    .item-main
+                    .item-main#helpFive.collapse
                         .text-box
                             .text
                                 p 1)  本公司为本产品提供3个月质保服务。
@@ -116,18 +117,5 @@ block content-main
 block script-main
     script.
         $(function () {
-            var $index = $(".sort").text();
-            if($(".js-help").length){
-                $(".help-item").eq($index).addClass('active');
-                $(".name-box").click(function () {
-                    if($(this).parent().hasClass('active')){
-                        $(this).parent().removeClass('active').siblings().removeClass('active');
-                        $(this).siblings(".item-main").slideUp("slow");
-                    }else{
-                        $(this).parent().addClass('active').siblings().removeClass('active');
-                        $(this).siblings(".item-main").slideDown("slow");
-                    }
-                })
-            }
         })
 

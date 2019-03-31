@@ -41,7 +41,6 @@ body {
 }
 
 .transition-one {
-  @extend .transition-one;
   transition: all 0.3s ease-in-out;
 }
 
@@ -190,7 +189,55 @@ body {
 
 .footer {
   .footer-top {
-    padding: rem(60) 0 rem(130);
+    max-width: rem(1650);
+    padding: rem(60) rem(25) rem(122);
+    .foot-title {
+      font-size: rem(18);
+      color: #666666;
+      margin-bottom: rem(25);
+    }
+    .link-us {
+      font-size: rem(14);
+      line-height: rem(30);
+      color: #999999;
+      .iconfont {
+        color: #bbbbbb;
+        width: rem(30);
+      }
+      a {
+        color: #999999;
+      }
+    }
+    .weixin {
+      padding-top: rem(10);
+      .code {
+        width: rem(100);
+        font-size: rem(14);
+        color: #999999;
+        display: inline-block;
+        img {
+          margin-bottom: rem(15);
+        }
+      }
+    }
+    .footer-nav {
+      >li {
+        margin-right: rem(95);
+        a {
+          display: block;
+          font-size: rem(14);
+          color: #999999;
+          line-height: rem(30);
+          @extend .transition-one;
+          &:hover {
+            color: $base-color;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
   .footer-copy {
     font-size: 12px;
@@ -199,7 +246,6 @@ body {
     color: #999999;
   }
 }
-
 
 //移动端头部
 @media (max-width: 768px){
@@ -320,7 +366,6 @@ body {
     position: relative;
     overflow: hidden;
   }
-
 
   .spark-s1 .mask-list, .spark-s1 .video-cover-list {
     display: block;
@@ -574,8 +619,11 @@ body {
     .help-item{
       margin-bottom: rem(40);
       position: relative;
+      overflow: hidden;
       .name-box{
-        background-color: #f0f0f0;
+        background-color: #FFFFFF;
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
         height: rem(80);
         line-height: rem(80);
         padding: 0 rem(30);
@@ -589,8 +637,8 @@ body {
         .name{
           font-size: rem(24);
           line-height: 1.5;
-          color: #080808;
           display: inline-block;
+          color: $base-color;
         }
         .line{
           width: rem(20);
@@ -599,28 +647,46 @@ body {
           .line-h{
             width: rem(20);
             height: rem(4);
-            background-color: #999999;
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%,-50%);
+            background-color: $base-color;
           }
           .line-s{
             width: rem(4);
             height: rem(20);
-            background-color: #999999;
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%,-50%);
+            background-color: $base-color;
+            opacity: 0;
             @extend .transition-one;
+          }
+        }
+        &.collapsed {
+          background-color: #f0f0f0;
+          .name{
+            color: #080808;
+          }
+          .line{
+            .line-h{
+              background-color: #999999;
+            }
+            .line-s{
+              background-color: #999999;
+              opacity: 1;
+            }
           }
         }
       }
       .item-main{
-        margin: 0 rem(-24);
-        padding-bottom: rem(80);
-        display: none;
+        transition: height 0.35s ease;
+        >div {
+          margin: 0 rem(-24);
+          padding-bottom: rem(80);
+        }
         .tuwen-box{
           width: 100%;
           padding: rem(50) rem(24) 0;
@@ -665,7 +731,7 @@ body {
           width: 100%;
           padding: rem(50) rem(30);
           background-color: #FFFFFF;
-          margin: 0 rem(24);
+          margin: 0;
           .text{
             p{
               font-size: rem(18);

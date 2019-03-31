@@ -152,13 +152,36 @@ block content
 
 block foot
     footer.footer
-        .footer-nav.d-flex
+        .footer-top.d-flex.justify-content-between
             .link-us
-                .foot-title
-            ul.nav
-
+                .foot-title 联系我们
+                p.d-flex.align-items-center
+                    i.iconfont.icondizhi
+                    span 上海市闵行区颛兴东路1277弄65栋
+                p.d-flex.align-items-center
+                    i.iconfont.iconxinfeng
+                    a(href="mailTo:motuozaoshi@chsvc.com") motuozaoshi@chsvc.com
+                p.d-flex.align-items-center
+                    i.iconfont.icondianhua
+                    a(href="Tel:motuozaoshi@chsvc.com") 400-800-1098
+            ul.nav.footer-nav
+                each items, index in navArray
+                    if(index>0)
+                        li
+                           .foot-title=items.navName
+                           if items.children
+                               each item in items.children
+                                    a(href="javascript:;")=item.navName
+            .weixin
+                .code
+                    img(src="images/serve_code.png" width="100%")
+                    p.text-center 皂石服务号
+                .code
+                    img(src="images/subscribe_code.png" width="100%")
+                    p.text-center 皂石订阅号
         .footer-copy.text-center Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号
 block script
+    script(src='js/plugins/bootstrap/bootstrap.bundle.min.js')
     script(src='js/plugins/swiper/js/swiper.js')
     script(src='js/plugins/lazyload.min.js')
     script(src='js/index.js')
