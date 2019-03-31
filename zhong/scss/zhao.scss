@@ -380,6 +380,7 @@
         transition-property: all;
         transition-timing-function: ease-in;
         transition-duration: .125s;
+        z-index: 3;
       }
       .form-control {
         height: 0.9rem;
@@ -387,11 +388,19 @@
         font-size: rem(18);
         line-height: rem(28);
         color: #080808;
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
         &:focus ~ .label {
           top: rem(20);
           font-size: rem(12);
           transform: none;
         }
+      }
+      .form-textbox-entered ~ .label {
+        top: rem(20);
+        font-size: rem(12);
+        transform: none;
       }
     }
     .form-btn {
@@ -439,6 +448,7 @@
         transition-property: all;
         transition-timing-function: ease-in;
         transition-duration: .125s;
+        z-index: 3;
       }
       .form-control {
         height: 0.9rem;
@@ -446,11 +456,19 @@
         font-size: rem(18);
         line-height: rem(28);
         color: #080808;
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
         &:focus ~ .label {
           top: rem(20);
           font-size: rem(12);
           transform: none;
         }
+      }
+      .form-textbox-entered ~ .label {
+        top: rem(20);
+        font-size: rem(12);
+        transform: none;
       }
     }
     .form-btn {
