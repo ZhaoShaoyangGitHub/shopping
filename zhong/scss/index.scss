@@ -624,12 +624,20 @@ body {
         .tuwen-box{
           width: 100%;
           padding: rem(50) rem(24) 0;
-          .img{
-            height:rem(230);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+          .img-box{
+            overflow: hidden;
+            .img{
+              height:rem(230);
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              @extend .transition-one;
+              &:hover{
+                transform: scale(1.1);
+              }
+            }
           }
+
           .bottom{
             padding: rem(30);
             background-color: #FFFFFF;
@@ -872,6 +880,7 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            cursor: pointer;
             &:hover{
               border: 2px #1d6650 solid;
             }
@@ -884,6 +893,7 @@ body {
           .invoice-detail{
             padding: rem(25);
             background-color: #f0f0f0;
+            display: none;
             .title{
               font-size: rem(18);
             }
@@ -896,6 +906,10 @@ body {
           }
           .company-box{
             margin-top: rem(20);
+            display: none;
+            .title{
+              margin-bottom: rem(20);
+            }
             .company{
               height: rem(65);
               margin-bottom: rem(20);
@@ -930,6 +944,18 @@ body {
             .active{
               border: 2px #1d6650 solid;
             }
+            .form-group {
+              .form-control {
+                height: rem(65);
+                background-color: #FFFFFF;
+                &:focus ~ .label {
+                  top: rem(10);
+                }
+              }
+            }
+          }
+          .active{
+            border: 2px #1d6650 solid;
           }
         }
         @media (max-width: 576px) {
@@ -955,6 +981,38 @@ body {
       @media (max-width: 576px){
         .btn-main{
           padding-right: 0;
+        }
+      }
+    }
+
+    .form-group {
+      margin-bottom: rem(20);
+      position: relative;
+      .label {
+        position: absolute;
+        font-size: rem(18);
+        color: #999999;
+        left: rem(20);
+        top: 50%;
+        transform: translateY(-50%);
+        transition-property: all;
+        transition-timing-function: ease-in;
+        transition-duration: .125s;
+      }
+      .form-control {
+        height: 0.9rem;
+        padding: rem(40) rem(140) rem(20) rem(20);
+        font-size: rem(18);
+        line-height: rem(28);
+        color: #080808;
+        background-color: transparent;
+        &:focus{
+          border-color: #1d6650;
+        }
+        &:focus ~ .label {
+          top: rem(20);
+          font-size: rem(12);
+          transform: none;
         }
       }
     }

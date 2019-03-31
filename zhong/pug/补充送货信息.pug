@@ -25,23 +25,24 @@ block content-main
                                 .default-r 默认地址
                             .modify-btn
                                 a.d-block(href="javascript:;") 修改地址
-                            a.address-new.address-border.js-address(href="javascript:;")
+                            a.address-new.address-border.js-new-address.active(href="javascript:;")
                                 .use 使用新的地址
-                            .new-address-main
-                                .address-new.address-border
-                                    .title 您的姓名
-                                    input.text(type="text" value="王泽祥" placeholder="请输入您的姓名")
-                                .address-new.address-border
-                                    .title 您的电话
-                                    input.text.phone(type="phone" value="17521035241" placeholder="请输入您的电话")
+                            form.new-address-main
+                                .form-group
+                                    input.form-control(type="text" value="" name="name" id="name")
+                                    label.label 您的姓名
+                                .form-group
+                                    input.form-control(type="text" value="" name="phone" id="phone")
+                                    label.label 您的电话
                                 .address-new.address-border
                                     .title 省份/城镇/城市/区
                                     select.select-box
                                         option(value="上海市，虹口区") 上海市，虹口区
                                         option(value="上海市，宝山区") 上海市，宝山区
                                         option(value="上海市，静安区") 上海市，静安区
-                                .address-new.address-border
-                                    input.detail(type="text" value="" placeholder="详细地址")
+                                .form-group
+                                    input.form-control(type="text" value="" name="phone" id="address")
+                                    label.label 详细地址
 
 
                         .right.col-md-12
@@ -63,27 +64,26 @@ block content-main
                     .zs-title 你是否需要开具发票？
                     .invoice-main.row
                         .left.col-md-12
-                            .invoice-item
+                            .invoice-item.js-no-use.active
                                 .use 无需发票
-                            .invoice-item.active
-                                .use 无需发票
+                            .invoice-item.js-use
+                                .use 普通发票
                             .invoice-detail
                                 .title 选择发票抬头
                                 .detail-main
-                                    .invoice-item
+                                    .invoice-item.js-personal.active
                                         .use 个人
-                                    .invoice-item.active
+                                    .invoice-item.js-other
                                         .use 其他发票抬头
-                                .title 请输入详细的发票抬头
-                                .company-box
-                                    .company
-                                        .name 发票抬头/公司
-                                        input.text(type="text" value="墨脱石锅文化产业有限公司" placeholder="请输入您的公司名称")
-                                    .company
-                                        select
-                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选)
-                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选1)
-                                            option(value="纳税人识别号 (可选)") 纳税人识别号 (可选2)
+                                form.company-box
+                                    .title 请输入详细的发票抬头
+                                    .form-group
+                                        input.form-control(type="text" value="" name="companyName" id="companyName")
+                                        label.label 发票抬头/公司
+                                    .form-group
+                                        input.form-control(type="text" value="" name="tax" id="tax")
+                                        label.label 纳税人识别号 (可选)
+
 
                 .delivery-bottom.row
                     .btn-main.col-md-12
@@ -94,11 +94,56 @@ block content-main
 block script-main
     script.
         $(function () {
-            if($(".js-address").length){
-                if($(this).hasClass('active')){
-                    $(this).siblings('.new-address-main').show(500);
+            if($(".js-new-address").length){
+                if($('.js-new-address').hasClass('active')){
+                    $(".new-address-main").show();
                 }
-
+                else{
+                    $(".new-address-main").hide();
+                }
+                $('.js-new-address').click(function () {
+                    if($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                        $(".new-address-main").slideUp(500);
+                    }else{
+                        $(this).addClass('active');
+                        $(".new-address-main").slideDown(500);
+                    }
+                })
             }
+
+            if ($(".js-use").hasClass('active')) {
+                $(".invoice-detail").show();
+            } else {
+                $(".invoice-detail").hide();
+            }
+
+            $(".js-no-use").click(function () {
+                $(this).addClass('active');
+                $('.js-use').removeClass('active');
+                $(".invoice-detail").slideUp(500);
+            })
+            $(".js-use").click(function () {
+                $(this).addClass('active');
+                $('.js-no-use').removeClass('active');
+                $(".invoice-detail").slideDown(500);
+            })
+
+            if($(".js-other").hasClass('active')){
+                $(".company-box").show();
+            }else{
+                $(".company-box").hide();
+            }
+            $(".js-personal").click(function () {
+                $(this).addClass('active');
+                $('.js-other').removeClass('active');
+                $(".company-box").slideUp(500);
+            })
+            $(".js-other").click(function () {
+                $(this).addClass('active');
+                $('.js-personal').removeClass('active');
+                $(".company-box").slideDown(500);
+            })
+
         })
 
