@@ -64,7 +64,7 @@ block content-main
                 input.form-control(type="password" value="" name="code" id="code")
                 label.label 输入验证码
             .form-btn.row.justify-content-between
-                button.btn.reset.col-10(type="reset") 取消
+                button.btn.reset.col-10.js-close-layer(type="reset") 取消
                 button.btn.submit.col-13(type="submit") 确定修改
     .edit-layer#editBox(style="display:none")
         .title 设置新的登录密码
@@ -82,7 +82,7 @@ block content-main
                 input.form-control(type="text" value="" name="" id="address")
                 label.label 详细地址
             .form-btn.row.justify-content-between
-                button.btn.reset.col-10(type="reset") 取消
+                button.btn.reset.col-10.js-close-layer(type="reset") 取消
                 button.btn.submit.col-13(type="submit") 保存并使用
 block script-main
     script.
@@ -94,8 +94,13 @@ block script-main
                     area: ['8rem','6.4rem'],
                     content: $('#passwordBox'),
                     shade: 0.4,
-                    shadeClose: true,
-                    closeBtn: 0
+                    closeBtn: 0,
+                    success: function () {
+                        $('.js-close-layer').click(function () {
+                            $("input").removeClass("form-textbox-entered");
+                            layer.closeAll();
+                        })
+                    }
                 })
             })
             $('.js-edit').click(function () {
@@ -105,8 +110,20 @@ block script-main
                     area: ['8rem', '7.5rem'],
                     content: $('#editBox'),
                     shade: 0.4,
-                    shadeClose: true,
-                    closeBtn: 0
+                    closeBtn: 0,
+                    success: function () {
+                        $('.js-close-layer').click(function () {
+                            $("input").removeClass("form-textbox-entered");
+                            layer.closeAll();
+                        })
+                    }
                 })
+            })
+            $("input").bind('blur', function () {
+                if($(this).val()) {
+                    $(this).addClass("form-textbox-entered")
+                }else {
+                    $(this).removeClass("form-textbox-entered")
+                }
             })
         })
