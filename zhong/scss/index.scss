@@ -1136,9 +1136,6 @@ body {
     cursor: pointer;
   }
 }
-.citySel {
-
-}
 ._citys1 {
   width: 100%;
   display: inline-block;
@@ -1324,6 +1321,7 @@ body {
         p{
           font-size: rem(18);
           color: #666666;
+          font-weight: bold;
         }
       }
       .has-invoice{

@@ -1,6 +1,7 @@
 extends ../public/pug/layouts/main
 block head-main
     -var $active = ""
+    -var $hasInvoice = true
 block style-main
 block content-main
     .order-detail
@@ -46,22 +47,56 @@ block content-main
                             p 17521035241
                 .row
                     .col-md-8.order-title.font-weight-bold 发票
-                    .col-md-16.paddingLeft.font-md.color-2.font-weight-bold 您已选择不开具发票
+                    .col-md-16.paddingLeft
+                        if($hasInvoice)
+                            .no-invoice
+                                p 您已选择不开具发票
+                        else
+                            .has-invoice
+                                .title 增值税专用发票
+                                .main
+                                    p 今日捷财
+                                    p xxxxxxxxxxxxxxxxxxxxxx
+                                    p 上海市，虹口区，凉城，广粤路835弄1号楼601
+                                    p 400-088-11
+                                    p 上海交通银行凉城支行
+                                    p xxxxxxxxxxxxxxxxxxxxxx
                 .row
                     .col-md-8.order-title.font-weight-bold 订单备注
                     .col-md-16.paddingLeft.font-md.color-2.font-weight-bold 录入的备注内容会在订单详情页显示
-                .row
-                    .col-md-8.order-title.font-weight-bold 总计
-                    .col-md-16.paddingLeft
-                        .freight.font-sm
-                            span.color-2.w-title 运费：
-                            span.fontArial.font-weight-bold RMB 100.00
-                        .price.font-sm.marginBottom
-                            span.color-2.w-title 商品价格：
-                            span.fontArial.font-weight-bold RMB 3600.00
-                        .pay-sytle.font-weight-bold.font-md 微信支付
-                .row.total
+                .content3
+                    .row
+                        .left.col-md-13
+                            .form-group
+                                input.form-control.form-textbox-entered(type="text" value="" name="remarks" id="remarks" placeholder="如需备注，请输入..")
+                                label.label 订单备注
+
+                    .total-box.row
+                        .left.col-md-8.col-5
+                            span 总计
+                        .right.col-md-16.col-19
+                            .main
+                                .item.row
+                                    .item-title 运费：
+                                    .text RMB 100.00
+                                .item.row
+                                    .item-title 商品价格：
+                                    .text RMB 3600.00
+
+                .content4.row
                     .col-md-8
-                    .col-md-16.paddingLeft.d-flex.justify-content-between.font-lg.font-weight-bold
-                        div 合计
-                        .money.fontArial RMB 3700.00
+                    .right.col-md-16
+                        .top.row
+                            .top-l 合计
+                            .top-r
+                                .money
+                                    span RMB
+                                    span 3700.00
+                        .center.row
+                            .name 选择支付方式
+                            .choose.active
+                                img(src="/images/icon_zfb.png")
+                            .choose
+                                img(src="/images/icon_wx.png")
+                        .bottom
+                            input.submit-btn(type="submit" value="立即支付")

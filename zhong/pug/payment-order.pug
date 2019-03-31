@@ -117,7 +117,7 @@ block script-main
             }
 
             $("input").bind('blur', function () {
-                if ($(this).val()) {
+                if ($(this).val() || $(this).attr('placeholder')) {
                     $(this).addClass("form-textbox-entered")
                 } else {
                     $(this).removeClass("form-textbox-entered")
