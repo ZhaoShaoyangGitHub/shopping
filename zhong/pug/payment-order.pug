@@ -32,26 +32,26 @@ block content-main
                             span RMB
                             span 3600.00
                 .content2.row
-                    .col-md-8.col-24.first
+                    .col-md-8.col-5.first
                         h5 送货详情
                         a.edit.js-edit(href="javascript:;")
                             span 更改
-                    .col-md-8.col-12.address
+                    .col-md-8.col-11.address
                         .a-title 送货地址：
                         .txt
                             p 上海，虹口区
                             p 广粤路835弄，1号楼601室
-                    .col-md-8.col-12.info
+                    .col-md-8.col-8.info
                         .a-title 联系信息：
                         .txt
                             p 王泽祥
                             p 17521035241
                 .content2.row
-                    .col-md-8.col-24.first
+                    .col-md-8.col-5.first
                         h5 发票
                         a.edit.js-edit(href="javascript:;")
                             span 更改
-                    .col-md-8.col-12.address
+                    .col-md-8.col-19.address
                         if($hasInvoice)
                             .no-invoice
                                 p 您已选择不开具发票
@@ -68,14 +68,14 @@ block content-main
                 .content3
                     .row
                         .left.col-md-13
-                            .remarks-box
-                                .title 订单备注
-                                input.text(type="text" value="如需备注，请输入.." placeholder="如需备注，请输入..")
+                            .form-group
+                                input.form-control.form-textbox-entered(type="text" value="" name="remarks" id="remarks" placeholder="如需备注，请输入..")
+                                label.label 订单备注
 
                     .total-box.row
-                        .left.col-md-8
+                        .left.col-md-8.col-5
                             span 总计
-                        .right.col-md-16
+                        .right.col-md-16.col-19
                             .main
                                 .item.row
                                     .title 运费：
@@ -114,9 +114,15 @@ block script-main
                 if($(this).hasClass('active')){
                     $(this).siblings('.new-address-main').show(500);
                 }
-
             }
 
+            $("input").bind('blur', function () {
+                if ($(this).val()) {
+                    $(this).addClass("form-textbox-entered")
+                } else {
+                    $(this).removeClass("form-textbox-entered")
+                }
+            })
 
 
         })

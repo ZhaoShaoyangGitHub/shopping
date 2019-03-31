@@ -391,6 +391,10 @@
         position: relative;
         z-index: 2;
         background-color: transparent;
+        border:1px #bbbbbb solid;
+        &:focus{
+          border-color: $base-color;
+        }
         &:focus ~ .label {
           top: rem(20);
           font-size: rem(12);
@@ -459,6 +463,10 @@
         position: relative;
         z-index: 2;
         background-color: transparent;
+        border:1px #bbbbbb solid;
+        &:focus{
+          border-color: $base-color;
+        }
         &:focus ~ .label {
           top: rem(20);
           font-size: rem(12);

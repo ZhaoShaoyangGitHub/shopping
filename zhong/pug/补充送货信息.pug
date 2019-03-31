@@ -36,10 +36,12 @@ block content-main
                                     label.label 您的电话
                                 .address-new.address-border
                                     .title 省份/城镇/城市/区
-                                    select.select-box
-                                        option(value="上海市，虹口区") 上海市，虹口区
-                                        option(value="上海市，宝山区") 上海市，宝山区
-                                        option(value="上海市，静安区") 上海市，静安区
+                                    .choose-address
+                                        input#city(type='text')
+                                        input#harea(type='hidden', name='harea', data-id='820002', value='市区')
+                                        input#hproper(type='hidden', name='hproper', data-id='820001', value='澳门')
+                                        input#hcity(type='hidden', name='hcity', data-id='820000', value='澳门')
+                                    .choose-address-box
                                 .form-group
                                     input.form-control(type="text" value="" name="phone" id="address")
                                     label.label 详细地址
@@ -92,6 +94,9 @@ block content-main
 
 
 block script-main
+    script(src='js/Popt.js')
+    script(src='js/cityJson.js')
+    script(src='js/citySet.js')
     script.
         $(function () {
             if($(".js-new-address").length){
@@ -144,6 +149,19 @@ block script-main
                 $('.js-personal').removeClass('active');
                 $(".company-box").slideDown(500);
             })
+
+            $("input").bind('blur', function () {
+                if ($(this).val()) {
+                    $(this).addClass("form-textbox-entered")
+                } else {
+                    $(this).removeClass("form-textbox-entered")
+                }
+            })
+
+            $("#city").click(function (e) {
+                SelCity(this, e);
+                console.log("inout", $(this).val(), new Date())
+            });
 
         })
 
