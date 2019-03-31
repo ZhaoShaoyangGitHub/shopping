@@ -361,6 +361,11 @@ body {
 
 //首页
 .zs-home{
+  .home-container {
+    max-width: rem(1650);
+    padding: 0 rem(25);
+    margin: 0 auto;
+  }
   .spark-s1{
     height: rem(930);
     position: relative;
@@ -585,6 +590,40 @@ body {
     height: 100%;
     object-fit: cover;
     font-family: 'object-fit: cover;';
+  }
+}
+
+.home-contact-info {
+  background-color: #484e47;
+  padding: rem(96) 0 rem(98);
+  width: 100%;
+  .logo {
+    width: rem(86);
+    flex: 0 0 rem(86);
+    margin-right: rem(110);
+  }
+  .main {
+    .title {
+      font-size: rem(50);
+      color: #ffffff;
+      margin-bottom: rem(30);
+    }
+    .txt {
+      font-size: rem(20);
+      color: #999999;
+      margin-bottom: rem(75);
+    }
+    .form {
+      .form-group {
+        width: rem(380);
+        height: rem(60);
+        background-color: #636862;
+        margin-right: rem(30);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
 

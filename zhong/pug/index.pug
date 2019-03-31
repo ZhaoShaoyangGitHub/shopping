@@ -79,9 +79,16 @@ block content-main
                 //.video-item(data-target='3', style='opacity: 0;')
                     .video-bg
                         video(src='/video/04.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
-    .home-contact-info.d-flex
-        .logo
-            img(src="images/")
+        .home-contact-info
+            .home-container.d-flex.justify-content-start
+                .logo
+                    img(src="images/home_logo.png" width="100%")
+                .main
+                    .title 第一时间了解·皂石
+                    .txt 可以在这里留下您的联系方式，探索我们的故事 / 产品和每一次惊喜
+                    form.form.d-flex.flex-md-row.flex-column
+                        .form-group
+                        .form-group
 block script-main
     script(src='js/spark.min.js')
     script.
