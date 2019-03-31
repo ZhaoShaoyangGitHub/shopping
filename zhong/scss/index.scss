@@ -556,6 +556,14 @@ body {
     font-size: rem(14);
     color: #1c7acc;
   }
+  @media (max-width: 576px){
+    .left{
+      font-size: rem(36);
+    }
+    .right{
+      font-size: rem(22);
+    }
+  }
 }
 .zs-title{
   font-size: rem(40);
@@ -717,8 +725,12 @@ body {
       margin-top: rem(50);
       .address-title{
         font-size: rem(24);
+        font-weight: bold;
         color: #080808;
         line-height: 1.5;
+        @media (max-width: 576px){
+          font-size: rem(28);
+        }
       }
       .address-main{
         margin-top: rem(28);
@@ -849,6 +861,30 @@ body {
         @media (max-width: 576px){
           .left{
             padding-right: 0;
+            .address-default{
+              .default-l{
+                .name{
+                  font-size: rem(24);
+                }
+                .info{
+                  font-size: rem(20);
+                }
+                .phone{
+                  font-size: rem(20);
+                }
+              }
+              .default-r{
+                font-size: rem(24);
+              }
+            }
+            .modify-btn{
+              font-size: rem(24);
+            }
+            .address-new{
+              .use{
+                font-size: rem(24);
+              }
+            }
             .address-border{
               height: rem(120);
             }
@@ -858,6 +894,19 @@ body {
             margin-top: rem(30);
             .attention{
               width: 100%;
+              .attention-title{
+                font-size: rem(28);
+              }
+              .attention-main{
+                .item{
+                  .img{
+                    margin-top: rem(6);
+                  }
+                  .text{
+                    font-size: rem(24);
+                  }
+                }
+              }
             }
           }
         }
@@ -932,14 +981,6 @@ body {
                 border: none;
                 background-color: transparent;
               }
-              select{
-                border: none;
-                color: #999999;
-                height: 100%;
-                option{
-                  color: #080808;
-                }
-              }
             }
             .active{
               border: 2px #1d6650 solid;
@@ -963,10 +1004,23 @@ body {
             padding-right: 0;
             .invoice-item {
               height: rem(120);
+              .use{
+                font-size: rem(24);
+              }
+            }
+            .invoice-detail{
+              .title{
+                font-size: rem(24);
+              }
             }
             .company-box{
               .company{
                 height: rem(90);
+              }
+              .form-group{
+                .form-control{
+                  height: rem(90);
+                }
               }
             }
           }
@@ -1015,6 +1069,19 @@ body {
           transform: none;
         }
       }
+      @media (max-width: 576px){
+        .label{
+          font-size: rem(24);
+        }
+        .form-control{
+          height: rem(120);
+          font-size: rem(24);
+          &:focus ~ .label {
+            top: rem(24);
+            font-size: rem(20);
+          }
+        }
+      }
     }
   }
 }
@@ -1029,9 +1096,8 @@ body {
   border: none;
   border-radius: 5px;
   @media (max-width: 576px){
-    .submit-btn{
-      height: rem(120);
-    }
+    height: rem(120);
+    font-size: rem(28);
   }
 }
 
