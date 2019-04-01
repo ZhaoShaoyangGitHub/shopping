@@ -1,0 +1,298 @@
+<!-- 订单列表-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>payment-order</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/zhao.css">
+    <script src="js/plugins/adaptive.js"></script>
+    <script>
+        var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
+        if (windowwidth < 769) {
+            window['adaptive'].desinWidth = 750;
+            window['adaptive'].baseFont = 14;
+            window['adaptive'].maxWidth = 750;
+            window['adaptive'].minWidth = 320;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        } else {
+            window['adaptive'].desinWidth = 1500;
+            window['adaptive'].baseFont = 16;
+            window['adaptive'].maxWidth = 1500;
+            window['adaptive'].minWidth = 1200;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        }
+    </script>
+    <!--[if lte IE 9]>
+    <script src="js/plugins/respond.min.js"></script>
+    <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <div class="zs-header">
+        <div class="header">
+            <div class="header-box clearfix">
+                <div class="header-left float-left">
+                    <div class="catalog float-left">
+                        <div class="icon iconfont iconmenu"></div>
+                        <div class="title">目录</div>
+                    </div><a class="d-block float-left" href="javascript:;">
+                        <div class="phone">
+                            <div class="icon iconfont icondianhua"></div>
+                            <div class="title">400-800-1098</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-center float-left"><a class="logo d-block" href="javascript:;"><img src="../images/logo.png"></a></div>
+                <div class="header-right float-right">
+                    <div class="search js-search float-right">
+                        <div class="iconfont iconsousuo"></div>
+                    </div>
+                    <div class="user float-right"><a class="d-block" href="javascript:;">
+                            <div class="iconfont iconzhuce"></div>
+                        </a>
+                        <div class="user-text"><a class="login d-block" href="javascript:;">登录</a><a class="register d-block" href="javascript:;">注册</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix mb-head"><a class="pull-left logo-box" href="index.html"><img src="images/logo.png"></a>
+            <div class="pull-right nav-icon js-nav-icon">
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+            </div>
+            <div class="mb-aside-nav">
+                <div class="mb-aside-nav-left"></div>
+                <div class="nav-list">
+                    <div class="nav-head clearfix">
+                        <div class="close-icon js-close-icon"><img src="images/close-icon.png"></div>
+                    </div>
+                    <div class="list-box">
+                        <div class="list-item active">
+                            <div class="list-name js-list-name"><a href="index.html">首页</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">关于我们</div>
+                            <div class="sub-list"><a class="item" href="introduce.html">企业介绍</a></div>
+                            <div class="sub-list"><a class="item" href="aptitude.html">公司资质</a></div>
+                            <div class="sub-list"><a class="item" href="news.html">新闻动态</a></div>
+                            <div class="sub-list"><a class="item" href="recruit.html">人才招聘</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">联系我们</div>
+                            <div class="sub-list"><a class="item" href="customer.html">联系客服</a></div>
+                            <div class="sub-list"><a class="item" href="cooperation.html">商务合作</a></div>
+                            <div class="sub-list"><a class="item" href="media.html">媒体联系</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">帮助中心</div>
+                            <div class="sub-list"><a class="item" href="help.html">线下门店</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">防伪查询</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">购买说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">物流说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">售后服务</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">皂石食器</div>
+                            <div class="sub-list"><a class="item" href="mouyu.html">墨域系列</a></div>
+                            <div class="sub-list"><a class="item" href="mogong.html">墨工系列</a></div>
+                            <div class="sub-list"><a class="item" href="moyun.html">墨韵系列</a></div>
+                            <div class="sub-list"><a class="item" href="custom.html">定制</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backtop js-backtop">
+        <div class="iconfont iconjiantou1"></div>
+    </div>
+    <div class="zs-payment-order">
+        <div class="container">
+            <div class="title-classify row">
+                <div class="left">结账</div>
+                <div class="right">如需帮助，请拨打 400-666-888</div>
+            </div>
+            <div class="payment-order-content">
+                <div class="zs-title">请确保以下信息均准确无误。</div>
+                <div class="content1 row">
+                    <div class="left col-md-8">
+                        <div class="img"><img src="/images/img_04.jpg"></div>
+                    </div>
+                    <div class="center col-md-8">
+                        <div class="title">纯天然墨脱石锅</div>
+                        <div class="number-box row">
+                            <div class="name">购买数量</div>
+                            <div class="count"><a id="sub" href="javascript:void(0)" onclick="show('sub')">-</a>
+                                <div id="num">1</div><a id="sum" href="javascript:void(0)" onclick="show('sum')">+</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right col-md-8">
+                        <div class="money"><span>RMB</span><span>3600.00</span></div>
+                    </div>
+                </div>
+                <div class="content2 row">
+                    <div class="col-md-8 col-5 first">
+                        <h5>送货详情</h5><a class="edit js-edit" href="javascript:;"><span>更改</span></a>
+                    </div>
+                    <div class="col-md-8 col-11 address">
+                        <div class="a-title">送货地址：</div>
+                        <div class="txt">
+                            <p>上海，虹口区</p>
+                            <p>广粤路835弄，1号楼601室</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-8 info">
+                        <div class="a-title">联系信息：</div>
+                        <div class="txt">
+                            <p>王泽祥</p>
+                            <p>17521035241</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content2 row">
+                    <div class="col-md-8 col-5 first">
+                        <h5>发票</h5><a class="edit js-edit" href="javascript:;"><span>更改</span></a>
+                    </div>
+                    <div class="col-md-8 col-19 address">
+                        <div class="has-invoice">
+                            <div class="title">增值税专用发票</div>
+                            <div class="main">
+                                <p>今日捷财</p>
+                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                <p>上海市，虹口区，凉城，广粤路835弄1号楼601</p>
+                                <p>400-088-11</p>
+                                <p>上海交通银行凉城支行</p>
+                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content3">
+                    <div class="row">
+                        <div class="left col-md-13">
+                            <div class="form-group"><input class="form-control form-textbox-entered" type="text" name="remarks" id="remarks" placeholder="如需备注，请输入.."> <label class="label">订单备注</label></div>
+                        </div>
+                    </div>
+                    <div class="total-box row">
+                        <div class="left col-md-8 col-5"><span>总计</span></div>
+                        <div class="right col-md-16 col-19">
+                            <div class="main">
+                                <div class="item row">
+                                    <div class="title">运费：</div>
+                                    <div class="text">RMB 100.00</div>
+                                </div>
+                                <div class="item row">
+                                    <div class="title">商品价格：</div>
+                                    <div class="text">RMB 3600.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content4 row">
+                    <div class="col-md-8"></div>
+                    <div class="right col-md-16">
+                        <div class="top row">
+                            <div class="top-l">合计</div>
+                            <div class="top-r">
+                                <div class="money"><span>RMB</span><span>3700.00</span></div>
+                            </div>
+                        </div>
+                        <div class="center row">
+                            <div class="name">选择支付方式</div>
+                            <div class="choose active"><img src="/images/icon_zfb.png"></div>
+                            <div class="choose"><img src="/images/icon_wx.png"></div>
+                        </div>
+                        <div class="bottom"><input class="submit-btn" type="submit" value="立即支付"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top d-flex justify-content-between row">
+            <div class="link-us">
+                <div class="foot-title">联系我们</div>
+                <p class="d-flex align-items-center"><i class="iconfont icondizhi"></i><span>上海市闵行区颛兴东路1277弄65栋</span></p>
+                <p class="d-flex align-items-center"><i class="iconfont iconxinfeng"></i><a href="mailTo:motuozaoshi@chsvc.com">motuozaoshi@chsvc.com</a></p>
+                <p class="d-flex align-items-center"><i class="iconfont icondianhua"></i><a href="Tel:motuozaoshi@chsvc.com">400-800-1098</a></p>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <div class="foot-title">关于我们</div><a href="javascript:;">企业介绍</a><a href="javascript:;">公司资质</a><a href="javascript:;">新闻动态</a><a href="javascript:;">人才招聘</a>
+                </li>
+                <li>
+                    <div class="foot-title">联系我们</div><a href="javascript:;">联系客服</a><a href="javascript:;">商务合作</a><a href="javascript:;">媒体联系</a>
+                </li>
+                <li>
+                    <div class="foot-title">帮助中心</div><a href="javascript:;">线下门店</a><a href="javascript:;">防伪查询</a><a href="javascript:;">购买说明</a><a href="javascript:;">物流说明</a><a href="javascript:;">售后服务</a>
+                </li>
+                <li>
+                    <div class="foot-title">皂石食器</div><a href="javascript:;">墨域系列</a><a href="javascript:;">墨工系列</a><a href="javascript:;">墨韵系列</a><a href="javascript:;">定制</a>
+                </li>
+            </ul>
+            <div class="weixin">
+                <div class="code"><img src="images/serve_code.png" width="100%">
+                    <p class="text-center">皂石服务号</p>
+                </div>
+                <div class="code"><img src="images/subscribe_code.png" width="100%">
+                    <p class="text-center">皂石订阅号</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy text-center">Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号</div>
+    </footer>
+    <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/vendor.js" merge="true"></script>
+    <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/lazyload.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function() {})
+    </script>
+    <script>
+        $(function() {
+            if ($(".js-address").length) {
+                if ($(this).hasClass('active')) {
+                    $(this).siblings('.new-address-main').show(500);
+                }
+            }
+
+            $("input").bind('blur', function() {
+                if ($(this).val() || $(this).attr('placeholder')) {
+                    $(this).addClass("form-textbox-entered")
+                } else {
+                    $(this).removeClass("form-textbox-entered")
+                }
+            })
+
+
+        })
+
+        var x = 1;
+
+        function show(state) {
+            if (state == "sub") {
+                if (x <= 0) {
+                    document.getElementById('num').innerHTML = "0";
+                } else {
+                    x--;
+                    document.getElementById('num').innerHTML = x;
+                }
+            } else if (state == "sum") {
+                x++;
+                document.getElementById('num').innerHTML = x;
+            }
+        }
+    </script>
+</body>
+</html>

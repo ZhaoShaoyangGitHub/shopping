@@ -1,0 +1,304 @@
+<!-- 订单列表-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>help</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/zhao.css">
+    <script src="js/plugins/adaptive.js"></script>
+    <script>
+        var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
+        if (windowwidth < 769) {
+            window['adaptive'].desinWidth = 750;
+            window['adaptive'].baseFont = 14;
+            window['adaptive'].maxWidth = 750;
+            window['adaptive'].minWidth = 320;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        } else {
+            window['adaptive'].desinWidth = 1500;
+            window['adaptive'].baseFont = 16;
+            window['adaptive'].maxWidth = 1500;
+            window['adaptive'].minWidth = 1200;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        }
+    </script>
+    <!--[if lte IE 9]>
+    <script src="js/plugins/respond.min.js"></script>
+    <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <div class="zs-header">
+        <div class="header">
+            <div class="header-box clearfix">
+                <div class="header-left float-left">
+                    <div class="catalog float-left">
+                        <div class="icon iconfont iconmenu"></div>
+                        <div class="title">目录</div>
+                    </div><a class="d-block float-left" href="javascript:;">
+                        <div class="phone">
+                            <div class="icon iconfont icondianhua"></div>
+                            <div class="title">400-800-1098</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-center float-left"><a class="logo d-block" href="javascript:;"><img src="../images/logo.png"></a></div>
+                <div class="header-right float-right">
+                    <div class="search js-search float-right">
+                        <div class="iconfont iconsousuo"></div>
+                    </div>
+                    <div class="user float-right"><a class="d-block" href="javascript:;">
+                            <div class="iconfont iconzhuce"></div>
+                        </a>
+                        <div class="user-text"><a class="login d-block" href="javascript:;">登录</a><a class="register d-block" href="javascript:;">注册</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix mb-head"><a class="pull-left logo-box" href="index.html"><img src="images/logo.png"></a>
+            <div class="pull-right nav-icon js-nav-icon">
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+            </div>
+            <div class="mb-aside-nav">
+                <div class="mb-aside-nav-left"></div>
+                <div class="nav-list">
+                    <div class="nav-head clearfix">
+                        <div class="close-icon js-close-icon"><img src="images/close-icon.png"></div>
+                    </div>
+                    <div class="list-box">
+                        <div class="list-item active">
+                            <div class="list-name js-list-name"><a href="index.html">首页</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">关于我们</div>
+                            <div class="sub-list"><a class="item" href="introduce.html">企业介绍</a></div>
+                            <div class="sub-list"><a class="item" href="aptitude.html">公司资质</a></div>
+                            <div class="sub-list"><a class="item" href="news.html">新闻动态</a></div>
+                            <div class="sub-list"><a class="item" href="recruit.html">人才招聘</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">联系我们</div>
+                            <div class="sub-list"><a class="item" href="customer.html">联系客服</a></div>
+                            <div class="sub-list"><a class="item" href="cooperation.html">商务合作</a></div>
+                            <div class="sub-list"><a class="item" href="media.html">媒体联系</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">帮助中心</div>
+                            <div class="sub-list"><a class="item" href="help.html">线下门店</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">防伪查询</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">购买说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">物流说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">售后服务</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">皂石食器</div>
+                            <div class="sub-list"><a class="item" href="mouyu.html">墨域系列</a></div>
+                            <div class="sub-list"><a class="item" href="mogong.html">墨工系列</a></div>
+                            <div class="sub-list"><a class="item" href="moyun.html">墨韵系列</a></div>
+                            <div class="sub-list"><a class="item" href="custom.html">定制</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backtop js-backtop">
+        <div class="iconfont iconjiantou1"></div>
+    </div>
+    <div class="zs-help">
+        <div class="container">
+            <div class="zs-title">帮助中心</div>
+            <div class="zs-help-content js-help">
+                <div class="sort">0</div>
+                <div class="help-item">
+                    <div class="name-box" data-toggle="collapse" data-target="#helpOne" aria-expanded="true">
+                        <div class="name">线下门店</div>
+                        <div class="line">
+                            <div class="line-h"></div>
+                            <div class="line-s"></div>
+                        </div>
+                    </div>
+                    <div class="item-main collapse show" id="helpOne">
+                        <div class="row">
+                            <div class="tuwen-box col-md-8"><a class="d-block" href="javascript:;">
+                                    <div class="img-box">
+                                        <div class="img" style="background-image:url(/images/img_01.jpg)"></div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="b-name">七宝</div>
+                                        <div class="b-address">上海市闵行区漕宝路 3366 号七宝万科广场</div>
+                                        <div class="b-phone">4006171324</div>
+                                    </div>
+                                </a></div>
+                            <div class="tuwen-box col-md-8"><a class="d-block" href="javascript:;">
+                                    <div class="img-box">
+                                        <div class="img" style="background-image:url(/images/img_02.jpg)"></div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="b-name">上海环贸 iapm</div>
+                                        <div class="b-address">上海市徐汇区淮海中路 999 号环贸 iapm 商场</div>
+                                        <div class="b-phone">4006171324</div>
+                                    </div>
+                                </a></div>
+                            <div class="tuwen-box col-md-8"><a class="d-block" href="javascript:;">
+                                    <div class="img-box">
+                                        <div class="img" style="background-image:url(/images/img_03.jpg)"></div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="b-name">五角场</div>
+                                        <div class="b-address">五角场上海市杨浦区翔殷路 1099 号上海合生汇</div>
+                                        <div class="b-phone">4006139771</div>
+                                    </div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="name-box collapsed" data-toggle="collapse" data-target="#helpTwo" aria-expanded="false">
+                        <div class="name">防伪查询</div>
+                        <div class="line">
+                            <div class="line-h"></div>
+                            <div class="line-s"></div>
+                        </div>
+                    </div>
+                    <div class="item-main collapse" id="helpTwo">
+                        <div class="text-box">
+                            <div class="text">
+                                <p>请通过微信搜索并关注我们的公众号“皂石石器” / “皂石时代”，点击防伪查询来验证您购买的产品。</p>
+                                <p>您也可以通过微信 / 支付宝 / 浏览器中的二维码识别功能，扫描产品的二维码来验证您购买的产品。</p>
+                                <p>如需帮助请拨打：400-800-1098</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="name-box collapsed" data-toggle="collapse" data-target="#helpThree" aria-expanded="false">
+                        <div class="name">购买说明</div>
+                        <div class="line">
+                            <div class="line-h"></div>
+                            <div class="line-s"></div>
+                        </div>
+                    </div>
+                    <div class="item-main collapse" id="helpThree">
+                        <div class="text-box">
+                            <div class="text">
+                                <p>1) 选择商品，点击购买</p>
+                                <p>2) 结算</p>
+                                <p>3) 填写收货信息和支付信息等内容并提交订单</p>
+                                <p>4) 按照网页指示付款</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="name-box collapsed" data-toggle="collapse" data-target="#helpFour" aria-expanded="false">
+                        <div class="name">物流说明</div>
+                        <div class="line">
+                            <div class="line-h"></div>
+                            <div class="line-s"></div>
+                        </div>
+                    </div>
+                    <div class="item-main collapse" id="helpFour">
+                        <div class="text-box">
+                            <div class="text">
+                                <p>中国大陆地区，全场默认发顺丰陆运，暂时不支持空运服务。</p>
+                                <p>顺丰快递网点覆盖不到的地方，我司则会选择用EMS安排。</p>
+                                <p>具体覆盖网点请参考：顺丰官网/EMS官网。</p>
+                                <p>运费将在您结算订单时根据收货地址的不同显示不同价格。</p>
+                                <div class="text-black">
+                                    <p>如果您对发货有任何特别要求，请一定提前联系我们的售前客服进行咨询。</p>
+                                    <p>请您在付款前核对收货信息,如因个人疏忽填错地址，请及时与客服联系，我们会尽量为您联系快递协商处理，但因地址修改而产生的风险和费用需要由客户承担。</p>
+                                    <p>因以下原因导致延误或退回的，大疆将不承担责任：</p>
+                                    <p>1) 部份城市的偏远地区因交通等问题，配送时间可能在预计到达时间基础上延后1-2天;</p>
+                                    <p>2) 因买家原因（更改收货地址、地址不详、地址错误、联系不上、拒收、无代收人等）导致包裹延误派送</p>
+                                    <p>或无法送达的;</p>
+                                    <p>3) 因不可抗力造成延误的（“不可抗力”指不可预见、不可避免或不可克服的客观情况以及其他影响配送</p>
+                                    <p>时间、造成包裹配送延误的客观情况，包括但不限于全国性或区域性空中或地面交通系统管制或中断（如</p>
+                                    <p>天气原因等）、或通讯系统干扰或故障、或政府行为、邮政主管部门政策变化、战争、地震、台风、洪水、</p>
+                                    <p>火灾、大雨、大雾等其他类似事件）</p>
+                                    <p>4) 航空违禁品、手机、电子类产品、易碎品等因航空安检查验导致无法正常配载航班或改走陆路运输的;</p>
+                                    <p>5) 寄递物品违反禁、限寄规定或有关运输管理条例，经有关部门没收或依照有关法规、规定处理的;</p>
+                                    <p>5) 收件人地址为机关、单位等机构，而周六、周日和公众节假日不接收邮件、包裹，造成延误的;</p>
+                                    <p>7) 收件人学校、单位或住宅小区不允许投递人员入内，或买家代收方原因，导致造成延误的。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="name-box collapsed" data-toggle="collapse" data-target="#helpFive" aria-expanded="false">
+                        <div class="name">售后服务</div>
+                        <div class="line">
+                            <div class="line-h"></div>
+                            <div class="line-s"></div>
+                        </div>
+                    </div>
+                    <div class="item-main collapse" id="helpFive">
+                        <div class="text-box">
+                            <div class="text">
+                                <p>1) 本公司为本产品提供3个月质保服务。</p>
+                                <p>2) 产品在保质期内如果出现任何质量问题，将按“三包”原则免费更换。</p>
+                                <p>3) 质保过期后，本公司将继续为其提供长期咨询服务。</p>
+                                <p>4) 请保证每月至少使用并保养一次石锅，以延长使用寿命。保养方法请在官网或说明书中查看。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top d-flex justify-content-between row">
+            <div class="link-us">
+                <div class="foot-title">联系我们</div>
+                <p class="d-flex align-items-center"><i class="iconfont icondizhi"></i><span>上海市闵行区颛兴东路1277弄65栋</span></p>
+                <p class="d-flex align-items-center"><i class="iconfont iconxinfeng"></i><a href="mailTo:motuozaoshi@chsvc.com">motuozaoshi@chsvc.com</a></p>
+                <p class="d-flex align-items-center"><i class="iconfont icondianhua"></i><a href="Tel:motuozaoshi@chsvc.com">400-800-1098</a></p>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <div class="foot-title">关于我们</div><a href="javascript:;">企业介绍</a><a href="javascript:;">公司资质</a><a href="javascript:;">新闻动态</a><a href="javascript:;">人才招聘</a>
+                </li>
+                <li>
+                    <div class="foot-title">联系我们</div><a href="javascript:;">联系客服</a><a href="javascript:;">商务合作</a><a href="javascript:;">媒体联系</a>
+                </li>
+                <li>
+                    <div class="foot-title">帮助中心</div><a href="javascript:;">线下门店</a><a href="javascript:;">防伪查询</a><a href="javascript:;">购买说明</a><a href="javascript:;">物流说明</a><a href="javascript:;">售后服务</a>
+                </li>
+                <li>
+                    <div class="foot-title">皂石食器</div><a href="javascript:;">墨域系列</a><a href="javascript:;">墨工系列</a><a href="javascript:;">墨韵系列</a><a href="javascript:;">定制</a>
+                </li>
+            </ul>
+            <div class="weixin">
+                <div class="code"><img src="images/serve_code.png" width="100%">
+                    <p class="text-center">皂石服务号</p>
+                </div>
+                <div class="code"><img src="images/subscribe_code.png" width="100%">
+                    <p class="text-center">皂石订阅号</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy text-center">Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号</div>
+    </footer>
+    <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/vendor.js" merge="true"></script>
+    <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/lazyload.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function() {})
+    </script>
+    <script>
+        $(function() {})
+    </script>
+</body>
+</html>

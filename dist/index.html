@@ -1,0 +1,273 @@
+<!-- 订单列表-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>index</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/zhao.css">
+    <script src="js/plugins/adaptive.js"></script>
+    <script>
+        var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
+        if (windowwidth < 769) {
+            window['adaptive'].desinWidth = 750;
+            window['adaptive'].baseFont = 14;
+            window['adaptive'].maxWidth = 750;
+            window['adaptive'].minWidth = 320;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        } else {
+            window['adaptive'].desinWidth = 1500;
+            window['adaptive'].baseFont = 16;
+            window['adaptive'].maxWidth = 1500;
+            window['adaptive'].minWidth = 1200;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        }
+    </script>
+    <!--[if lte IE 9]>
+    <script src="js/plugins/respond.min.js"></script>
+    <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <div class="zs-header">
+        <div class="header">
+            <div class="header-box clearfix">
+                <div class="header-left float-left">
+                    <div class="catalog float-left">
+                        <div class="icon iconfont iconmenu"></div>
+                        <div class="title">目录</div>
+                    </div><a class="d-block float-left" href="javascript:;">
+                        <div class="phone">
+                            <div class="icon iconfont icondianhua"></div>
+                            <div class="title">400-800-1098</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-center float-left"><a class="logo d-block" href="javascript:;"><img src="../images/logo.png"></a></div>
+                <div class="header-right float-right">
+                    <div class="search js-search float-right">
+                        <div class="iconfont iconsousuo"></div>
+                    </div>
+                    <div class="user float-right"><a class="d-block" href="javascript:;">
+                            <div class="iconfont iconzhuce"></div>
+                        </a>
+                        <div class="user-text"><a class="login d-block" href="javascript:;">登录</a><a class="register d-block" href="javascript:;">注册</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix mb-head"><a class="pull-left logo-box" href="index.html"><img src="images/logo.png"></a>
+            <div class="pull-right nav-icon js-nav-icon">
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+            </div>
+            <div class="mb-aside-nav">
+                <div class="mb-aside-nav-left"></div>
+                <div class="nav-list">
+                    <div class="nav-head clearfix">
+                        <div class="close-icon js-close-icon"><img src="images/close-icon.png"></div>
+                    </div>
+                    <div class="list-box">
+                        <div class="list-item active">
+                            <div class="list-name js-list-name"><a href="index.html">首页</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">关于我们</div>
+                            <div class="sub-list"><a class="item" href="introduce.html">企业介绍</a></div>
+                            <div class="sub-list"><a class="item" href="aptitude.html">公司资质</a></div>
+                            <div class="sub-list"><a class="item" href="news.html">新闻动态</a></div>
+                            <div class="sub-list"><a class="item" href="recruit.html">人才招聘</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">联系我们</div>
+                            <div class="sub-list"><a class="item" href="customer.html">联系客服</a></div>
+                            <div class="sub-list"><a class="item" href="cooperation.html">商务合作</a></div>
+                            <div class="sub-list"><a class="item" href="media.html">媒体联系</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">帮助中心</div>
+                            <div class="sub-list"><a class="item" href="help.html">线下门店</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">防伪查询</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">购买说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">物流说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">售后服务</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">皂石食器</div>
+                            <div class="sub-list"><a class="item" href="mouyu.html">墨域系列</a></div>
+                            <div class="sub-list"><a class="item" href="mogong.html">墨工系列</a></div>
+                            <div class="sub-list"><a class="item" href="moyun.html">墨韵系列</a></div>
+                            <div class="sub-list"><a class="item" href="custom.html">定制</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backtop js-backtop">
+        <div class="iconfont iconjiantou1"></div>
+    </div>
+    <div class="zs-home">
+        <section class="spark-s1 dji-edit-module">
+            <div class="mask-list">
+                <div class="mask-item ga-data" data-target="0" data-ga-category="spark_detail" data-ga-action="mouseenter" data-ga-label="s1_pipeline_01">
+                    <div class="mask"></div>
+                    <div class="top-text">
+                        <div class="title-box">
+                            <h2 class="title web-font">铸</h2><img class="title-icon" src="/images/icon_circular.png">
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="title-box">
+                            <h2 class="common-title title web-font">铸</h2><img class="title-icon" src="/images/icon_circular.png">
+                        </div>
+                    </div>
+                    <div class="bottom-text">
+                        <h2 class="title web-font">快速启动</h2>
+                        <p class="web-font">开机后 25 秒内准备就绪，放上手掌<sup>3</sup>开启人脸检测，解锁后启动升空，随时为你拍照。</p>
+                    </div>
+                </div>
+                <div class="mask-item" data-target="1" data-ga-category="spark_detail" data-ga-action="mouseenter" data-ga-label="s1_pipeline_02">
+                    <div class="mask"></div>
+                    <div class="top-text">
+                        <h2 class="title web-font">简单操控</h2>
+                    </div>
+                    <div class="text">
+                        <div class="icon">
+                            <div class="svg-s1-icon2 svg-s1-icon2-dims"></div>
+                        </div>
+                        <h2 class="common-title title web-font">简单操控</h2>
+                    </div>
+                    <div class="bottom-text">
+                        <h2 class="title web-font">简单操控</h2>
+                        <p class="web-font">飞行、拍摄、返航，这些原本需要移动设备或遥控器的操作，现在挥挥手也可以完成。</p>
+                    </div>
+                </div>
+                <div class="mask-item" data-target="2" data-ga-category="spark_detail" data-ga-action="mouseenter" data-ga-label="s1_pipeline_03">
+                    <div class="mask"></div>
+                    <div class="top-text">
+                        <h2 class="title web-font">轻松拍摄</h2>
+                    </div>
+                    <div class="text">
+                        <div class="icon">
+                            <div class="svg-s1-icon3 svg-s1-icon3-dims"></div>
+                        </div>
+                        <h2 class="common-title title web-font">轻松拍摄</h2>
+                    </div>
+                    <div class="bottom-text">
+                        <h2 class="title web-font">轻松拍摄</h2>
+                        <p class="web-font">只需在移动设备上轻轻一点，即使你从未接触过无人机，也能拍出精彩的航拍视频。</p>
+                    </div>
+                </div>
+                <!--.mask-item(data-target='3', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_04')
+          .mask
+          .top-text
+              h2.title.web-font 剪辑分享
+          .text
+              .icon
+                  .svg-s1-icon4.svg-s1-icon4-dims
+              h2.common-title.title.web-font 剪辑分享
+          .bottom-text
+              h2.title.web-font 剪辑分享
+              p.web-font 自动剪辑、加入滤镜、套上模板，全在 DJI GO 4 应用实现，并一键在社交网络上分享。
+          -->
+            </div>
+            <div class="video-cover-list">
+                <div class="video-cover-item" data-target="0" style="width:33.33%;opacity:1">
+                    <div class="section-bg" style="background-image:url(&quot;/images/home_banner_01.jpg&quot;);opacity:1"></div>
+                </div>
+                <div class="video-cover-item" data-target="1" style="width:33.33%;opacity:1">
+                    <div class="section-bg" style="background-image:url(&quot;/images/home_banner_02.jpg&quot;);opacity:1;background-position:right"></div>
+                </div>
+                <div class="video-cover-item" data-target="2" style="width:33.33%;opacity:1">
+                    <div class="section-bg" style="background-image:url(&quot;/images/home_banner_03.jpg&quot;);opacity:1;background-position:left"></div>
+                </div>
+                <!--.video-cover-item(data-target='3', style='width: 25%; opacity: 1;').section-bg(style='background-image: url("/images/banner_04.jpg"); opacity: 1;')
+          -->
+            </div>
+            <div class="video-list">
+                <div class="video-item" data-target="0" style="opacity:0">
+                    <div class="video-bg"><video src="/video/01.mp4" preload="auto" loop type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;" muted></video></div>
+                </div>
+                <div class="video-item" data-target="1" style="opacity:0">
+                    <div class="video-bg"><video src="/video/02.mp4" preload="auto" loop type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;" muted></video></div>
+                </div>
+                <div class="video-item" data-target="2" style="opacity:0">
+                    <div class="video-bg"><video src="/video/03.mp4" preload="auto" loop type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;" muted></video></div>
+                </div>
+                <!--.video-item(data-target='3', style='opacity: 0;')
+          .video-bg
+              video(src='/video/04.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+          -->
+            </div>
+        </section>
+        <div class="home-contact-info">
+            <div class="home-container d-flex justify-content-start">
+                <div class="logo"><img src="images/home_logo.png" width="100%"></div>
+                <div class="main">
+                    <div class="title">第一时间了解·皂石</div>
+                    <div class="txt">可以在这里留下您的联系方式，探索我们的故事 / 产品和每一次惊喜</div>
+                    <form class="form d-flex flex-md-row flex-column">
+                        <div class="form-group"></div>
+                        <div class="form-group"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top d-flex justify-content-between row">
+            <div class="link-us">
+                <div class="foot-title">联系我们</div>
+                <p class="d-flex align-items-center"><i class="iconfont icondizhi"></i><span>上海市闵行区颛兴东路1277弄65栋</span></p>
+                <p class="d-flex align-items-center"><i class="iconfont iconxinfeng"></i><a href="mailTo:motuozaoshi@chsvc.com">motuozaoshi@chsvc.com</a></p>
+                <p class="d-flex align-items-center"><i class="iconfont icondianhua"></i><a href="Tel:motuozaoshi@chsvc.com">400-800-1098</a></p>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <div class="foot-title">关于我们</div><a href="javascript:;">企业介绍</a><a href="javascript:;">公司资质</a><a href="javascript:;">新闻动态</a><a href="javascript:;">人才招聘</a>
+                </li>
+                <li>
+                    <div class="foot-title">联系我们</div><a href="javascript:;">联系客服</a><a href="javascript:;">商务合作</a><a href="javascript:;">媒体联系</a>
+                </li>
+                <li>
+                    <div class="foot-title">帮助中心</div><a href="javascript:;">线下门店</a><a href="javascript:;">防伪查询</a><a href="javascript:;">购买说明</a><a href="javascript:;">物流说明</a><a href="javascript:;">售后服务</a>
+                </li>
+                <li>
+                    <div class="foot-title">皂石食器</div><a href="javascript:;">墨域系列</a><a href="javascript:;">墨工系列</a><a href="javascript:;">墨韵系列</a><a href="javascript:;">定制</a>
+                </li>
+            </ul>
+            <div class="weixin">
+                <div class="code"><img src="images/serve_code.png" width="100%">
+                    <p class="text-center">皂石服务号</p>
+                </div>
+                <div class="code"><img src="images/subscribe_code.png" width="100%">
+                    <p class="text-center">皂石订阅号</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy text-center">Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号</div>
+    </footer>
+    <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/vendor.js" merge="true"></script>
+    <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/lazyload.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function() {})
+    </script>
+    <script src="js/spark.min.js"></script>
+    <script>
+        $(function() {
+
+        })
+    </script>
+</body>
+</html>

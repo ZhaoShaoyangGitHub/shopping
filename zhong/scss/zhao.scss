@@ -58,17 +58,42 @@
         color: #FFFFFF;
       }
     }
+    @media (max-width: 576px) {
+      width: rem(60);
+      height: rem(60);
+      flex: 0 0 rem(60);
+      >a{
+        font-size: rem(24);
+        line-height: rem(60);
+      }
+      &.prev-page,&.next-page {
+        width: rem(100);
+        flex: 0 0 rem(100);
+        >a {
+          background-size: rem(24);
+        }
+      }
+    }
   }
 }
 
 .font-sm {
-  font-size: rem(14)
+  font-size: rem(14);
+  @media (max-width: 576px) {
+    font-size: rem(24);
+  }
 }
 .font-md {
   font-size: rem(18);
+  @media (max-width: 576px) {
+    font-size: rem(28);
+  }
 }
 .font-lg {
   font-size: rem(30);
+  @media (max-width: 576px) {
+    font-size: rem(36);
+  }
 }
 
 .color-1 {
@@ -130,6 +155,13 @@
       .order-img {
         .img {
           transform: scale(1.03);
+        }
+      }
+    }
+    @media (max-width: 576px){
+      .order-body{
+        .order-status{
+          font-size: rem(28);
         }
       }
     }
@@ -263,6 +295,18 @@
       padding-left: rem(5);
     }
   }
+  .help-bottom{
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 576px) {
+      .helpPhone{
+        font-size: rem(24);
+        text-align: center;
+        margin-bottom: rem(30);
+      }
+    }
+  }
+
 }
 
 .order-detail {
@@ -279,6 +323,10 @@
     padding-bottom: rem(80);
     .img {
       max-width: rem(340);
+      @media (max-width: 576px) {
+        width: 100%;
+        max-width: 100%;
+      }
     }
     .info {
       padding-left: rem(30);
@@ -302,6 +350,17 @@
         color: $base-color;
         padding-left: rem(20);
       }
+      @media (max-width: 576px){
+        margin-top: rem(50);
+        padding-left: 0;
+        .w-title{
+          width: rem(150);
+          font-size: rem(24);
+        }
+        .w-txt{
+          width: rem(150);
+        }
+      }
     }
   }
   .order-content {
@@ -315,6 +374,9 @@
       &.total {
         padding: rem(40) 0;
         line-height: 1;
+        .paddingLeft{
+          padding-left: 0;
+        }
       }
     }
     .order-title {
@@ -533,6 +595,16 @@
         font-size: rem(14);
         color: #666666;
         margin-top: rem(20);
+      }
+    }
+    @media (max-width: 576px){
+      .w-title{
+        width: rem(150);
+      }
+      .no-invoice{
+        p{
+          font-size: rem(28);
+        }
       }
     }
   }
