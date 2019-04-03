@@ -100,9 +100,7 @@ body {
           }
         }
       }
-
       .header-center{
-        height: 100%;
         line-height: 1.5rem;
         position: absolute;
         left: 50%;
@@ -113,7 +111,6 @@ body {
           }
         }
       }
-
       .header-right{
         height: 100%;
         line-height: 1.5rem;
@@ -1726,8 +1723,326 @@ body {
   }
 }
 
+//公用banner
+.qy-banner{
+  .banner{
+    width: 100%;
+    height: rem(500);
+    background: url("../images/banner_05.jpg") no-repeat center/cover;
+  }
+  .nav-box{
+    background: #FFFFFF;
+    .nav-list{
+      height: rem(70);
+      .list-item{
+        flex: 1;
+        height: 100%;
+        border-left: 1px #e5e6e7 solid;
+        text-align: center;
+        line-height: rem(70);
+        position: relative;
+        &:first-child{
+          border-left: none;
+        }
+        a{
+          display: block;
+          font-size: rem(18);
+          font-weight: bold;
+          color: #666666;
+        }
+        &:hover{
+          a{
+            color: $base-color;
+          }
+          &:before{
+            content: '';
+            width: rem(4);
+            height: rem(16);
+            background-color: $base-color;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+          }
+        }
+      }
+      .active{
+        a{
+          color: $base-color;
+        }
+        &:before{
+          content: '';
+          width: rem(4);
+          height: rem(16);
+          background-color: $base-color;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
+
 //新闻动态
 .zs-news{
+  .zs-news-main{
+    background-color: #f8f8f8;
+    padding: rem(80) 0 rem(100);
+    .news-main-first{
+      position: relative;
+      .news-pagination{
+        display: table;
+        text-align: right;
+        position: absolute;
+        left: auto;
+        right: 65%;
+        top: rem(20);
+        z-index: 2;
+        width: rem(200);
+        .swiper-pagination-bullet{
+          width: rem(12);
+          height: rem(12);
+          border: 2px #ffffff solid;
+          border-radius: 50%;
+          background-color: transparent;
+          margin: 0 rem(5);
+          opacity: 1;
+        }
+        .swiper-pagination-bullet-active{
+          background-color: #ffffff;
+        }
+      }
+      .first-content{
+        display: flex;
+        flex-direction: row;
+        .first-img{
+          flex: 0 1 514px;
+          height: rem(400);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+        .first-right{
+          flex: 0 1 786px;
+          padding: rem(50) rem(120) rem(50) rem(50);
+          overflow: hidden;
+          box-sizing: border-box;
+          background-color: #ffffff;
+          position: relative;
+          .tap{
+            color: #666666;
+            border: 2px #dddddd solid;
+            padding: rem(14) rem(20);
+            display: inline-block;
+            text-align: center;
+            position: absolute;
+            right: rem(20);
+            top: rem(20);
+            .data{
+              font-size: rem(30);
+              line-height: rem(24);
+              font-weight: bold;
+              color: $base-color;
+            }
+            .month{
+              font-size: rem(14);
+              margin-top: rem(8);
+              color: #666666;
+            }
+          }
+          .tit{
+            font-size: rem(24);
+            color: #080808;
+            line-height: rem(28);
+            a{
+              color: #080808;
+            }
+          }
+          .text{
+            font-size: rem(14);
+            line-height: rem(24);
+            color: #999999;
+            margin-top: rem(35);
+            min-height: rem(120);
+            overflow: hidden;
+          }
+          .view-btn{
+            color: #666666;
+            font-weight: bold;
+            padding: rem(20) rem(56);
+            border: 2px #666666 solid;
+            display: inline-block;
+            margin-top: rem(40);
+            @extend .transition-one;
+            &:hover{
+              color: #151c1f;
+              background-color: $base-color;
+              border: 2px $base-color solid;
+            }
+          }
+        }
+      }
+
+    }
+    .news-main-second{
+      margin-top: rem(60);
+      .news-container{
+        padding-bottom: rem(50);
+        .news-list {
+          .grid-item {
+            width: 32%;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            margin-bottom: rem(30);
+            box-shadow: 0 0 rem(10) rgba(0,0,0,0.06);
+          }
+          .card {
+            position: relative;
+            &:hover {
+              .dot {
+                transform: scale(1.8);
+                background-color: $base-color;
+              }
+              .card-body {
+                border-bottom-color: $base-color;
+                .title {
+                  color: $base-color;
+                }
+              }
+            }
+            .dot {
+              position: absolute;
+              left: rem(30);
+              top: rem(30);
+              width: rem(10);
+              height: rem(10);
+              border: 1px solid $base-color;
+              border-radius: 50%;
+              transition: all 0.3s linear;
+              z-index: 2;
+            }
+          }
+          .card-img {
+            min-height: rem(50);
+            position: relative;
+            img {
+              width: 100%;
+            }
+            &:before{
+              content: '';
+              width:0;
+              height:0;
+              border-width:0 rem(16) rem(16);
+              border-style:solid;
+              border-color:transparent transparent #FFFFFF;
+              position: absolute;
+              left: rem(30);
+              bottom: 0;
+              z-index: 1;
+            }
+          }
+          .card-body {
+            padding: rem(28) rem(30) rem(40);
+            border-bottom: rem(6) solid transparent;
+            transition: border-bottom-color 0.3s linear;
+            .title {
+              font-size: rem(20);
+              line-height: rem(24);
+              color: #666666;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              transition: color 0.3s linear;
+            }
+            .text{
+              font-size: rem(14);
+              color: #999999;
+              line-height: rem(22);
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+              margin-top: rem(25);
+            }
+          }
+        }
+        .grid-sizer {
+          width: 32%;
+        }
+        .gutter-sizer {
+          width: rem(24);
+        }
+      }
+    }
+    @media (max-width: 576px) {
+      .news-main-first{
+        .news-pagination {
+          left: 65%;
+          top: rem(40);
+          .swiper-pagination-bullet{
+            width: rem(20);
+            height: rem(20);
+            margin: 0 rem(6);
+            opacity: 1;
+          }
+        }
+        .first-content{
+          flex-direction: column;
+          .first-img{
+            width: 100%;
+            flex: 1;
+          }
+          .first-right{
+            flex: 1;
+            width: 100%;
+            padding: rem(50);
+            .tap{
+              top: rem(30);
+            }
+            .tit{
+              padding-right: rem(70);
+              font-size: rem(30);
+            }
+            .text{
+              min-height: 0;
+              font-size: rem(24);
+              line-height: rem(36);
+              margin-top: rem(50);
+            }
+            .view-btn{
+              font-size: rem(22);
+            }
+          }
+        }
+      }
+      .news-main-second{
+        .news-container{
+          .news-list{
+            .card-body{
+              .title{
+                font-size: rem(30);
+                line-height: rem(38);
+              }
+              .text{
+                font-size: rem(24);
+                line-height: rem(36);
+              }
+            }
+            .grid-item{
+              width: 100%;
+            }
+          }
+          .grid-sizer{
+            width: 100%;
+          }
+        }
+
+      }
+    }
+  }
 
 }
 

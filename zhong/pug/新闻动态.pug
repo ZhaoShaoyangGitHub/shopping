@@ -1,19 +1,96 @@
 extends ../public/pug/layouts/main
 block head-main
     -var $active = "news"
+    -var bannerNav = [{"title": "企业介绍", "url" : "index.html", "":""}]
 block style-main
 
 
 block content-main
     .zs-news
-        .container
+        .qy-banner
+            .banner
+            .nav-box
+                .container
+                    .nav-list.row
+                        .list-item
+                            a(href="javascript:;") 企业介绍
+                        .list-item
+                            a(href="javascript:;") 公司资质
+                        .list-item.active
+                            a(href="javascript:;") 新闻动态
+                        .list-item
+                            a(href="javascript:;") 人才招聘
+                        .list-item
+                            a(href="javascript:;") 联系我们
+        .zs-news-main
+            .container
+                .news-main-first
+                    .swiper-container#swiper-container
+                        .news-pagination
+                        .swiper-wrapper
+                            each $val in [1,2,3]
+                                .swiper-slide.first-content
+                                    .first-img(style="background-image: url('images/banner_06.jpg')")
+                                    .first-right
+                                        .tap
+                                            .data 14
+                                            .month APR
+                                        .tit 墨脱石锅·重新定义食器
+                                        .text
+                                            p 如何通过食器改变人们对鸡肉的味觉？
+                                            p 不同的器材，做出来的食物真的不一样吗？
+                                            p 皂石有着优良的热传导和积聚性能，比如具有良好的保
 
+                                        a.view-btn(href="javascript:;") 查看更多
+
+                .news-main-second
+                    .news-container
+                        .news-list.clearfix
+                            .grid-sizer
+                            .gutter-sizer
+                            each $val,index in [1,2,3,4,5]
+                                .grid-item.float-left
+                                    a(href="新闻详情.html").card
+                                        .dot
+                                        .card-img
+                                        .card-body
+                                            .title 新食器-墨脱石锅
+                                            .text
+                                                p “雏鹰计划”是集团人才梯队建设的重要举措。雏鹰，指幼小的鹰，喻指勇敢，表示充满希望，正在振翅欲飞。 为了帮助雏鹰学员们提升能力
+                                .grid-item.float-left
+                                    a(href="insight-detail.html").card
+                                        .card-img
+                                            img(src=("images/news_detail_img_0" + (index + 1) + ".jpg") width="100%")
+                                        .card-body
+                                            .title 新食器-墨脱石锅
+                                            .text
+                                                p 为了帮助新入职员工快速成长，董事长聆听员工心声，公司于11月30日在浙江嘉善罗星阁酒店举办了第十五届“董事长会客厅”。
 
 
 block script-main
+    script(src='js/imagesloaded.pkgd.min.js')
+    script(src='js/masonry.pkgd.min.js')
+    script(src='js/plugins/bootstrap/util.js')
+    script(src='js/plugins/bootstrap/carousel.js')
+    script(src='js/plugins/bootstrap/transition.js')
     script.
         $(function () {
 
+            var mySwiper = new Swiper('#swiper-container', {
+                pagination: {
+                    el: '.news-pagination',
+                    clickable: true,
+                },
+            })
+            $(".news-list").each(function (n, ele) {
+                var $this = $(ele);
+                var $grid = $this.masonry({
+                    columnWidth: '.grid-sizer',
+                    gutter: '.gutter-sizer',
+                    itemSelector: '.grid-item',
+                    percentPosition: true
+                });
+            })
         })
 
 
