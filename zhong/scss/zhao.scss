@@ -297,7 +297,8 @@
   }
   .help-bottom{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     @media (max-width: 576px) {
       .helpPhone{
         font-size: rem(24);

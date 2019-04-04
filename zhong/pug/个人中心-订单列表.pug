@@ -24,8 +24,7 @@ block content-main
         .container
             .title 您已订购的产品
             +order(order)
-            .clearfix.help-bottom
-                .float-left.helpPhone 需要关于订单的帮助？请致电
+            .help-bottom
+                .helpPhone 需要关于订单的帮助？请致电
                     a(Tel="400-800-1098") 400-800-1098
-                .float-right
-                    include ../public/pug/pagination
+                include ../public/pug/pagination
