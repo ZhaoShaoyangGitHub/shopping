@@ -1,0 +1,75 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "news"
+    -var bannerNav = [{"title": "企业介绍", "url" : "index.html", "":""}]
+block style-main
+
+
+block content-main
+    .zs-join
+        .zs-banner
+            .banner
+            .nav-box
+                .container
+                    .nav-list.row
+                        .list-item
+                            a(href="javascript:;") 企业介绍
+                        .list-item
+                            a(href="javascript:;") 公司资质
+                        .list-item
+                            a(href="javascript:;") 新闻动态
+                        .list-item.active
+                            a(href="javascript:;") 人才招聘
+                        .list-item
+                            a(href="javascript:;") 联系我们
+        .resume
+            .about-title.text-center
+                h2 加入皂石
+                h4 因为你，我们才会精彩
+            .container
+                each $val in [1,2,3]
+                    .list-item
+                        .bg
+                            img(src="images/about_bg.png" width="100%")
+                        .resume-main
+                            .resume-bg
+                                img(src="/images/join_bg.png")
+                            .name
+                                .iconfont.iconshehuizhaopin
+                                .name-right
+                                    .name-t 岗位名称
+                                    .name-b 活动现场执行
+                            p.number 人数：2人
+                            ul
+                                li.resume-conent
+                                    .s-title 岗位职责：
+                                    p 1、根据公司宣传特点与活动策划目的，构思、设计、编排大型活动、宣讲会、国外奢华旅游等策划方案
+                                    p 2、负责活动现场事物处理工作，包括物料准备、活动现场的人员调配管理等；
+                                    p 3、监督活动执行，负责收集客户对于活动整体的感受与建议；
+                                    p 4、总结活动内容，归集、整理活动素材及物资。
+                                li.resume-conent
+                                    .s-title 任职要求：
+                                    p 1、25-35岁，新闻、广告、中文或相关专业者优先；
+                                    p 2、3年以上相关工作经验，有大型活动及宣讲会策划执行经验优先；
+                                    p 3、文字功底一流，逻辑思维能力强，创意灵活丰富，可独立撰写活动项目提案；具有优秀的沟通能力和演讲。
+                                li.resume-conent
+                                    .s-title 福利待遇：
+                                    p 1、国家法定：五险一金、公休假、法定假、年休假及其他带薪休假。
+                                    p 2、企业自主：员工中餐、员工体检、节日慰问、防暑降温、冬季采暖、年底十三薪等。
+                .contact-bottom.row
+                    .contact-eamil.col-md-14
+                        span 请将您的简历发送至招聘邮箱：
+                        span.email zaoshi@163.com
+                        span ，我们会尽快与您取得联系！
+                    include ../public/pug/pagination
+
+
+
+block script-main
+    script.
+        $(function () {
+
+        })
+
+
+

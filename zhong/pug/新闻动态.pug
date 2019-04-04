@@ -7,7 +7,7 @@ block style-main
 
 block content-main
     .zs-news
-        .qy-banner
+        .zs-banner
             .banner
             .nav-box
                 .container
@@ -58,13 +58,14 @@ block content-main
                                             .text
                                                 p “雏鹰计划”是集团人才梯队建设的重要举措。雏鹰，指幼小的鹰，喻指勇敢，表示充满希望，正在振翅欲飞。 为了帮助雏鹰学员们提升能力
                                 .grid-item.float-left
-                                    a(href="insight-detail.html").card
+                                    a(href="新闻详情.html").card
                                         .card-img
                                             img(src=("images/news_detail_img_0" + (index + 1) + ".jpg") width="100%")
                                         .card-body
                                             .title 新食器-墨脱石锅
                                             .text
                                                 p 为了帮助新入职员工快速成长，董事长聆听员工心声，公司于11月30日在浙江嘉善罗星阁酒店举办了第十五届“董事长会客厅”。
+                include ../public/pug/pagination
 
 
 block script-main

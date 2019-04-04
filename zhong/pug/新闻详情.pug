@@ -1,0 +1,63 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "news"
+    -var bannerNav = [{"title": "企业介绍", "url" : "index.html", "":""}]
+block style-main
+
+
+block content-main
+    .zs-news-detail
+        .zs-banner
+            .banner
+            .nav-box
+                .container
+                    .nav-list.row
+                        .list-item
+                            a(href="javascript:;") 企业介绍
+                        .list-item
+                            a(href="javascript:;") 公司资质
+                        .list-item.active
+                            a(href="javascript:;") 新闻动态
+                        .list-item
+                            a(href="javascript:;") 人才招聘
+                        .list-item
+                            a(href="javascript:;") 联系我们
+        .news-detail-box.container
+            .top
+                .title 墨脱石锅·重新定义食器
+                .originate
+                    .data
+                        span.iconfont.icontime
+                        span 2019-03-27  16:21
+                    .from
+                        span 来源：
+                        span 皂石时代
+            .content
+                p 5月24日上午，重庆邮电大学（以下简称“重邮”）“通鼎实验大楼”冠名揭幕仪式在重邮综合实验大楼举行。重邮校领导李林、吕翊、陈前斌，通鼎集团董事局主席沈小平，通鼎互联副总经理彭声谦等领导出席仪式，重邮党委副书记游惠担任主持；各位校友代表，学校各学院、各部门领导及师生代表参加活动。
+                p
+                    img(src="/images/detail_img_01.jpg")
+                p 校长李林为冠名揭幕致辞，他表达了对沈小平一行的衷心感谢。通鼎集团董事局主席沈小平先生作为重邮校董事会副主席，长期关心、帮助学校
+                p 校长李林为冠名揭幕致辞，他表达了对沈小平一行的衷心感谢。通鼎集团董事局主席沈小平先生作为重邮校董事会副主席，长期关心、帮助学校
+                p 校长李林为冠名揭幕致辞，他表达了对沈小平一行的衷心感谢。通鼎集团董事局主席沈小平先生作为重邮校董事会副主席，长期关心、帮助学校
+        .news-detail-pagination.container
+            .row
+                .prev.pagination-btn.col-12.active
+                    .arrow.iconfont.iconyoujiantou
+                    .title
+                        .name 上一篇
+                        .text 用“植物营养”定义健康新主张
+                .next.pagination-btn.col-12
+                    .title
+                        .name 下一篇
+                        .text 用“植物营养”定义健康新主张
+                    .arrow.iconfont.iconyoujiantou
+
+
+block script-main
+    script.
+        $(function () {
+
+        })
+
+
+
