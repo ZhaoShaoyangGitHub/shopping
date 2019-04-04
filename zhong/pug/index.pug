@@ -80,7 +80,7 @@ block content-main
                     .video-bg
                         video(src='/video/04.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
         .home-contact-info
-            .home-container.d-flex.justify-content-start
+            .home-container.d-flex.justify-content-between
                 .logo
                     img(src="images/home_logo.png" width="100%")
                 .main
@@ -88,7 +88,16 @@ block content-main
                     .txt 可以在这里留下您的联系方式，探索我们的故事 / 产品和每一次惊喜
                     form.form.d-flex.flex-md-row.flex-column
                         .form-group
+                            input(type="text" class="form-control name")
+                            label 您的姓名
+                                sup *
                         .form-group
+                            input(type="email" class="form-control email")
+                            label 电子邮箱地址
+                                sup *
+                .submit.float-right
+                    span 提交
+                    img(src="images/icon_submit.png")
 block script-main
     script(src='js/spark.min.js')
     script.

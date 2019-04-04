@@ -628,12 +628,30 @@ body {
   background-color: #484e47;
   padding: rem(96) 0 rem(98);
   width: 100%;
+  position: relative;
+  &:after {
+    content: "";
+    background-color: #1f211f;
+    width: 28.64%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
   .logo {
     width: rem(86);
     flex: 0 0 rem(86);
     margin-right: rem(110);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .main {
+    position: relative;
+    z-index: 10;
+    padding-left: rem(180);
     .title {
       font-size: rem(50);
       color: #ffffff;
@@ -650,10 +668,54 @@ body {
         height: rem(60);
         background-color: #636862;
         margin-right: rem(30);
+        position: relative;
         &:last-child {
           margin-right: 0;
         }
+        .form-control {
+          background-color: transparent;
+          border-radius: 0;
+          font-size: rem(18);
+          line-height: rem(30);
+          height: rem(60);
+          border: 0;
+          color: #FFFFFF;
+          &.name {
+            padding: rem(15) rem(20) rem(15) rem(125);
+          }
+          &.email {
+            padding: rem(15) rem(20) rem(15) rem(150);
+          }
+          &:focus {
+            + label {
+              color: #FFFFFF;
+            }
+          }
+        }
+        label {
+          position: absolute;
+          font-size: rem(18);
+          color: rgba(255,255,255,0.3);
+          left: rem(20);
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
+    }
+  }
+  .submit {
+    position: relative;
+    z-index: 10;
+    height: rem(90);
+    font-size: rem(40);
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    align-self: center;
+    cursor: pointer;
+    img {
+      width: rem(81);
+      margin-left: rem(-8);
     }
   }
 }
