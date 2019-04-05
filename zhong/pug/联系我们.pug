@@ -1,0 +1,74 @@
+extends ../public/pug/layouts/main
+block head-main
+    - $innerActive = "banner5"
+    -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html"},{"title":"公司资质","link":"公司资质.html"},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html"},{"title":"联系我们","link":"联系我们.html","active": 'banner5'}]
+
+block style-main
+
+
+block content-main
+    .zs-contact
+        .zs-banner
+            .banner
+            .nav-box
+                .container
+                    .nav-list.row
+                        each $val in bannerNav
+                            .list-item(class=($val.active == $innerActive ? "active" : ""))
+                                a(href=$val.link) #{$val.title}
+
+        .zs-contact-box
+            .container
+                .company-list.row
+                    .list-item.col-md-7
+                        .left
+                            .iconfont.iconhezuobaoxiangongsi
+                        .right
+                            .title 公司名字
+                            .name 墨脱石锅文化产业有限公司
+                    .list-item.col-md-10
+                        .left
+                            .iconfont.icondizhi
+                        .right
+                            .title 公司地址
+                            .name 西藏林芝市墨脱县15号
+                    .list-item.col-md-7
+                        .left
+                            .iconfont.iconkefunv
+                        .right
+                            .title 业务咨询/市场合作
+                            .name
+                                p 客服电话：400-800-1098
+                                p 商务邮箱：zaoshi@163.com
+                                p 商务/运营微信：aiji-12
+                .code-list.row
+                    .code-item
+                        .img
+                            img(src="/images/code_service.png")
+                        .bottom
+                            .left
+                                img(src="/images/icon_yuan_46.png")
+                            .right
+                                .title 皂石微信服务号·皂石食器
+                                .text 扫描上方二维码，了解皂石最新动态。
+                    .code-item
+                        .img
+                            img(src="/images/code_subscribe.png")
+                        .bottom
+                            .left
+                                img(src="/images/icon_yuan_46.png")
+                            .right
+                                .title 皂石微信订阅号·皂石时代
+                                .text 扫描上方二维码，了解皂石最新动态。
+
+
+
+
+block script-main
+    script.
+        $(function () {
+
+        })
+
+
+

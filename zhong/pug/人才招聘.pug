@@ -1,7 +1,8 @@
 extends ../public/pug/layouts/main
 block head-main
-    -var $active = "news"
-    -var bannerNav = [{"title": "企业介绍", "url" : "index.html", "":""}]
+    - $innerActive = "banner4"
+    -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html"},{"title":"公司资质","link":"公司资质.html"},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html","active": 'banner4'},{"title":"联系我们","link":"联系我们.html"}]
+
 block style-main
 
 
@@ -12,16 +13,9 @@ block content-main
             .nav-box
                 .container
                     .nav-list.row
-                        .list-item
-                            a(href="javascript:;") 企业介绍
-                        .list-item
-                            a(href="javascript:;") 公司资质
-                        .list-item
-                            a(href="javascript:;") 新闻动态
-                        .list-item.active
-                            a(href="javascript:;") 人才招聘
-                        .list-item
-                            a(href="javascript:;") 联系我们
+                        each $val in bannerNav
+                            .list-item(class=($val.active == $innerActive ? "active" : ""))
+                                a(href=$val.link) #{$val.title}
         .resume
             .about-title.text-center
                 h2 加入皂石
