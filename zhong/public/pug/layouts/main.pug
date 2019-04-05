@@ -4,6 +4,83 @@ extends ./base
 block head
     block head-main
     -
+        var headerArry = [{
+            "navName": "首页",
+            "url": "index.html",
+            "active": "homePage"
+        },{
+            "navName":"产品列表",
+            "url":"food-utensils.html",
+            "active": "food",
+            "children": [{
+                "navName": "墨域",
+                "url": "mouyu.html",
+                "src": "../images/two_nav_img04.png"
+            },{
+                "navName": "墨工",
+                "url": "mogong.html",
+                "src": "../images/two_nav_img05.png"
+            },{
+                "navName": "墨韵",
+                "url": "moyun.html",
+                "src": "../images/two_nav_img06.png"
+            },{
+                "navName": "定制",
+                "url": "custom.html",
+                "src": "../images/two_nav_img05.png"
+            }]
+        },{
+            "navName":"帮助中心",
+            "url":"food-utensils.html",
+            "active": "food",
+            "children": [{
+                "navName": "企业介绍",
+                "url": "mouyu.html",
+                "src": "../images/two_nav_img04.png"
+            },{
+                "navName": "公司资质",
+                "url": "mogong.html",
+                "src": "../images/two_nav_img05.png"
+            },{
+                "navName": "新闻动态",
+                "url": "moyun.html",
+                "src": "../images/two_nav_img06.png"
+            },{
+                "navName": "人才招聘",
+                "url": "custom.html",
+                "src": "../images/two_nav_img05.png"
+            },{
+                "navName": "联系我们",
+                "url": "custom.html",
+                "src": "../images/two_nav_img05.png"
+            }]
+        },{
+        "navName":"关于我们",
+        "url":"food-utensils.html",
+        "active": "food",
+        "children": [{
+        "navName": "线下门店    ",
+        "url": "mouyu.html",
+        "src": "../images/two_nav_img04.png"
+        },{
+        "navName": "防伪查询",
+        "url": "mogong.html",
+        "src": "../images/two_nav_img05.png"
+        },{
+        "navName": "购买说明",
+        "url": "moyun.html",
+        "src": "../images/two_nav_img06.png"
+        },{
+        "navName": "物流说明",
+        "url": "custom.html",
+        "src": "../images/two_nav_img05.png"
+        },{
+        "navName": "售后服务",
+        "url": "custom.html",
+        "src": "../images/two_nav_img05.png"
+        }]
+        }]
+    -
         var navArray = [{
         "navName": "首页",
         "url": "index.html",
@@ -98,10 +175,10 @@ block style
 block content
     .zs-header
         .header
-            .header-box.clearfix
+            .header-box.d-flex.align-items-center.justify-content-between
                 .header-left.float-left
                     .catalog.float-left
-                        .icon.iconfont.iconmenu
+                        .icon.iconfont.iconmenu.js-menu
                         .title 目录
                     a.d-block.float-left(href="javascript:;")
                         .phone
@@ -147,7 +224,21 @@ block content
 
     .backtop.js-backtop
         .iconfont.iconjiantou1
-
+    .header-menu
+        .main
+            .nav
+                each items, index in headerArry
+                    .nav-item
+                        if index==0
+                            a(href=items.url).home-title=items.navName
+                        else
+                            .nav-title=items.navName
+                            each item in items.children
+                               a.nav-link(href="javascript:;")=item.navName
+            .close-menu.text-center
+                .close-btn.js-close
+                    i.iconfont.iconguanbi
+                p 关闭菜单
     block content-main
 
 block foot
@@ -183,8 +274,16 @@ block foot
 block script
     script(src='js/plugins/bootstrap/bootstrap.bundle.min.js')
     script(src='js/plugins/swiper/js/swiper.js')
+    script(src='js/jquery.waypoints.min.js')
     script(src='js/plugins/lazyload.min.js')
     script(src='js/index.js')
     script.
-        $(function () {})
+        $(function () {
+            $(".js-menu").click(function () {
+               $(".header-menu").slideToggle()
+            })
+            $(".js-close").click(function () {
+                $(".header-menu").slideUp()
+            })
+        })
     block script-main

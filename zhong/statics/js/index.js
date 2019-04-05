@@ -1,6 +1,7 @@
 var common = {
     init: function() {
         lazyload();
+        this.animationFun('fadeInUp');
         //返回顶部
         if($('.js-backtop')){
             $('.js-backtop').click(function () {
@@ -37,7 +38,20 @@ var common = {
             $('.mb-aside-nav .nav-list').stop().animate({'right':'-77%'});
             $('.mb-aside-nav').hide();
         })
-    }
+    },
+    animationFun: function (className) {
+    var $offsetTop = $(window).height();
+    var $elment = ".js-" + className;
+    var waypoints1 = $($elment).waypoint({
+      handler: function handler(direction) {
+        if (direction === "down") {
+          $(this.element).addClass(className); // }else {
+          //     $(this.element).removeClass("animated fadeInUp")
+        }
+      },
+      offset: $offsetTop
+    });
+  }
 }
 $(function () {
     common.init();
