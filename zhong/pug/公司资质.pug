@@ -1,0 +1,51 @@
+extends ../public/pug/layouts/main
+block head-main
+    - $innerActive = "banner2"
+    -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html"},{"title":"公司资质","link":"公司资质.html","active": 'banner2'},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html"},{"title":"联系我们","link":"联系我们.html"}]
+
+block style-main
+
+
+block content-main
+    .zs-aptitude
+        .zs-banner
+            .banner
+            .nav-box
+                .container
+                    .nav-list.row
+                        each $val in bannerNav
+                            .list-item(class=($val.active==$innerActive?"active":""))
+                                a(href=$val.link) #{$val.title}
+
+        .zs-aptitude-box
+            .zs-aptitude-main.container
+                .swiper-container-aptitude
+                    .swiper-wrapper
+                        each $val in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+                            .swiper-slide
+                                .img-box
+                                    img.img(src="/images/aptitude_img_01.jpg")
+                                    .bottom-mask
+                                        p 市级企业科技研究开发机构
+                .swiper-button-prev.iconfont.iconarrow-right-copy-copy.swiper-btn
+                .swiper-button-next.iconfont.iconarrow-right-copy-copy.swiper-btn
+
+
+block script-main
+    script.
+        $(function () {
+            var mySwiper = new Swiper('.swiper-container-aptitude', {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                slidesPerColumn: 3,
+                spaceBetween : 45,
+                slidesPerColumnFill : 'row',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        })
+
+
+
