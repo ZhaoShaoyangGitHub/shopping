@@ -1,0 +1,133 @@
+extends ../public/pug/layouts/main
+block head-main
+    - $innerActive = "banner1"
+    -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html","active": 'banner1'},{"title":"公司资质","link":"公司资质.html"},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html"},{"title":"联系我们","link":"联系我们.html"}]
+
+block style-main
+
+
+block content-main
+    .zs-product
+        .banner
+        .content1
+            .zs-product-content
+                .nav-main
+                    .nav-box.row
+                        .nav-item.active
+                            a(href="javascript:;") 墨域
+                                span.circle ·
+                        .nav-item
+                            a(href="javascript:;") 墨工
+                                span.circle ·
+                        .nav-item
+                            a(href="javascript:;") 墨韵
+                                span.circle ·
+                        .nav-item
+                            a(href="javascript:;") 定制
+                                span.circle ·
+                        .nav-item
+                            a(href="javascript:;") 所有产品
+                .zs-product-main
+                    each $val in [1,2,3,4]
+                        .zs-product-item.row
+                            .item-left.col-md-16
+                                .top
+                                    .title-box
+                                        .title 墨脱石锅产品名
+                                        .sub-title / 墨域
+                                    .text
+                                        p 墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。
+                                .bottom.row
+                                    a.d-block.buy-btn(href="javascript:;") 立即购买
+                                    a.d-block.read-more(href="javascript:;")
+                                        span 了解更多
+                                        span.iconfont.iconarrow-right-copy-copy
+                            .item-right.col-md-8
+                                img.prd-img(src="/images/product_img_01.png")
+
+                .pagination-box
+                    include ../public/pug/pagination
+        .content2
+            .zs-product-content
+                .zs-product-title.row
+                    .left
+                        img(src="/images/icon_yuan_46.png")
+                    .right 客户发现
+                .zs-content2-main
+                    .swiper-container-content2
+                        .swiper-wrapper
+                            each $val in [1,2,3,4]
+                                .swiper-slide
+                                    .item-box
+                                        .content2-title “墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。”
+                                        .fuhao ”
+                                        .avatar
+                                            img.avatar-img(src="/images/avatar_01.png")
+                                            .name Jimmy Chin
+                    .swiper-button-prev.iconfont.iconarrow-right-copy-copy.swiper-btn
+                    .swiper-button-next.iconfont.iconarrow-right-copy-copy.swiper-btn
+
+        .content3
+            .zs-product-content
+                .zs-product-title.row
+                    .left
+                        img(src="/images/icon_yuan_46.png")
+                    .right 产品体验
+                .zs-content3-main
+                    .swiper-container-content3
+                        .swiper-wrapper
+                            each $val in [1,2,1,2]
+                                .swiper-slide
+                                    .item-box
+                                        .item-img(style="background-image: url('/images/product_0" + $val + ".jpg')")
+                                        .item-info
+                                            .title 墨脱石锅炖煮料理
+                                            .text 墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。
+                                            a.d-block.read-more(href="javascript:;")
+                                                span 了解更多
+                                                span.iconfont.iconarrow-right-copy-copy
+                    .swiper-button-content3-prev.iconfont.iconarrow-right-copy-copy.swiper-btn
+                    .swiper-button-content3-next.iconfont.iconarrow-right-copy-copy.swiper-btn
+
+
+
+block script-main
+    script.
+        $(function () {
+            var mySwiper = new Swiper('.swiper-container-content2', {
+                slidesPerView: 2,
+                spaceBetween: 50,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 1,
+                        slidesPerGroup: 1,
+                        autoplay: true
+                    }
+                }
+            })
+
+            var mySwiperTwo = new Swiper('.swiper-container-content3', {
+                slidesPerView: 2,
+                spaceBetween: 50,
+                navigation: {
+                    nextEl: '.swiper-button-content3-next',
+                    prevEl: '.swiper-button-content3-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 1,
+                        slidesPerGroup: 1,
+                        autoplay: true
+                    }
+                }
+            })
+        })
+
+
+
