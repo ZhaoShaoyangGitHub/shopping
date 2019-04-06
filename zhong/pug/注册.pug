@@ -1,10 +1,8 @@
 extends ../public/pug/layouts/main
 block head-main
-    - $innerActive = "banner2"
-    -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html"},{"title":"公司资质","link":"公司资质.html","active": 'banner2'},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html"},{"title":"联系我们","link":"联系我们.html"}]
-
+    - $headerShow = true
+    - $footerShow = true
 block style-main
-
 
 block content-main
     .zs-sign
@@ -12,14 +10,31 @@ block content-main
             .sign-box
                 .row
                     .left
-                        //img(src="/images/sign_bg_01.jpg")
-
-
-
-
-
-
-
+                        img(src="/images/sign_bg_01.jpg" height="100%")
+                    .right
+                        a.logo(href="index.html")
+                            img(src="images/sign_logo.png" width="100%")
+                        form.form
+                            .form-group
+                                input.form-control(type="text" value="" name="phone" id="phone")
+                                label.label 手机号
+                            .form-group
+                                input.form-control(type="password" value="" name="password" id="password")
+                                label.label 设置密码
+                            .form-group
+                                input.form-control(type="text" value="" name="code" id="code")
+                                .send-code.btn.js-send 获取验证码
+                                label.label 验证码
+                            .checkbox-input
+                                input(type="checkbox" value="" name="agree" id="agree")
+                                .icon
+                                label(for="agree") 我已仔细阅读并同意
+                                a(href="javascript:;") 《服务协议》
+                                | 、
+                                a(href="javascript:;") 《法律声明及隐私权政策》
+                            .form-btn.row.justify-content-between
+                                button.btn.reset.col-10.js-close-layer(type="reset") 取消
+                                button.btn.submit.col-13(type="submit") 确定修改
 block script-main
     script.
         $(function () {

@@ -3,7 +3,6 @@ block head-main
     -var $active = "homePage"
 block style-main
 
-
 block content-main
     .zs-home
         section.spark-s1.dji-edit-module
@@ -45,50 +44,50 @@ block content-main
                         video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
         .explore-section
             .title.text-center 探索皂石
-            .main.row
-                .col-md-8
-                    .list-item
-                        a(href="javascript:;").pro-content
-                            img(src="images/img_05.png" width="100%")
-                            .bottom
-                                .b-title 墨域
-                                .more
-                                    span 更多系列产品
-                        .tips
-                            a(href="javascript:;").btn 炖锅
-                            a(href="javascript:;").btn 汤锅
-                            a(href="javascript:;").btn 炖锅
-                        .text-center
-                            a.btn.customized(href="javascript:;") 定制
-                .col-md-8
-                    .list-item
-                        a(href="javascript:;").pro-content
-                            img(src="images/img_06.png" width="100%")
-                            .bottom
-                                .b-title 墨工
-                                .more
-                                    span 更多系列产品
-                        .tips
-                            a(href="javascript:;").btn 餐具
-                            a(href="javascript:;").btn 瓷盘
-                            a(href="javascript:;").btn 餐具
-                        .text-center
-                            a.btn.customized(href="javascript:;") 定制
-                .col-md-8
-                    .list-item
-                        a(href="javascript:;").pro-content
-                            img(src="images/img_05.png" width="100%")
-                            .bottom
-                                .b-title 墨韵
-                                .more
-                                    span 更多系列产品
-                        .tips
-                            a(href="javascript:;").btn 煎锅
-                            a(href="javascript:;").btn 奶锅
-                            a(href="javascript:;").btn 煎锅
-                        .text-center
-                            a.btn.customized(href="javascript:;") 定制
-
+            .main
+                .row
+                    .col-md-8
+                        .list-item
+                            a(href="javascript:;").pro-content
+                                img(src="images/img_05.png" width="100%")
+                                .bottom
+                                    .b-title 墨域
+                                    .more
+                                        span 更多系列产品
+                            .tips
+                                a(href="javascript:;").btn 炖锅
+                                a(href="javascript:;").btn 汤锅
+                                a(href="javascript:;").btn 炖锅
+                            .text-center
+                                a.btn.customized(href="javascript:;") 定制
+                    .col-md-8
+                        .list-item
+                            a(href="javascript:;").pro-content
+                                img(src="images/img_06.png" width="100%")
+                                .bottom
+                                    .b-title 墨工
+                                    .more
+                                        span 更多系列产品
+                            .tips
+                                a(href="javascript:;").btn 餐具
+                                a(href="javascript:;").btn 瓷盘
+                                a(href="javascript:;").btn 餐具
+                            .text-center
+                                a.btn.customized(href="javascript:;") 定制
+                    .col-md-8
+                        .list-item
+                            a(href="javascript:;").pro-content
+                                img(src="images/img_05.png" width="100%")
+                                .bottom
+                                    .b-title 墨韵
+                                    .more
+                                        span 更多系列产品
+                            .tips
+                                a(href="javascript:;").btn 煎锅
+                                a(href="javascript:;").btn 奶锅
+                                a(href="javascript:;").btn 煎锅
+                            .text-center
+                                a.btn.customized(href="javascript:;") 定制
         .home-video
             img(src="images/img_08.jpg" width="100%")
             .main.text-center.fadeIn.js-fadeInUp
@@ -114,11 +113,12 @@ block content-main
                     span 提交
                     img(src="images/icon_submit.png")
     .video-layer(style="display:none")
-        video#video(width="100%" controls src='/video/01.mp4', preload='auto', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+        video#video(width="100%" controls src='/video/01.mp4', preload='auto', type='video/mp4')
 block script-main
     script(src='js/spark.min.js')
     script.
         $(function () {
+            var $video = $("#video");
             $(".js-play").click(function () {
                 layer.open({
                     title: "",
@@ -129,10 +129,10 @@ block script-main
                         $(".layui-layer").css({
                             "background-color": "transparent"
                         })
-                        $("#video")[0].play(); // 播放
+                        $video[0].play(); // 播放
                     },
-                    close: function () {
-
+                    cancel: function () {
+                        $video[0].pause();
                     }
                 });
             })

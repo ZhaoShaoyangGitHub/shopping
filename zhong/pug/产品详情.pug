@@ -1,0 +1,164 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "homePage"
+block style-main
+block content-main
+    .product-detail
+        .product-top.js-fixed-top
+            .container.d-flex.align-items-center.justify-content-between
+                .product-name 墨域·天然皂石新食器
+                .product-top-r.d-flex.align-items-center
+                    a(href="javascript:;") 概览
+                    a(href="javascript:;") 工艺
+                    a(href="javascript:;") 价格
+                    a.now-buy.btn(href="javascript:;") 立即购买
+        .product-wrapper.js-scroll
+            .scroll-container-horizontal
+                .main.clearfix
+                    section.section.section-banner(style="background-image:url(images/img_15.jpg)")
+                        .name 墨域·墨脱石锅（中）
+                        .text 拥有一口正宗好料墨脱皂石锅，重新创造美食！
+                        .tips
+                            span 自然不粘锅
+                            span 独一无二
+                            span 天然保温
+                            span 皂石手工艺打磨
+                        .price RMB 3600.00
+                        .play.d-inline-flex.js-play 观看完整视频
+                            .icon
+                    section.section.section-swiper.swiper-container.js-pro-swiper
+                            .swiper-wrapper
+                                each item in [1,2,3,4]
+                                    .swiper-slide
+                                        img(src="images/img_11.jpg" height="100%")
+                            .swiper-pagination
+                    section.section
+                        img(src="images/img_09.jpg" height="100%")
+                    section.section
+                        img(src="images/img_10.jpg" height="100%")
+                    section.section
+                        img(src="images/img_12.jpg" height="100%")
+                    section.section
+                        img(src="images/img_13.jpg" height="100%")
+                    section.section
+                        img(src="images/img_14.jpg" height="100%")
+                    section.last.js-last
+                        .container.d-flex
+                            .list-item.text-center
+                                i.iconfont.iconwentifankui
+                                .l-title 获得购买帮助
+                                p 有问题吗？致电 400-800-1098<br>联系我们
+                                a.more(href="javascript:;")
+                            .list-item.text-center
+                                i.iconfont.iconchange-consulta
+                                .l-title 防伪查询
+                                p 您可以关注“皂石食器”公众号<br>验证产品
+                                a.more(href="javascript:;") 进一步了解
+                                    i.iconfont.iconarrow-right-copy-copy
+                            .list-item.text-center
+                                i.iconfont.icongoumai
+                                .l-title 购买说明
+                                p 您可以通过帮助中心进一步了解<br>购买相关说明
+                                a.more(href="javascript:;") 进一步了解
+                                    i.iconfont.iconarrow-right-copy-copy
+    .video-layer(style="display:none")
+        video#video(width="100%" controls src='/video/01.mp4', preload='auto', type='video/mp4')
+block script-main
+    script.
+        $(function () {
+            var $video = $("#video");
+            $(".js-play").click(function () {
+                layer.open({
+                    title: "",
+                    type: 1,
+                    area: '60%',
+                    content: $(".video-layer"),
+                    success: function () {
+                        $(".layui-layer").css({
+                            "background-color": "transparent"
+                        })
+                        $video[0].play(); // 播放
+                    },
+                    cancel: function () {
+                        $video[0].pause();
+                    }
+                });
+            })
+            var $swiper = $('.js-pro-swiper');
+            var $proImgWidth = parseInt($swiper.find('img').width())
+            $swiper.css({
+                flex: '0 0' + $proImgWidth + 'px',
+                width: $proImgWidth,
+                minWidth: $proImgWidth
+            })
+            $product = new Swiper('.js-pro-swiper', {
+                autoplay: true,
+                loop: true,
+                direction : 'vertical',
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                }
+            })
+            var $windowWidth = $(window).width();
+            var $windowHeight = $(window).height();
+            var $scoll = $(".js-scroll");
+            var $scrollHorizontal = $scoll.find(".scroll-container-horizontal");
+            var $banner = $scrollHorizontal.find(".section-banner");
+            var $width = 0;
+            var $fixedTop = $(".js-fixed-top");
+            var $fixedHeight  = parseInt($fixedTop.height());
+            var $header = $(".zs-header");
+            var $headerHeight = parseInt($header.height());
+            var $footerHeight = $(".footer").height();
+            $banner.css({
+                flex: '0 0' + $windowWidth + 'px',
+                width: $windowWidth,
+                minWidth: $windowWidth
+            })
+            $(".last").css({
+                flex: '0 0' + $windowWidth + 'px',
+                width: $windowWidth,
+                minWidth: $windowWidth
+            })
+            $(".section").each(function (n,ele) {
+                var _this = $(ele);
+                $width += parseInt(_this.width());
+            })
+            $(".product-detail").height($width + $windowHeight);
+            $scrollHorizontal.find(".main").width($width)
+            $(window).scroll(function () {
+                var $scrollTop = parseInt($(this).scrollTop());
+                if($scrollTop <= $headerHeight) {
+                    $(".zs-header").css({
+                        transform: 'translateY(-' + $scrollTop + 'px)'
+                    })
+                    if($fixedTop.hasClass('active')) {
+                        $fixedTop.removeClass("active");
+                    }
+                    $scrollHorizontal.find(".main").css({
+                        transform: 'translateX(-0px)'
+                    })
+                }else if($scrollTop <= $width + $footerHeight - $windowHeight) {
+                    $(".zs-header").css({
+                        transform: 'translateY(-' + $headerHeight + 'px)'
+                    })
+                    if(!$fixedTop.hasClass('active')) {
+                        $fixedTop.addClass("active");
+                    }
+                    $scrollHorizontal.find(".main").css({
+                        transform: 'translateX(-' + ($scrollTop-$fixedHeight) + 'px)'
+                    })
+                    $('.js-last').css({
+                        transform: 'translateY(-0px)'
+                    })
+                }else {
+                    $scrollHorizontal.find(".main").css({
+                        transform: 'translateX(-' + $width + 'px)'
+                    })
+                    $('.js-last').css({
+                        transform: 'translateY(-' + ($scrollTop-$width) + 'px)'
+                    })
+                }
+            })
+        })

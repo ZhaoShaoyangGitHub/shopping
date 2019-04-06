@@ -173,59 +173,63 @@ block head
 block style
     block style-main
 block content
-    .zs-header
-        .header
-            .header-box.d-flex.align-items-center.justify-content-between
-                .header-left.float-left
-                    .catalog.float-left
-                        .icon.iconfont.iconmenu.js-menu
-                        .title 目录
-                    a.d-block.float-left(href="javascript:;")
-                        .phone
-                            .icon.iconfont.icondianhua
-                            .title 400-800-1098
-                .header-center.float-left
-                    a.logo.d-block(href="javascript:;")
-                        img(src="../images/logo.png")
-                .header-right.float-right
-                    .search.js-search.float-right
-                        .iconfont.iconsousuo
-                    .user.float-right
-                        a.d-block(href="javascript:;")
-                            .iconfont.iconzhuce
-                        .user-text
-                            a.login.d-block(href="javascript:;") 登录
-                            a.register.d-block(href="javascript:;") 注册
-        .clearfix.mb-head
-            a(href="index.html").pull-left.logo-box
-                img(src="images/logo.png")
-            .pull-right.nav-icon.js-nav-icon
-                .icon-item
-                .icon-item
-                .icon-item
-            .mb-aside-nav
-                .mb-aside-nav-left
-                .nav-list
-                    .nav-head.clearfix
-                        .close-icon.js-close-icon
-                            img(src="images/close-icon.png")
-                    .list-box
-                        each $val in navArray
-                            .list-item(class=($val.active == $active ? " active" : ""))
-                                if($val.children)
-                                    .list-name.js-list-name=$val.navName
-                                    each $value in $val.children
-                                        .sub-list
-                                            a(href=$value.url).item=$value.navName
-                                else
-                                    .list-name.js-list-name
-                                        a(href=$val.url)=$val.navName
+    if(!$headerShow)
+        .zs-header
+            .header
+                .header-box.d-flex.align-items-center.justify-content-between
+                    .header-left.clearfix
+                        .catalog.float-left
+                            .icon.iconfont.iconmenu.js-menu
+                            .title 目录
+                        a.d-block.float-left(href="javascript:;")
+                            .phone
+                                .icon.iconfont.icondianhua
+                                .title 400-800-1098
+                    .header-center
+                        a.logo.d-block(href="javascript:;")
+                            img(src="../images/logo.png")
+                    .header-right
+                        .search.js-search.float-right
+                            .iconfont.iconsousuo
+                        .user.float-right
+                            a.d-block(href="javascript:;")
+                                .iconfont.iconzhuce
+                            .user-text
+                                a.login.d-block(href="javascript:;") 登录
+                                a.register.d-block(href="注册.html") 注册
+            .clearfix.mb-head
+                a(href="index.html").pull-left.logo-box
+                    img(src="images/logo.png")
+                .pull-right.nav-icon.js-nav-icon
+                    .icon-item
+                    .icon-item
+                    .icon-item
+                .mb-aside-nav
+                    .mb-aside-nav-left
+                    .nav-list
+                        .nav-head.clearfix
+                            .close-icon.js-close-icon
+                                img(src="images/close-icon.png")
+                        .list-box
+                            each $val in navArray
+                                .list-item(class=($val.active == $active ? " active" : ""))
+                                    if($val.children)
+                                        .list-name.js-list-name=$val.navName
+                                        each $value in $val.children
+                                            .sub-list
+                                                a(href=$value.url).item=$value.navName
+                                    else
+                                        .list-name.js-list-name
+                                            a(href=$val.url)=$val.navName
 
 
-    .backtop.js-backtop
-        .iconfont.iconjiantou1
+        .backtop.js-backtop
+            .iconfont.iconjiantou1
     .header-menu
         .main
+            .line1.line
+            .line2.line
+            .line3.line
             .nav
                 each items, index in headerArry
                     .nav-item
@@ -242,35 +246,36 @@ block content
     block content-main
 
 block foot
-    footer.footer
-        .footer-top.d-flex.justify-content-between.row
-            .link-us
-                .foot-title 联系我们
-                p.d-flex.align-items-center
-                    i.iconfont.icondizhi
-                    span 上海市闵行区颛兴东路1277弄65栋
-                p.d-flex.align-items-center
-                    i.iconfont.iconxinfeng
-                    a(href="mailTo:motuozaoshi@chsvc.com") motuozaoshi@chsvc.com
-                p.d-flex.align-items-center
-                    i.iconfont.icondianhua
-                    a(href="Tel:motuozaoshi@chsvc.com") 400-800-1098
-            ul.nav.footer-nav
-                each items, index in navArray
-                    if(index>0)
-                        li
-                           .foot-title=items.navName
-                           if items.children
-                               each item in items.children
-                                    a(href="javascript:;")=item.navName
-            .weixin
-                .code
-                    img(src="images/serve_code.png" width="100%")
-                    p.text-center 皂石服务号
-                .code
-                    img(src="images/subscribe_code.png" width="100%")
-                    p.text-center 皂石订阅号
-        .footer-copy.text-center Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号
+    if(!$footerShow)
+        footer.footer
+            .footer-top.d-flex.justify-content-between.row
+                .link-us
+                    .foot-title 联系我们
+                    p.d-flex.align-items-center
+                        i.iconfont.icondizhi
+                        span 上海市闵行区颛兴东路1277弄65栋
+                    p.d-flex.align-items-center
+                        i.iconfont.iconxinfeng
+                        a(href="mailTo:motuozaoshi@chsvc.com") motuozaoshi@chsvc.com
+                    p.d-flex.align-items-center
+                        i.iconfont.icondianhua
+                        a(href="Tel:motuozaoshi@chsvc.com") 400-800-1098
+                ul.nav.footer-nav
+                    each items, index in navArray
+                        if(index>0)
+                            li
+                               .foot-title=items.navName
+                               if items.children
+                                   each item in items.children
+                                        a(href="javascript:;")=item.navName
+                .weixin
+                    .code
+                        img(src="images/serve_code.png" width="100%")
+                        p.text-center 皂石服务号
+                    .code
+                        img(src="images/subscribe_code.png" width="100%")
+                        p.text-center 皂石订阅号
+            .footer-copy.text-center Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号
 block script
     script(src='js/plugins/bootstrap/bootstrap.bundle.min.js')
     script(src='js/plugins/swiper/js/swiper.js')
@@ -280,10 +285,16 @@ block script
     script.
         $(function () {
             $(".js-menu").click(function () {
-               $(".header-menu").slideToggle()
+               $(".header-menu").slideToggle();
+               if($("body").hasClass("active")) {
+                   $("body").removeClass("active");
+               }else {
+                   $("body").addClass("active");
+               }
             })
             $(".js-close").click(function () {
-                $(".header-menu").slideUp()
+                $(".header-menu").slideUp();
+                $("body").removeClass("active");
             })
         })
     block script-main

@@ -21,6 +21,11 @@ body {
   font-family: "微软雅黑";
   font-size: rem(16);
   color: #080808;
+  &.active {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .com-more {
@@ -125,10 +130,6 @@ body {
         }
       }
       .header-center{
-        line-height: 1.5rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         .logo{
           img{
             max-width: rem(330);
@@ -235,6 +236,24 @@ body {
     flex-wrap: wrap;
     align-content: center;
     padding-bottom: rem(80);
+    position: relative;
+    overflow: hidden;
+    .line {
+      position: absolute;
+      height: 100%;
+      border-left: 1px solid #e7e7e7;
+      top: 0;
+      transform: rotate(10deg);
+      &.line1 {
+        left: 25%;
+      }
+      &.line2 {
+        left: 50%;
+      }
+      &.line3 {
+        left: 75%;
+      }
+    }
     .nav {
       flex-wrap: nowrap;
       position: relative;
@@ -291,7 +310,7 @@ body {
       background-color: $base-color;
       overflow: hidden;
       text-align: center;
-      margin: 0 auto;
+      margin: 0 auto rem(10);
       @extend .transition-one;
       cursor: pointer;
       .iconfont {
@@ -315,6 +334,7 @@ body {
 .footer {
   .footer-top {
     max-width: rem(1650);
+    margin: 0 auto;
     padding: rem(60) rem(25) rem(122);
     .foot-title {
       font-size: rem(18);
@@ -512,6 +532,7 @@ body {
     max-width: rem(1650);
     padding: 0 rem(25);
     margin: 0 auto;
+    position: relative;
   }
   .spark-s1{
     height: rem(930);
@@ -757,9 +778,12 @@ body {
   .main {
     max-width: rem(1650);
     padding: 0 rem(25);
-    margin: 0 rem(-25);
-    >div {
-      padding: 0 rem(25);
+    margin: 0 auto;
+    .row {
+      margin: 0 rem(-25);
+      >div {
+        padding: 0 rem(25);
+      }
     }
     .list-item {
       padding-bottom: rem(40);
@@ -3102,22 +3126,149 @@ body {
   background-color: #f8f8f8;
   width: 100%;
   height: 100vh;
-  padding: 5% 0;
+  padding: 3% 0;
+  background: #f8f8f8 url("../images/logo_bg.png") no-repeat right top/contain;
   .zs-sign-content{
-    max-width: 1640px;
-    padding: 0 0.2rem;
+    max-width: rem(1650);
+    padding: rem(25);
     margin: 0 auto;
     height: 100%;
-    .sign-box{
+    .sign-box {
       width: 100%;
       height: 100%;
-      background-color: red;
+      background-color: #FFFFFF;
+      box-shadow: rem(4) 0 rem(40) rgba(0,0,0,0.11);
+      >.row{
+        width: 100%;
+        height: 100%;
+      }
     }
     .left{
-
+      height: 100%;
+      flex: auto;
     }
     .right{
-
+      height: 100%;
+      flex: 1 1 rem(950);
+      padding: rem(50) rem(155) 0;
+      .logo {
+        display: block;
+        width: rem(40);
+        margin: 0 auto rem(30);
+      }
+    }
+    .form {
+      .form-group {
+        margin-bottom: rem(20);
+        position: relative;
+        .send-code {
+          width: rem(120);
+          height: rem(44);
+          line-height: rem(44);
+          background-color: $base-color;
+          border-radius: rem(22);
+          font-size: rem(12);
+          color: #ffffff;
+          position: absolute;
+          top: 50%;
+          margin-top: rem(-22);
+          right: rem(20);
+          z-index: 2;
+          text-align: center;
+          cursor: pointer;
+          padding: 0;
+          border: 0;
+        }
+        .label {
+          position: absolute;
+          font-size: rem(18);
+          color: #999999;
+          left: rem(20);
+          top: 50%;
+          transform: translateY(-50%);
+          transition-property: all;
+          transition-timing-function: ease-in;
+          transition-duration: .125s;
+          z-index: 3;
+        }
+        .form-control {
+          height: 0.9rem;
+          padding: rem(40) rem(140) rem(20) rem(20);
+          font-size: rem(18);
+          line-height: rem(28);
+          color: #080808;
+          position: relative;
+          z-index: 2;
+          background-color: transparent;
+          border:1px #bbbbbb solid;
+          &:focus{
+            border-color: $base-color;
+          }
+          &:focus ~ .label {
+            top: rem(20);
+            font-size: rem(12);
+            transform: none;
+          }
+        }
+        .form-textbox-entered ~ .label {
+          top: rem(20);
+          font-size: rem(12);
+          transform: none;
+        }
+      }
+      .form-btn {
+        margin-top: rem(50);
+        .btn {
+          height: rem(90);
+          text-align: center;
+          padding: 0;
+          font-size: rem(18);
+        }
+        .reset {
+          background-color: #f0f0f0;
+          color: #999999;
+        }
+        .submit {
+          color: #ffffff;
+          background-color: $base-color;
+        }
+      }
+    }
+    .checkbox-input {
+      font-size: 12px;
+      color: #666666;
+      padding-left: rem(30);
+      line-height: rem(18);
+      position: relative;
+      input[type="checkbox"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+        &:checked ~ .icon {
+          background: url("../images/icon_checked.png") no-repeat center/contain;
+        }
+      }
+      .icon {
+        width: rem(18);
+        height: rem(18);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("../images/icon_nochecked.png") no-repeat center/contain;
+      }
+      label {
+        user-select: none;
+        margin-bottom: 0;
+      }
+      a {
+        color: #666666;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
