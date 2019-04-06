@@ -34,10 +34,10 @@
 <body>
     <div class="zs-header">
         <div class="header">
-            <div class="header-box clearfix">
+            <div class="header-box d-flex align-items-center justify-content-between">
                 <div class="header-left float-left">
                     <div class="catalog float-left">
-                        <div class="icon iconfont iconmenu"></div>
+                        <div class="icon iconfont iconmenu js-menu"></div>
                         <div class="title">目录</div>
                     </div><a class="d-block float-left" href="javascript:;">
                         <div class="phone">
@@ -111,17 +111,37 @@
     <div class="backtop js-backtop">
         <div class="iconfont iconjiantou1"></div>
     </div>
+    <div class="header-menu">
+        <div class="main">
+            <div class="nav">
+                <div class="nav-item"><a class="home-title" href="index.html">首页</a></div>
+                <div class="nav-item">
+                    <div class="nav-title">产品列表</div><a class="nav-link" href="javascript:;">墨域</a><a class="nav-link" href="javascript:;">墨工</a><a class="nav-link" href="javascript:;">墨韵</a><a class="nav-link" href="javascript:;">定制</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-title">帮助中心</div><a class="nav-link" href="javascript:;">企业介绍</a><a class="nav-link" href="javascript:;">公司资质</a><a class="nav-link" href="javascript:;">新闻动态</a><a class="nav-link" href="javascript:;">人才招聘</a><a class="nav-link" href="javascript:;">联系我们</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-title">关于我们</div><a class="nav-link" href="javascript:;">线下门店 </a><a class="nav-link" href="javascript:;">防伪查询</a><a class="nav-link" href="javascript:;">购买说明</a><a class="nav-link" href="javascript:;">物流说明</a><a class="nav-link" href="javascript:;">售后服务</a>
+                </div>
+            </div>
+            <div class="close-menu text-center">
+                <div class="close-btn js-close"><i class="iconfont iconguanbi"></i></div>
+                <p>关闭菜单</p>
+            </div>
+        </div>
+    </div>
     <div class="zs-news-detail">
         <div class="zs-banner">
             <div class="banner"></div>
             <div class="nav-box">
                 <div class="container">
                     <div class="nav-list row">
-                        <div class="list-item"><a href="javascript:;">企业介绍</a></div>
-                        <div class="list-item"><a href="javascript:;">公司资质</a></div>
-                        <div class="list-item active"><a href="javascript:;">新闻动态</a></div>
-                        <div class="list-item"><a href="javascript:;">人才招聘</a></div>
-                        <div class="list-item"><a href="javascript:;">联系我们</a></div>
+                        <div class="list-item"><a href="企业介绍.html">企业介绍</a></div>
+                        <div class="list-item"><a href="公司资质.html">公司资质</a></div>
+                        <div class="list-item active"><a href="新闻动态.html">新闻动态</a></div>
+                        <div class="list-item"><a href="人才招聘.html">人才招聘</a></div>
+                        <div class="list-item"><a href="联系我们.html">联系我们</a></div>
                     </div>
                 </div>
             </div>
@@ -197,10 +217,18 @@
     <script src="js/plugins/jquery.min.js"></script>
     <script src="js/vendor.js" merge="true"></script>
     <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/plugins/lazyload.min.js"></script>
     <script src="js/index.js"></script>
     <script>
-        $(function() {})
+        $(function() {
+            $(".js-menu").click(function() {
+                $(".header-menu").slideToggle()
+            })
+            $(".js-close").click(function() {
+                $(".header-menu").slideUp()
+            })
+        })
     </script>
     <script>
         $(function() {

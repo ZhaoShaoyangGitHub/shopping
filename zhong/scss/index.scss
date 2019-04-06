@@ -2862,21 +2862,26 @@ body {
           margin-left: rem(50);
           position: relative;
           height: 100%;
-          .title{
-            font-size: rem(18);
-            line-height: 1.5;
-            font-weight: bold;
-          }
-          .sub-title{
-            font-size: rem(18);
-            margin-top: rem(35);
-            line-height: 1.5;
-            font-weight: bold;
-          }
-          .text{
-            font-size: rem(14);
-            color: #666666;
-            margin-top: rem(40);
+          .left-r-main{
+            height: rem(300);
+            overflow-y: auto;
+            padding-bottom: rem(50);
+            .title{
+              font-size: rem(18);
+              line-height: 1.5;
+              font-weight: bold;
+            }
+            .sub-title{
+              font-size: rem(18);
+              margin-top: rem(35);
+              line-height: 1.5;
+              font-weight: bold;
+            }
+            .text{
+              font-size: rem(14);
+              color: #666666;
+              margin-top: rem(40);
+            }
           }
           .border{
             width: 100%;
@@ -2972,14 +2977,18 @@ body {
             }
           }
           .left-r{
-            .title{
-              font-size: rem(28);
-            }
-            .sub-title{
-              font-size: rem(24);
-            }
-            .text{
-              font-size: rem(20);
+            .left-r-main{
+              height: auto;
+              max-height: rem(450);
+              .title{
+                font-size: rem(28);
+              }
+              .sub-title{
+                font-size: rem(24);
+              }
+              .text{
+                font-size: rem(20);
+              }
             }
             .border{
               bottom: auto;
