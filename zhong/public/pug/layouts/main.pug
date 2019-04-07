@@ -31,52 +31,52 @@ block head
             }]
         },{
             "navName":"帮助中心",
-            "url":"food-utensils.html",
+            "url":"help.html",
             "active": "food",
             "children": [{
                 "navName": "企业介绍",
-                "url": "mouyu.html",
+                "url": "企业介绍.html",
                 "src": "../images/two_nav_img04.png"
             },{
                 "navName": "公司资质",
-                "url": "mogong.html",
+                "url": "公司资质.html",
                 "src": "../images/two_nav_img05.png"
             },{
                 "navName": "新闻动态",
-                "url": "moyun.html",
+                "url": "新闻动态.html",
                 "src": "../images/two_nav_img06.png"
             },{
                 "navName": "人才招聘",
-                "url": "custom.html",
+                "url": "人才招聘.html",
                 "src": "../images/two_nav_img05.png"
             },{
                 "navName": "联系我们",
-                "url": "custom.html",
+                "url": "联系我们.html",
                 "src": "../images/two_nav_img05.png"
             }]
         },{
         "navName":"关于我们",
-        "url":"food-utensils.html",
+        "url":"联系我们.html",
         "active": "food",
         "children": [{
-        "navName": "线下门店    ",
-        "url": "mouyu.html",
+        "navName": "线下门店",
+        "url": "help.html",
         "src": "../images/two_nav_img04.png"
         },{
         "navName": "防伪查询",
-        "url": "mogong.html",
+        "url": "help.html",
         "src": "../images/two_nav_img05.png"
         },{
         "navName": "购买说明",
-        "url": "moyun.html",
+        "url": "help.html",
         "src": "../images/two_nav_img06.png"
         },{
         "navName": "物流说明",
-        "url": "custom.html",
+        "url": "help.html",
         "src": "../images/two_nav_img05.png"
         },{
         "navName": "售后服务",
-        "url": "custom.html",
+        "url": "help.html",
         "src": "../images/two_nav_img05.png"
         }]
         }]
@@ -186,16 +186,16 @@ block content
                                 .icon.iconfont.icondianhua
                                 .title 400-800-1098
                     .header-center
-                        a.logo.d-block(href="javascript:;")
+                        a.logo.d-block(href="index.html")
                             img(src="../images/logo.png")
                     .header-right
                         .search.js-search.float-right
-                            .iconfont.iconsousuo
+                            a.iconfont.iconsousuo(href="搜索结果页.html")
                         .user.float-right
                             a.d-block(href="javascript:;")
                                 .iconfont.iconzhuce
                             .user-text
-                                a.login.d-block(href="javascript:;") 登录
+                                a.login.d-block(href="登录.html") 登录
                                 a.register.d-block(href="注册.html") 注册
             .clearfix.mb-head
                 a(href="index.html").pull-left.logo-box
@@ -238,7 +238,7 @@ block content
                         else
                             .nav-title=items.navName
                             each item in items.children
-                               a.nav-link(href="javascript:;")=item.navName
+                               a.nav-link(href=item.url)=item.navName
             .close-menu.text-center
                 .close-btn.js-close
                     i.iconfont.iconguanbi
@@ -247,7 +247,7 @@ block content
 
 block foot
     if(!$footerShow)
-        footer.footer
+        footer.footer(class=($searchPage=='search'?"footer-t-b":""))
             .footer-top.d-flex.justify-content-between.row
                 .link-us
                     .foot-title 联系我们
