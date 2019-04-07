@@ -18,24 +18,14 @@ block content-main
                             .form-group
                                 input.form-control(type="text" value="" name="phone" id="phone")
                                 label.label 手机号
-                                p.warning 中国大陆 +86
                             .form-group
                                 input.form-control(type="password" value="" name="password" id="password")
-                                label.label 设置密码
-                            .form-group
-                                input.form-control(type="text" value="" name="code" id="code")
-                                .send-code.btn.js-send 获取验证码
-                                label.label 验证码
-                            .checkbox-input
-                                input(type="checkbox" value="" name="agree" id="agree")
-                                .icon
-                                label(for="agree") 我已仔细阅读并同意
-                                a(href="javascript:;") 《服务协议》
-                                | 、
-                                a(href="javascript:;") 《法律声明及隐私权政策》
+                                label.label 登录密码
+                            .form-group.clearfix.forget
+                                a(href="忘记密码.html").float-right 忘记密码
                             .form-btn.row.justify-content-between
-                                a(href="登录.html").btn.login.col-10 返回登录
-                                a(href="javacript:;").btn.submit.col-13 完成注册
+                                a(href="注册.html").btn.login.col-10 免费注册
+                                a(href="忘记密码.html").btn.submit.col-13 登录
 block script-main
     script.
         $(function () {

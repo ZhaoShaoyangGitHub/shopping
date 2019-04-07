@@ -21,21 +21,14 @@ block content-main
                                 p.warning 中国大陆 +86
                             .form-group
                                 input.form-control(type="password" value="" name="password" id="password")
-                                label.label 设置密码
+                                label.label 设置新密码
                             .form-group
                                 input.form-control(type="text" value="" name="code" id="code")
                                 .send-code.btn.js-send 获取验证码
                                 label.label 验证码
-                            .checkbox-input
-                                input(type="checkbox" value="" name="agree" id="agree")
-                                .icon
-                                label(for="agree") 我已仔细阅读并同意
-                                a(href="javascript:;") 《服务协议》
-                                | 、
-                                a(href="javascript:;") 《法律声明及隐私权政策》
                             .form-btn.row.justify-content-between
                                 a(href="登录.html").btn.login.col-10 返回登录
-                                a(href="javacript:;").btn.submit.col-13 完成注册
+                                a(href="忘记密码.html").btn.submit.col-13 重置密码
 block script-main
     script.
         $(function () {
