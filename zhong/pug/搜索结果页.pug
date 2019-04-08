@@ -3,7 +3,8 @@ block head-main
     - $innerActive = "banner4"
     - $searchPage = "search"
     -var bannerNav = [{"title":"企业介绍","link":"企业介绍.html"},{"title":"公司资质","link":"公司资质.html"},{"title":"新闻动态","link":"新闻动态.html"},{"title":"人才招聘","link":"人才招聘.html","active": 'banner4'},{"title":"联系我们","link":"联系我们.html"}]
-
+    -var searchList = [{"title":"墨脱石锅产品名","name":"墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，","link":"/images/product_img_01.png"},{"title":"墨脱石锅产品名","name":"墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，","link":"/images/product_img_01.png"},{"title":"墨脱石锅产品名","name":"墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，","link":"/images/product_img_01.png"},{"title":"墨脱石锅产品名","name":"墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，","link":"/images/product_img_01.png"}]
+    -var search = []
 block style-main
 
 
@@ -17,16 +18,21 @@ block content-main
         .content2
             .container
                 .search-list
-                    each $val in [1,2,3,4]
-                        .list-item.row
-                            .left.col-md-8
-                                img.search-img(src="/images/product_img_01.png")
-                            .right.col-md-10
-                                .title 墨脱石锅产品名
-                                .text 墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，
-                                .bottom
-                                    a.read-more(href="javascript:;") 了解更多
-                                    a.read-more(href="javascript:;") 下载
+                    if(searchList.length)
+                        each $val in searchList
+                            .list-item.row
+                                .left.col-8.col-md-8
+                                    img.search-img(src=$val.link)
+                                .right.col-16.col-md-10
+                                    .title=$val.title
+                                    .text=$val.name
+                                    .bottom
+                                        a.read-more(href="javascript:;") 了解更多
+                                        a.read-more(href="javascript:;") 下载
+                    else
+                        .no-data
+                            p 未找到结果
+
 
 
 
