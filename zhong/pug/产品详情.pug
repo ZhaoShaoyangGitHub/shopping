@@ -66,13 +66,22 @@ block content-main
 block script-main
     script.
         $(function () {
+            var $windowWidth = $(window).width();
+            var $windowHeight = $(window).height();
             var $video = $("#video");
+            var videoArea = '60%'
+            if ($windowWidth < 769) {
+                videoArea = '90%'
+            }else {
+                videoArea = '60%'
+            }
             $(".js-play").click(function () {
                 layer.open({
                     title: "",
                     type: 1,
-                    area: '60%',
+                    area: videoArea,
                     content: $(".video-layer"),
+                    shade: 0.7,
                     success: function () {
                         $(".layui-layer").css({
                             "background-color": "transparent"
@@ -84,81 +93,99 @@ block script-main
                     }
                 });
             })
-            var $swiper = $('.js-pro-swiper');
-            var $proImgWidth = parseInt($swiper.find('img').width())
-            $swiper.css({
-                flex: '0 0' + $proImgWidth + 'px',
-                width: $proImgWidth,
-                minWidth: $proImgWidth
-            })
-            $product = new Swiper('.js-pro-swiper', {
+            var $product = new Swiper('.js-pro-swiper', {
                 autoplay: true,
                 loop: true,
-                direction : 'vertical',
+                direction: 'vertical',
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        direction: 'horizontal',
+                    }
                 }
             })
-            var $windowWidth = $(window).width();
-            var $windowHeight = $(window).height();
-            var $scoll = $(".js-scroll");
-            var $scrollHorizontal = $scoll.find(".scroll-container-horizontal");
-            var $banner = $scrollHorizontal.find(".section-banner");
-            var $width = 0;
-            var $fixedTop = $(".js-fixed-top");
-            var $fixedHeight  = parseInt($fixedTop.height());
-            var $header = $(".zs-header");
-            var $headerHeight = parseInt($header.height());
-            var $footerHeight = $(".footer").height();
-            $banner.css({
-                flex: '0 0' + $windowWidth + 'px',
-                width: $windowWidth,
-                minWidth: $windowWidth
-            })
-            $(".last").css({
-                flex: '0 0' + $windowWidth + 'px',
-                width: $windowWidth,
-                minWidth: $windowWidth
-            })
-            $(".section").each(function (n,ele) {
-                var _this = $(ele);
-                $width += parseInt(_this.width());
-            })
-            $(".product-detail").height($width + $windowHeight);
-            $scrollHorizontal.find(".main").width($width)
-            $(window).scroll(function () {
+            var pcScroll = function () {
+                var $scoll = $(".js-scroll");
+                var $swiper = $('.js-pro-swiper');
+                var $scrollHorizontal = $scoll.find(".scroll-container-horizontal");
+                var $banner = $scrollHorizontal.find(".section-banner");
+                var $fixedTop = $(".js-fixed-top");
+                var $header = $(".zs-header");
                 var $scrollTop = parseInt($(this).scrollTop());
-                if($scrollTop <= $headerHeight) {
-                    $(".zs-header").css({
-                        transform: 'translateY(-' + $scrollTop + 'px)'
-                    })
-                    if($fixedTop.hasClass('active')) {
-                        $fixedTop.removeClass("active");
-                    }
-                    $scrollHorizontal.find(".main").css({
-                        transform: 'translateX(-0px)'
-                    })
-                }else if($scrollTop <= $width + $footerHeight - $windowHeight) {
-                    $(".zs-header").css({
-                        transform: 'translateY(-' + $headerHeight + 'px)'
-                    })
-                    if(!$fixedTop.hasClass('active')) {
-                        $fixedTop.addClass("active");
-                    }
-                    $scrollHorizontal.find(".main").css({
-                        transform: 'translateX(-' + ($scrollTop-$fixedHeight) + 'px)'
-                    })
-                    $('.js-last').css({
-                        transform: 'translateY(-0px)'
-                    })
+                if($windowWidth<769) {
+                    return false
                 }else {
-                    $scrollHorizontal.find(".main").css({
-                        transform: 'translateX(-' + $width + 'px)'
+                    var $proImgWidth = parseInt($swiper.find('img').width())
+                    $swiper.css({
+                        flex: '0 0' + $proImgWidth + 'px',
+                        width: $proImgWidth,
+                        minWidth: $proImgWidth
                     })
-                    $('.js-last').css({
-                        transform: 'translateY(-' + ($scrollTop-$width) + 'px)'
+                    var $width = 0;
+                    var $fixedHeight = parseInt($fixedTop.height());
+                    var $headerHeight = parseInt($header.height());
+                    var $footerHeight = $(".footer").height();
+                    $banner.css({
+                        flex: '0 0' + $windowWidth + 'px',
+                        width: $windowWidth,
+                        minWidth: $windowWidth
+                    })
+                    $(".last").css({
+                        flex: '0 0' + $windowWidth + 'px',
+                        width: $windowWidth,
+                        minWidth: $windowWidth
+                    })
+                    $(".section").each(function (n, ele) {
+                        var _this = $(ele);
+                        $width += parseInt(_this.width());
+                    })
+                    $(".product-detail").height($width + $windowHeight);
+                    $scrollHorizontal.find(".main").width($width)
+                    function scrollFun() {
+                        if ($scrollTop <= $headerHeight) {
+                            $(".zs-header").css({
+                                transform: 'translateY(-' + $scrollTop + 'px)'
+                            })
+                            if ($fixedTop.hasClass('active')) {
+                                $fixedTop.removeClass("active");
+                            }
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-0px)'
+                            })
+                        } else if ($scrollTop <= $width + $footerHeight - $windowHeight) {
+                            $(".zs-header").css({
+                                transform: 'translateY(-' + $headerHeight + 'px)'
+                            })
+                            if (!$fixedTop.hasClass('active')) {
+                                $fixedTop.addClass("active");
+                            }
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-' + ($scrollTop - $fixedHeight) + 'px)'
+                            })
+                            $('.js-last').css({
+                                transform: 'translateY(-0px)'
+                            })
+                        } else {
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-' + $width + 'px)'
+                            })
+                            $('.js-last').css({
+                                transform: 'translateY(-' + ($scrollTop - $width) + 'px)'
+                            })
+                        }
+                    }
+                    scrollFun()
+                    $(window).scroll(function () {
+                        $scrollTop = parseInt($(this).scrollTop());
+                        scrollFun()
                     })
                 }
+            }
+            pcScroll();
+            $(window).resize(function () {
+                pcScroll();
             })
         })
