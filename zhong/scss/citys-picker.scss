@@ -1,0 +1,74 @@
+
+.city-picker-span{
+  width: 100%!important;
+  position:relative;
+  display:none;
+  outline:0;
+  -webkit-tap-highlight-color:transparent;
+  border-bottom:1px solid #ccc;
+  background-color:#fff;
+  color:#ccc;
+  cursor:pointer
+}
+
+.city-picker-span>.placeholder{
+  color:#aaa
+}
+.city-picker-span>.arrow{
+  position:absolute;
+  top:50%;right:8px;
+  width:10px;margin-top:-3px;
+  height:5px;background:url(../images/drop-arrow.png) -10px -25px no-repeat
+}
+.city-picker-span.focus,.city-picker-span.open{border-bottom-color:#46a4ff}
+.city-picker-span.open>.arrow{background-position:-10px -10px}
+.city-picker-span>.title>span{color:#333;padding:5px;border-radius:3px}
+.city-picker-span>.title>span:hover{background-color:#f1f8ff}
+.city-picker-dropdown{
+  position:relative;width:100%!important;
+  outline:0;-webkit-tap-highlight-color:transparent;
+  z-index:999999;display:none;margin-bottom:20px
+}
+.city-select-tab{border-bottom:1px solid #ccc;font-size: 0.28rem}
+.city-select-tab>a{
+  display:inline-block;
+  padding: 0.4rem 1rem 0.2rem 0;
+  color:#0070c9;
+  text-align:center;
+  outline:0;
+  text-decoration:none;
+  cursor:pointer;
+  font-size: 0.2rem;
+  margin-bottom:-1px
+}
+.city-select-tab>a.active{
+  color: #333333;
+  font-weight: bold;
+  border: none!important;
+}
+.city-select-content{width:100%;min-height:10px;}
+.city-select{font-size: 0.16rem}
+.city-select dt{display: none}
+.city-select dd{margin-left:0;line-height:2}
+.city-select.province dd{
+
+}
+.city-select a{
+  width: 33%;
+  display:inline-block;
+  padding: 0.2rem 0;
+  white-space:nowrap;
+  color:#333;
+  cursor:pointer
+}
+.city-select a.active{
+  font-weight: bold;
+  font-size: 0.18rem;
+}
+.city-picker-arrow{
+  position: absolute;
+  right: 0.3rem;
+  top: 0.28rem;
+  font-size: 0.26rem;
+  color: #999999;
+}

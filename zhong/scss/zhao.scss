@@ -708,7 +708,7 @@
 .edit-layer {
   width: rem(800);
   height: rem(750);
-  overflow: hidden;
+  overflow: auto;
   padding: rem(50) rem(80) rem(55);
   .title {
     font-size: rem(24);
@@ -775,6 +775,15 @@
       }
     }
   }
+}
+@media (max-width: 567px) {
+  .layui-layer{
+    width: 90%!important;
+  }
+  .edit-layer{
+    width: 100%;
+  }
+
 }
 
 .product-detail {

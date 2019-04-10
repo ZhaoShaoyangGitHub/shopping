@@ -75,9 +75,11 @@ block content-main
             .form-group
                 input.form-control(type="text" value="" name="" id="phone1")
                 label.label 您的电话
-            .form-group
-                .form-control
-                label.label 省份/城镇/城市/区
+            #distpicker
+                .form-group
+                    input#city-picker3.form-control.city-picker-input(readonly='', type='text', value='', data-toggle='city-picker')
+                    label.label 省份/城镇/城市/区
+                    .iconfont.iconxiala.city-picker-arrow
             .form-group
                 input.form-control(type="text" value="" name="" id="address")
                 label.label 详细地址
@@ -85,6 +87,8 @@ block content-main
                 button.btn.reset.col-10.js-close-layer(type="reset") 取消
                 button.btn.submit.col-13(type="submit") 保存并使用
 block script-main
+    script(src='js/address/city-picker.data.js')
+    script(src='js/address/city-picker.js')
     script.
         $(function () {
             $('.js-reset-password').click(function () {
@@ -120,10 +124,15 @@ block script-main
                 })
             })
             $("input").bind('blur', function () {
+
                 if($(this).val()) {
                     $(this).addClass("form-textbox-entered")
                 }else {
                     $(this).removeClass("form-textbox-entered")
                 }
+            })
+
+            $('#city-picker3').bind('blur', function () {
+                $(this).addClass("form-textbox-entered")
             })
         })

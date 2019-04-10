@@ -158,10 +158,10 @@
                             <form class="new-address-main">
                                 <div class="form-group"><input class="form-control" type="text" name="name" id="name"> <label class="label">您的姓名</label></div>
                                 <div class="form-group"><input class="form-control" type="text" name="phone" id="phone"> <label class="label">您的电话</label></div>
-                                <div class="address-new address-border">
-                                    <div class="title">省份/城镇/城市/区</div>
-                                    <div class="choose-address"><input id="city" type="text"> <input id="harea" type="hidden" name="harea" data-id="820002" value="市区"> <input id="hproper" type="hidden" name="hproper" data-id="820001" value="澳门"> <input id="hcity" type="hidden" name="hcity" data-id="820000" value="澳门"></div>
-                                    <div class="choose-address-box"></div>
+                                <div id="distpicker">
+                                    <div class="form-group"><input class="form-control city-picker-input" id="city-picker3" readonly type="text" data-toggle="city-picker"> <label class="label">省份/城镇/城市/区</label>
+                                        <div class="iconfont iconxiala city-picker-arrow"></div>
+                                    </div>
                                 </div>
                                 <div class="form-group"><input class="form-control" type="text" name="phone" id="address"> <label class="label">详细地址</label></div>
                             </form>
@@ -277,66 +277,75 @@
             })
         })
     </script>
-    <script src="js/Popt.js"></script>
-    <script src="js/cityJson.js"></script>
-    <script src="js/citySet.js"></script>
+    <script src="js/address/city-picker.data.js"></script>
+    <script src="js/address/city-picker.js"></script>
     <script>
         $(function() {
-            if ($(".js-new-address").length) {
-                if ($('.js-new-address').hasClass('active')) {
-                    $(".new-address-main").show();
+            var newAddress = $(".js-new-address");
+            var newAddressMain = $(".new-address-main");
+            if (newAddress.length) {
+                if (newAddress.hasClass('active')) {
+                    newAddressMain.show();
                 } else {
-                    $(".new-address-main").hide();
+                    newAddressMain.hide();
                 }
-                $('.js-new-address').click(function() {
-                    if ($(this).hasClass('active')) {
-                        $(this).removeClass('active');
-                        $(".new-address-main").slideUp(500);
+                newAddress.click(function() {
+                    var _this = $(this);
+                    if (_this.hasClass('active')) {
+                        _this.removeClass('active');
+                        newAddressMain.slideUp(500);
                     } else {
-                        $(this).addClass('active');
-                        $(".new-address-main").slideDown(500);
+                        _this.addClass('active');
+                        newAddressMain.slideDown(500);
                     }
                 })
             }
 
-            if ($(".js-use").hasClass('active')) {
-                $(".invoice-detail").show();
+            var used = $(".js-use");
+            var noUsed = $(".js-no-use");
+            var invoiceDetail = $(".invoice-detail");
+            if (used.hasClass('active')) {
+                invoiceDetail.show();
             } else {
-                $(".invoice-detail").hide();
+                invoiceDetail.hide();
             }
 
-            $(".js-no-use").click(function() {
+            noUsed.click(function() {
                 $(this).addClass('active');
-                $('.js-use').removeClass('active');
-                $(".invoice-detail").slideUp(500);
+                used.removeClass('active');
+                invoiceDetail.slideUp(500);
             })
-            $(".js-use").click(function() {
+            used.click(function() {
                 $(this).addClass('active');
-                $('.js-no-use').removeClass('active');
-                $(".invoice-detail").slideDown(500);
+                noUsed.removeClass('active');
+                invoiceDetail.slideDown(500);
             })
 
-            if ($(".js-other").hasClass('active')) {
-                $(".company-box").show();
+            var other = $(".js-other");
+            var personal = $(".js-personal");
+            var companyBox = $(".company-box");
+            if (other.hasClass('active')) {
+                companyBox.show();
             } else {
-                $(".company-box").hide();
+                companyBox.hide();
             }
-            $(".js-personal").click(function() {
+            personal.click(function() {
                 $(this).addClass('active');
-                $('.js-other').removeClass('active');
-                $(".company-box").slideUp(500);
+                other.removeClass('active');
+                companyBox.slideUp(500);
             })
-            $(".js-other").click(function() {
+            other.click(function() {
                 $(this).addClass('active');
-                $('.js-personal').removeClass('active');
-                $(".company-box").slideDown(500);
+                personal.removeClass('active');
+                companyBox.slideDown(500);
             })
 
             $("input").bind('blur', function() {
-                if ($(this).val()) {
-                    $(this).addClass("form-textbox-entered")
+                var _this = $(this);
+                if (_this.val()) {
+                    _this.addClass("form-textbox-entered")
                 } else {
-                    $(this).removeClass("form-textbox-entered")
+                    _this.removeClass("form-textbox-entered")
                 }
             })
 
@@ -344,6 +353,10 @@
                 SelCity(this, e);
                 console.log("inout", $(this).val(), new Date())
             });
+
+            $('#city-picker3').bind('blur', function() {
+                $(this).addClass("form-textbox-entered")
+            })
 
         })
     </script>

@@ -34,14 +34,11 @@ block content-main
                                 .form-group
                                     input.form-control(type="text" value="" name="phone" id="phone")
                                     label.label 您的电话
-                                .address-new.address-border
-                                    .title 省份/城镇/城市/区
-                                    .choose-address
-                                        input#city(type='text')
-                                        input#harea(type='hidden', name='harea', data-id='820002', value='市区')
-                                        input#hproper(type='hidden', name='hproper', data-id='820001', value='澳门')
-                                        input#hcity(type='hidden', name='hcity', data-id='820000', value='澳门')
-                                    .choose-address-box
+                                #distpicker
+                                    .form-group
+                                        input#city-picker3.form-control.city-picker-input(readonly='', type='text', value='', data-toggle='city-picker')
+                                        label.label 省份/城镇/城市/区
+                                        .iconfont.iconxiala.city-picker-arrow
                                 .form-group
                                     input.form-control(type="text" value="" name="phone" id="address")
                                     label.label 详细地址
@@ -94,67 +91,76 @@ block content-main
 
 
 block script-main
-    script(src='js/Popt.js')
-    script(src='js/cityJson.js')
-    script(src='js/citySet.js')
+    script(src='js/address/city-picker.data.js')
+    script(src='js/address/city-picker.js')
     script.
         $(function () {
-            if($(".js-new-address").length){
-                if($('.js-new-address').hasClass('active')){
-                    $(".new-address-main").show();
+            var newAddress = $(".js-new-address");
+            var newAddressMain = $(".new-address-main");
+            if(newAddress.length){
+                if(newAddress.hasClass('active')){
+                    newAddressMain.show();
                 }
                 else{
-                    $(".new-address-main").hide();
+                    newAddressMain.hide();
                 }
-                $('.js-new-address').click(function () {
-                    if($(this).hasClass('active')){
-                        $(this).removeClass('active');
-                        $(".new-address-main").slideUp(500);
+                newAddress.click(function () {
+                    var _this = $(this);
+                    if(_this.hasClass('active')){
+                        _this.removeClass('active');
+                        newAddressMain.slideUp(500);
                     }else{
-                        $(this).addClass('active');
-                        $(".new-address-main").slideDown(500);
+                        _this.addClass('active');
+                        newAddressMain.slideDown(500);
                     }
                 })
             }
 
-            if ($(".js-use").hasClass('active')) {
-                $(".invoice-detail").show();
+            var used = $(".js-use");
+            var noUsed = $(".js-no-use");
+            var invoiceDetail = $(".invoice-detail");
+            if (used.hasClass('active')) {
+                invoiceDetail.show();
             } else {
-                $(".invoice-detail").hide();
+                invoiceDetail.hide();
             }
 
-            $(".js-no-use").click(function () {
+            noUsed.click(function () {
                 $(this).addClass('active');
-                $('.js-use').removeClass('active');
-                $(".invoice-detail").slideUp(500);
+                used.removeClass('active');
+                invoiceDetail.slideUp(500);
             })
-            $(".js-use").click(function () {
+            used.click(function () {
                 $(this).addClass('active');
-                $('.js-no-use').removeClass('active');
-                $(".invoice-detail").slideDown(500);
+                noUsed.removeClass('active');
+                invoiceDetail.slideDown(500);
             })
 
-            if($(".js-other").hasClass('active')){
-                $(".company-box").show();
+            var other = $(".js-other");
+            var personal = $(".js-personal");
+            var companyBox = $(".company-box");
+            if(other.hasClass('active')){
+                companyBox.show();
             }else{
-                $(".company-box").hide();
+                companyBox.hide();
             }
-            $(".js-personal").click(function () {
+            personal.click(function () {
                 $(this).addClass('active');
-                $('.js-other').removeClass('active');
-                $(".company-box").slideUp(500);
+                other.removeClass('active');
+                companyBox.slideUp(500);
             })
-            $(".js-other").click(function () {
+            other.click(function () {
                 $(this).addClass('active');
-                $('.js-personal').removeClass('active');
-                $(".company-box").slideDown(500);
+                personal.removeClass('active');
+                companyBox.slideDown(500);
             })
 
             $("input").bind('blur', function () {
-                if ($(this).val()) {
-                    $(this).addClass("form-textbox-entered")
+                var _this = $(this);
+                if (_this.val()) {
+                    _this.addClass("form-textbox-entered")
                 } else {
-                    $(this).removeClass("form-textbox-entered")
+                    _this.removeClass("form-textbox-entered")
                 }
             })
 
@@ -162,6 +168,10 @@ block script-main
                 SelCity(this, e);
                 console.log("inout", $(this).val(), new Date())
             });
+
+            $('#city-picker3').bind('blur', function () {
+                $(this).addClass("form-textbox-entered")
+            })
 
         })
 
