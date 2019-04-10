@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>个人中心</title>
+    <title>产品详情</title>
     <link rel="stylesheet" href="css/vendor.css">
     <script src="js/plugins/adaptive.js"></script>
     <script>
@@ -70,7 +70,7 @@
                         <div class="close-icon js-close-icon"><img src="images/close-icon.png"></div>
                     </div>
                     <div class="list-box">
-                        <div class="list-item">
+                        <div class="list-item active">
                             <div class="list-name js-list-name"><a href="index.html">首页</a></div>
                         </div>
                         <div class="list-item">
@@ -132,102 +132,62 @@
             </div>
         </div>
     </div>
-    <div class="personal-center">
-        <div class="container">
-            <div class="personal-top d-flex justify-content-between align-items-center">
-                <h4>个人中心</h4><a class="logout" href="javascript:;"><span>退出登录</span></a>
-            </div>
-            <div class="personal-info">
-                <div class="personal-name">欢迎来到皂石</div>
-                <div class="personal-phone">17521035241</div>
+    <div class="product-detail">
+        <div class="product-top js-fixed-top">
+            <div class="container d-flex align-items-center justify-content-between">
+                <div class="product-name">墨域·天然皂石新食器</div>
+                <div class="product-top-r d-flex align-items-center"><a href="javascript:;">概览</a><a href="javascript:;">工艺</a><a href="javascript:;">价格</a><a class="now-buy btn" href="javascript:;">立即购买</a></div>
             </div>
         </div>
-        <div class="personal-order">
-            <div class="container">
-                <div class="title d-flex align-items-end">
-                    <h5>你的订单</h5><a class="more" href="个人中心-订单列表.html"><span>查看更多</span></a>
-                </div>
-                <div class="order-list row">
-                    <div class="col-md-8 col-sm-12 col-12"><a class="list-item" href="订单详情-待支付.html">
-                            <div class="order-img">
-                                <div class="img lazyload" data-src="images/product.png"></div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-status">待支付</div>
-                                <div class="order-date">2019 / 03 / 10</div>
-                            </div>
-                        </a></div>
-                    <div class="col-md-8 col-sm-12 col-12"><a class="list-item" href="订单详情-待发货.html">
-                            <div class="order-img">
-                                <div class="img lazyload" data-src="images/product.png"></div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-status">待发货</div>
-                                <div class="order-date">2019 / 03 / 10</div>
-                            </div>
-                        </a></div>
-                    <div class="col-md-8 col-sm-12 col-12"><a class="list-item" href="订单详情-已送达.html">
-                            <div class="order-img">
-                                <div class="img lazyload" data-src="images/product.png"></div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-status">已送达</div>
-                                <div class="order-date">2019 / 03 / 10</div>
-                            </div>
-                        </a></div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="account-settings row">
-                <div class="col-md-8 col-5 first">
-                    <h5>账户设置</h5>
-                    <p>送货</p><a class="edit js-edit" href="javascript:;"><span>编辑</span></a>
-                </div>
-                <div class="col-md-8 col-12 address">
-                    <div class="a-title">送货地址：</div>
-                    <div class="txt">
-                        <p>上海，虹口区</p>
-                        <p>广粤路835弄，1号楼601室</p>
+        <div class="product-wrapper js-scroll">
+            <div class="scroll-container-horizontal">
+                <div class="main clearfix">
+                    <section class="section section-banner" style="background-image:url(images/img_15.jpg)">
+                        <div class="name">墨域·墨脱石锅（中）</div>
+                        <div class="text">拥有一口正宗好料墨脱皂石锅，重新创造美食！</div>
+                        <div class="tips"><span>自然不粘锅</span><span>独一无二</span><span>天然保温</span><span>皂石手工艺打磨</span></div>
+                        <div class="price">RMB 3600.00</div>
+                        <div class="play d-inline-flex js-play">观看完整视频<div class="icon"></div>
+                        </div>
+                    </section>
+                    <section class="section section-swiper swiper-container js-pro-swiper pc-show">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/img_11.jpg" height="100%"></div>
+                            <div class="swiper-slide"><img src="images/img_11.jpg" height="100%"></div>
+                            <div class="swiper-slide"><img src="images/img_11.jpg" height="100%"></div>
+                            <div class="swiper-slide"><img src="images/img_11.jpg" height="100%"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </section>
+                    <section class="section"><img class="pc-show" src="images/img_09.jpg" height="100%"></section>
+                    <section class="section"><img class="pc-show" src="images/img_10.jpg" height="100%"></section>
+                    <section class="section"><img class="pc-show" src="images/img_12.jpg" height="100%"></section>
+                    <section class="section"><img class="pc-show" src="images/img_13.jpg" height="100%"></section>
+                    <section class="section"><img class="pc-show" src="images/img_14.jpg" height="100%"></section>
+                    <div class="mobile-show">
+                        <div class="section"><img src="images/img_09.jpg" height="100%"><img src="images/img_10.jpg" height="100%"><img src="images/img_12.jpg" height="100%"><img src="images/img_13.jpg" height="100%"><img src="images/img_14.jpg" height="100%"></div>
                     </div>
+                    <section class="last js-last">
+                        <div class="container d-flex">
+                            <div class="list-item text-center"><i class="iconfont iconwentifankui"></i>
+                                <div class="l-title">获得购买帮助</div>
+                                <p>有问题吗？致电 400-800-1098<br>联系我们</p><a class="more" href="javascript:;"></a>
+                            </div>
+                            <div class="list-item text-center"><i class="iconfont iconchange-consulta"></i>
+                                <div class="l-title">防伪查询</div>
+                                <p>您可以关注“皂石食器”公众号<br>验证产品</p><a class="more" href="javascript:;">进一步了解<i class="iconfont iconarrow-right-copy-copy"></i></a>
+                            </div>
+                            <div class="list-item text-center"><i class="iconfont icongoumai"></i>
+                                <div class="l-title">购买说明</div>
+                                <p>您可以通过帮助中心进一步了解<br>购买相关说明</p><a class="more" href="javascript:;">进一步了解<i class="iconfont iconarrow-right-copy-copy"></i></a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="col-md-8 col-7 info">
-                    <div class="a-title">联系信息：</div>
-                    <div class="txt">
-                        <p>王泽祥</p>
-                        <p>17521035241</p>
-                    </div>
-                </div>
-            </div>
-            <div class="password-security">
-                <h5>密码安全</h5>
-                <btn class="btn password-btn js-reset-password" type="btn">设置新的登录密码</btn>
             </div>
         </div>
     </div>
-    <div class="password-layer" id="passwordBox" style="display:none">
-        <div class="title">设置新的登录密码</div>
-        <form class="form">
-            <div class="form-group"><input class="form-control" type="password" name="password" id="password"> <label class="label">新的密码</label></div>
-            <div class="form-group"><input class="form-control" type="text" name="phone" id="phone">
-                <div class="send-code btn js-send">发送验证码</div><label class="label">您的当前手机号为</label>
-            </div>
-            <div class="form-group"><input class="form-control" type="password" name="code" id="code"> <label class="label">输入验证码</label></div>
-            <div class="form-btn row justify-content-between"><button class="btn reset col-10 js-close-layer" type="reset">取消</button> <button class="btn submit col-13" type="submit">确定修改</button></div>
-        </form>
-    </div>
-    <div class="edit-layer" id="editBox" style="display:none">
-        <div class="title">设置新的登录密码</div>
-        <form class="form">
-            <div class="form-group"><input class="form-control" type="text" name="" id="name"> <label class="label">您的姓名</label></div>
-            <div class="form-group"><input class="form-control" type="text" name="" id="phone1"> <label class="label">您的电话</label></div>
-            <div class="form-group">
-                <div class="form-control"></div><label class="label">省份/城镇/城市/区</label>
-            </div>
-            <div class="form-group"><input class="form-control" type="text" name="" id="address"> <label class="label">详细地址</label></div>
-            <div class="form-btn row justify-content-between"><button class="btn reset col-10 js-close-layer" type="reset">取消</button> <button class="btn submit col-13" type="submit">保存并使用</button></div>
-        </form>
-    </div>
+    <div class="video-layer" style="display:none"><video id="video" width="100%" controls src="/video/01.mp4" preload="auto" type="video/mp4"></video></div>
     <footer class="footer">
         <div class="footer-top d-flex justify-content-between row">
             <div class="link-us">
@@ -285,44 +245,128 @@
     </script>
     <script>
         $(function() {
-            $('.js-reset-password').click(function() {
+            var $windowWidth = $(window).width();
+            var $windowHeight = $(window).height();
+            var $video = $("#video");
+            var videoArea = '60%'
+            if ($windowWidth < 769) {
+                videoArea = '90%'
+            } else {
+                videoArea = '60%'
+            }
+            $(".js-play").click(function() {
                 layer.open({
-                    title: '',
+                    title: "",
                     type: 1,
-                    area: ['8rem', '6.4rem'],
-                    content: $('#passwordBox'),
-                    shade: 0.4,
-                    closeBtn: 0,
+                    area: videoArea,
+                    content: $(".video-layer"),
+                    shade: 0.7,
                     success: function() {
-                        $('.js-close-layer').click(function() {
-                            $("input").removeClass("form-textbox-entered");
-                            layer.closeAll();
+                        $(".layui-layer").css({
+                            "background-color": "transparent"
                         })
+                        $video[0].play(); // 播放
+                    },
+                    cancel: function() {
+                        $video[0].pause();
                     }
-                })
+                });
             })
-            $('.js-edit').click(function() {
-                layer.open({
-                    title: '',
-                    type: 1,
-                    area: ['8rem', '7.5rem'],
-                    content: $('#editBox'),
-                    shade: 0.4,
-                    closeBtn: 0,
-                    success: function() {
-                        $('.js-close-layer').click(function() {
-                            $("input").removeClass("form-textbox-entered");
-                            layer.closeAll();
-                        })
+            var $product = new Swiper('.js-pro-swiper', {
+                autoplay: true,
+                loop: true,
+                direction: 'vertical',
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        direction: 'horizontal',
                     }
-                })
-            })
-            $("input").bind('blur', function() {
-                if ($(this).val()) {
-                    $(this).addClass("form-textbox-entered")
-                } else {
-                    $(this).removeClass("form-textbox-entered")
                 }
+            })
+            var pcScroll = function() {
+                var $scoll = $(".js-scroll");
+                var $swiper = $('.js-pro-swiper');
+                var $scrollHorizontal = $scoll.find(".scroll-container-horizontal");
+                var $banner = $scrollHorizontal.find(".section-banner");
+                var $fixedTop = $(".js-fixed-top");
+                var $header = $(".zs-header");
+                var $scrollTop = parseInt($(this).scrollTop());
+                if ($windowWidth < 769) {
+                    return false
+                } else {
+                    var $proImgWidth = parseInt($swiper.find('img').width())
+                    $swiper.css({
+                        flex: '0 0' + $proImgWidth + 'px',
+                        width: $proImgWidth,
+                        minWidth: $proImgWidth
+                    })
+                    var $width = 0;
+                    var $fixedHeight = parseInt($fixedTop.height());
+                    var $headerHeight = parseInt($header.height());
+                    var $footerHeight = $(".footer").height();
+                    $banner.css({
+                        flex: '0 0' + $windowWidth + 'px',
+                        width: $windowWidth,
+                        minWidth: $windowWidth
+                    })
+                    $(".last").css({
+                        flex: '0 0' + $windowWidth + 'px',
+                        width: $windowWidth,
+                        minWidth: $windowWidth
+                    })
+                    $(".section").each(function(n, ele) {
+                        var _this = $(ele);
+                        $width += parseInt(_this.width());
+                    })
+                    $(".product-detail").height($width + $windowHeight);
+                    $scrollHorizontal.find(".main").width($width)
+
+                    function scrollFun() {
+                        if ($scrollTop <= $headerHeight) {
+                            $(".zs-header").css({
+                                transform: 'translateY(-' + $scrollTop + 'px)'
+                            })
+                            if ($fixedTop.hasClass('active')) {
+                                $fixedTop.removeClass("active");
+                            }
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-0px)'
+                            })
+                        } else if ($scrollTop <= $width + $footerHeight - $windowHeight) {
+                            $(".zs-header").css({
+                                transform: 'translateY(-' + $headerHeight + 'px)'
+                            })
+                            if (!$fixedTop.hasClass('active')) {
+                                $fixedTop.addClass("active");
+                            }
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-' + ($scrollTop - $fixedHeight) + 'px)'
+                            })
+                            $('.js-last').css({
+                                transform: 'translateY(-0px)'
+                            })
+                        } else {
+                            $scrollHorizontal.find(".main").css({
+                                transform: 'translateX(-' + $width + 'px)'
+                            })
+                            $('.js-last').css({
+                                transform: 'translateY(-' + ($scrollTop - $width) + 'px)'
+                            })
+                        }
+                    }
+                    scrollFun()
+                    $(window).scroll(function() {
+                        $scrollTop = parseInt($(this).scrollTop());
+                        scrollFun()
+                    })
+                }
+            }
+            pcScroll();
+            $(window).resize(function() {
+                pcScroll();
             })
         })
     </script>

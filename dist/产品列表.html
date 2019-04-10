@@ -1,0 +1,423 @@
+<!-- 订单列表-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>产品列表</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <script src="js/plugins/adaptive.js"></script>
+    <script>
+        var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
+        if (windowwidth < 769) {
+            window['adaptive'].desinWidth = 750;
+            window['adaptive'].baseFont = 14;
+            window['adaptive'].maxWidth = 750;
+            window['adaptive'].minWidth = 320;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        } else {
+            window['adaptive'].desinWidth = 1500;
+            window['adaptive'].baseFont = 16;
+            window['adaptive'].maxWidth = 1500;
+            window['adaptive'].minWidth = 1200;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].init();
+        }
+    </script>
+    <!--[if lte IE 9]>
+    <script src="js/plugins/respond.min.js"></script>
+    <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <div class="zs-header">
+        <div class="header">
+            <div class="header-box d-flex align-items-center justify-content-between">
+                <div class="header-left clearfix">
+                    <div class="catalog float-left">
+                        <div class="icon iconfont iconmenu js-menu"></div>
+                        <div class="title">目录</div>
+                    </div><a class="d-block float-left" href="javascript:;">
+                        <div class="phone">
+                            <div class="icon iconfont icondianhua"></div>
+                            <div class="title">400-800-1098</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-center"><a class="logo d-block" href="index.html"><img src="../images/logo.png"></a></div>
+                <div class="header-right">
+                    <div class="search js-search float-right"><a class="iconfont iconsousuo" href="搜索结果页.html"></a></div>
+                    <div class="user float-right"><a class="d-block" href="javascript:;">
+                            <div class="iconfont iconzhuce"></div>
+                        </a>
+                        <div class="user-text"><a class="login d-block" href="登录.html">登录</a><a class="register d-block" href="注册.html">注册</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix mb-head"><a class="pull-left logo-box" href="index.html"><img src="images/logo.png"></a>
+            <div class="pull-right nav-icon js-nav-icon">
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+                <div class="icon-item"></div>
+            </div>
+            <div class="mb-aside-nav">
+                <div class="mb-aside-nav-left"></div>
+                <div class="nav-list">
+                    <div class="nav-head clearfix">
+                        <div class="close-icon js-close-icon"><img src="images/close-icon.png"></div>
+                    </div>
+                    <div class="list-box">
+                        <div class="list-item">
+                            <div class="list-name js-list-name"><a href="index.html">首页</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">关于我们</div>
+                            <div class="sub-list"><a class="item" href="introduce.html">企业介绍</a></div>
+                            <div class="sub-list"><a class="item" href="aptitude.html">公司资质</a></div>
+                            <div class="sub-list"><a class="item" href="news.html">新闻动态</a></div>
+                            <div class="sub-list"><a class="item" href="recruit.html">人才招聘</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">联系我们</div>
+                            <div class="sub-list"><a class="item" href="customer.html">联系客服</a></div>
+                            <div class="sub-list"><a class="item" href="cooperation.html">商务合作</a></div>
+                            <div class="sub-list"><a class="item" href="media.html">媒体联系</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">帮助中心</div>
+                            <div class="sub-list"><a class="item" href="help.html">线下门店</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">防伪查询</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">购买说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">物流说明</a></div>
+                            <div class="sub-list"><a class="item" href="help.html">售后服务</a></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-name js-list-name">皂石食器</div>
+                            <div class="sub-list"><a class="item" href="mouyu.html">墨域系列</a></div>
+                            <div class="sub-list"><a class="item" href="mogong.html">墨工系列</a></div>
+                            <div class="sub-list"><a class="item" href="moyun.html">墨韵系列</a></div>
+                            <div class="sub-list"><a class="item" href="custom.html">定制</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backtop js-backtop">
+        <div class="iconfont iconjiantou1"></div>
+    </div>
+    <div class="header-menu">
+        <div class="main">
+            <div class="line1 line"></div>
+            <div class="line2 line"></div>
+            <div class="line3 line"></div>
+            <div class="nav">
+                <div class="nav-item"><a class="home-title" href="index.html">首页</a></div>
+                <div class="nav-item">
+                    <div class="nav-title">产品列表</div><a class="nav-link" href="mouyu.html">墨域</a><a class="nav-link" href="mogong.html">墨工</a><a class="nav-link" href="moyun.html">墨韵</a><a class="nav-link" href="custom.html">定制</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-title">帮助中心</div><a class="nav-link" href="企业介绍.html">企业介绍</a><a class="nav-link" href="公司资质.html">公司资质</a><a class="nav-link" href="新闻动态.html">新闻动态</a><a class="nav-link" href="人才招聘.html">人才招聘</a><a class="nav-link" href="联系我们.html">联系我们</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-title">关于我们</div><a class="nav-link" href="help.html">线下门店</a><a class="nav-link" href="help.html">防伪查询</a><a class="nav-link" href="help.html">购买说明</a><a class="nav-link" href="help.html">物流说明</a><a class="nav-link" href="help.html">售后服务</a>
+                </div>
+            </div>
+            <div class="close-menu text-center">
+                <div class="close-btn js-close"><i class="iconfont iconguanbi"></i></div>
+                <p>关闭菜单</p>
+            </div>
+        </div>
+    </div>
+    <div class="zs-product">
+        <div class="banner">
+            <div class="title">皂石·墨域系</div>
+            <div class="sub-title">探索墨脱石锅</div>
+        </div>
+        <div class="content1">
+            <div class="zs-product-content">
+                <div class="nav-main">
+                    <div class="nav-box row">
+                        <div class="nav-item active"><a href="javascript:;">墨域<span class="circle">·</span></a></div>
+                        <div class="nav-item"><a href="javascript:;">墨工<span class="circle">·</span></a></div>
+                        <div class="nav-item"><a href="javascript:;">墨韵<span class="circle">·</span></a></div>
+                        <div class="nav-item"><a href="javascript:;">定制<span class="circle">·</span></a></div>
+                        <div class="nav-item"><a href="javascript:;">所有产品</a></div>
+                    </div>
+                </div>
+                <div class="zs-product-main">
+                    <div class="zs-product-item row">
+                        <div class="item-left col-md-16">
+                            <div class="top">
+                                <div class="title-box">
+                                    <div class="title">墨脱石锅产品名</div>
+                                    <div class="sub-title">/ 墨域</div>
+                                </div>
+                                <div class="text">
+                                    <p>墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。</p>
+                                </div>
+                            </div>
+                            <div class="bottom row"><a class="d-block buy-btn" href="javascript:;">立即购买</a><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a></div>
+                        </div>
+                        <div class="item-right col-md-8"><img class="prd-img" src="/images/product_img_01.png"></div>
+                    </div>
+                    <div class="zs-product-item row">
+                        <div class="item-left col-md-16">
+                            <div class="top">
+                                <div class="title-box">
+                                    <div class="title">墨脱石锅产品名</div>
+                                    <div class="sub-title">/ 墨域</div>
+                                </div>
+                                <div class="text">
+                                    <p>墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。</p>
+                                </div>
+                            </div>
+                            <div class="bottom row"><a class="d-block buy-btn" href="javascript:;">立即购买</a><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a></div>
+                        </div>
+                        <div class="item-right col-md-8"><img class="prd-img" src="/images/product_img_01.png"></div>
+                    </div>
+                    <div class="zs-product-item row">
+                        <div class="item-left col-md-16">
+                            <div class="top">
+                                <div class="title-box">
+                                    <div class="title">墨脱石锅产品名</div>
+                                    <div class="sub-title">/ 墨域</div>
+                                </div>
+                                <div class="text">
+                                    <p>墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。</p>
+                                </div>
+                            </div>
+                            <div class="bottom row"><a class="d-block buy-btn" href="javascript:;">立即购买</a><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a></div>
+                        </div>
+                        <div class="item-right col-md-8"><img class="prd-img" src="/images/product_img_01.png"></div>
+                    </div>
+                    <div class="zs-product-item row">
+                        <div class="item-left col-md-16">
+                            <div class="top">
+                                <div class="title-box">
+                                    <div class="title">墨脱石锅产品名</div>
+                                    <div class="sub-title">/ 墨域</div>
+                                </div>
+                                <div class="text">
+                                    <p>墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。</p>
+                                </div>
+                            </div>
+                            <div class="bottom row"><a class="d-block buy-btn" href="javascript:;">立即购买</a><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a></div>
+                        </div>
+                        <div class="item-right col-md-8"><img class="prd-img" src="/images/product_img_01.png"></div>
+                    </div>
+                </div>
+                <div class="pagination-box">
+                    <ul class="pagination justify-content-center">
+                        <li class="prev-page"><a href="javascript:;"></a></li>
+                        <li class="active"><a href="javascript:;">1</a></li>
+                        <li><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;">3</a></li>
+                        <li><a href="javascript:;">4</a></li>
+                        <li class="next-page"><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content2">
+            <div class="zs-product-content">
+                <div class="zs-product-title row">
+                    <div class="left"><img src="/images/icon_yuan_46.png"></div>
+                    <div class="right">客户发现</div>
+                </div>
+                <div class="zs-content2-main">
+                    <div class="swiper-container-content2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="content2-title">“墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。”</div>
+                                    <div class="fuhao">”</div>
+                                    <div class="avatar"><img class="avatar-img" src="/images/avatar_01.png">
+                                        <div class="name">Jimmy Chin</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="content2-title">“墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。”</div>
+                                    <div class="fuhao">”</div>
+                                    <div class="avatar"><img class="avatar-img" src="/images/avatar_01.png">
+                                        <div class="name">Jimmy Chin</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="content2-title">“墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。”</div>
+                                    <div class="fuhao">”</div>
+                                    <div class="avatar"><img class="avatar-img" src="/images/avatar_01.png">
+                                        <div class="name">Jimmy Chin</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="content2-title">“墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。”</div>
+                                    <div class="fuhao">”</div>
+                                    <div class="avatar"><img class="avatar-img" src="/images/avatar_01.png">
+                                        <div class="name">Jimmy Chin</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev iconfont iconarrow-right-copy-copy swiper-btn"></div>
+                    <div class="swiper-button-next iconfont iconarrow-right-copy-copy swiper-btn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content3">
+            <div class="zs-product-content">
+                <div class="zs-product-title row">
+                    <div class="left"><img src="/images/icon_yuan_46.png"></div>
+                    <div class="right">产品体验</div>
+                </div>
+                <div class="zs-content3-main">
+                    <div class="swiper-container-content3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="item-img" style="background-image:url(/images/product_01.jpg)"></div>
+                                    <div class="item-info">
+                                        <div class="title">墨脱石锅炖煮料理</div>
+                                        <div class="text">墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。</div><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="item-img" style="background-image:url(/images/product_02.jpg)"></div>
+                                    <div class="item-info">
+                                        <div class="title">墨脱石锅炖煮料理</div>
+                                        <div class="text">墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。</div><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="item-img" style="background-image:url(/images/product_01.jpg)"></div>
+                                    <div class="item-info">
+                                        <div class="title">墨脱石锅炖煮料理</div>
+                                        <div class="text">墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。</div><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item-box">
+                                    <div class="item-img" style="background-image:url(/images/product_02.jpg)"></div>
+                                    <div class="item-info">
+                                        <div class="title">墨脱石锅炖煮料理</div>
+                                        <div class="text">墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。</div><a class="d-block read-more" href="javascript:;"><span>了解更多</span><span class="iconfont iconarrow-right-copy-copy"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-content3-prev iconfont iconarrow-right-copy-copy swiper-btn"></div>
+                    <div class="swiper-button-content3-next iconfont iconarrow-right-copy-copy swiper-btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top d-flex justify-content-between row">
+            <div class="link-us">
+                <div class="foot-title">联系我们</div>
+                <p class="d-flex align-items-center"><i class="iconfont icondizhi"></i><span>上海市闵行区颛兴东路1277弄65栋</span></p>
+                <p class="d-flex align-items-center"><i class="iconfont iconxinfeng"></i><a href="mailTo:motuozaoshi@chsvc.com">motuozaoshi@chsvc.com</a></p>
+                <p class="d-flex align-items-center"><i class="iconfont icondianhua"></i><a href="Tel:motuozaoshi@chsvc.com">400-800-1098</a></p>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <div class="foot-title">关于我们</div><a href="javascript:;">企业介绍</a><a href="javascript:;">公司资质</a><a href="javascript:;">新闻动态</a><a href="javascript:;">人才招聘</a>
+                </li>
+                <li>
+                    <div class="foot-title">联系我们</div><a href="javascript:;">联系客服</a><a href="javascript:;">商务合作</a><a href="javascript:;">媒体联系</a>
+                </li>
+                <li>
+                    <div class="foot-title">帮助中心</div><a href="javascript:;">线下门店</a><a href="javascript:;">防伪查询</a><a href="javascript:;">购买说明</a><a href="javascript:;">物流说明</a><a href="javascript:;">售后服务</a>
+                </li>
+                <li>
+                    <div class="foot-title">皂石食器</div><a href="javascript:;">墨域系列</a><a href="javascript:;">墨工系列</a><a href="javascript:;">墨韵系列</a><a href="javascript:;">定制</a>
+                </li>
+            </ul>
+            <div class="weixin">
+                <div class="code"><img src="images/serve_code.png" width="100%">
+                    <p class="text-center">皂石服务号</p>
+                </div>
+                <div class="code"><img src="images/subscribe_code.png" width="100%">
+                    <p class="text-center">皂石订阅号</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy text-center">Copyright © 2013-2019 moyu All Right Reserved. 粤ICP备xxxxxxxx号</div>
+    </footer>
+    <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/vendor.js" merge="true"></script>
+    <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/lazyload.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function() {
+            $(".js-menu").click(function() {
+                $(".header-menu").slideToggle();
+                if ($("body").hasClass("active")) {
+                    $("body").removeClass("active");
+                } else {
+                    $("body").addClass("active");
+                }
+            })
+            $(".js-close").click(function() {
+                $(".header-menu").slideUp();
+                $("body").removeClass("active");
+            })
+        })
+    </script>
+    <script>
+        $(function() {
+            var mySwiper = new Swiper('.swiper-container-content2', {
+                slidesPerView: 2,
+                spaceBetween: 50,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 1,
+                        slidesPerGroup: 1,
+                        autoplay: true
+                    }
+                }
+            })
+
+            var mySwiperTwo = new Swiper('.swiper-container-content3', {
+                slidesPerView: 2,
+                spaceBetween: 50,
+                navigation: {
+                    nextEl: '.swiper-button-content3-next',
+                    prevEl: '.swiper-button-content3-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 1,
+                        slidesPerGroup: 1,
+                        autoplay: true
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

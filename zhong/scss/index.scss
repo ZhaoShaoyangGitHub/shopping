@@ -336,6 +336,8 @@ body {
   display: none;
 }
 .footer {
+  position: relative;
+  z-index: 99;
   .footer-top {
     max-width: rem(1650);
     margin: 0 auto;
@@ -420,9 +422,6 @@ body {
 
 //移动端头部
 @media (max-width: 769px){
-  .zs-header{
-    margin-bottom: rem(120);
-  }
   .header{
     display: none;
   }
@@ -1054,6 +1053,10 @@ body {
 
 //帮助中心
 .zs-help{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   background-color: #f8f8f8;
   padding: rem(80) 0 rem(100);
   .zs-help-content{
@@ -1255,8 +1258,12 @@ body {
 
 //补充送货信息,选择新地址，普通发票
 .zs-delivery{
+  margin-top: rem(150);
   background-color: #f8f8f8;
   padding: rem(40) 0 rem(100);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .delivery-content{
     padding-top: rem(80);
     .address-box{
@@ -1710,8 +1717,12 @@ body {
 
 //支付订单
 .zs-payment-order{
+  margin-top: rem(150);
   background-color: #f8f8f8;
   padding: rem(40) 0 rem(100);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .payment-order-content{
     padding-top: rem(75);
     .content1{
@@ -2156,6 +2167,10 @@ body {
 
 //新闻动态
 .zs-news{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .zs-news-main{
     background-color: #f8f8f8;
     padding: rem(80) 0 rem(100);
@@ -2415,8 +2430,12 @@ body {
 
 //新闻详情
 .zs-news-detail{
+  margin-top: rem(150);
   background-color: #f8f8f8;
   padding-bottom: rem(100);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .news-detail-box{
     background-color: #ffffff;
     padding: rem(75) rem(100);
@@ -2570,6 +2589,10 @@ body {
 
 //人才招聘
 .zs-join{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .resume {
     padding-bottom: rem(50);
     background-color: #fcfcfc;
@@ -2723,6 +2746,10 @@ body {
 
 //联系我们
 .zs-contact{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .zs-contact-box{
     background-color: #f8f8f8;
     padding: rem(160) 0 rem(170);
@@ -2867,6 +2894,10 @@ body {
 .zs-company-introduce{
   padding-bottom: rem(145);
   background-color: #f8f8f8;
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .zs-title{
     font-size: rem(40);
     padding: rem(60) 0;
@@ -3063,6 +3094,10 @@ body {
 
 //公司资质
 .zs-aptitude{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .zs-aptitude-box{
     padding: rem(80) 0 rem(100);
     background-color: #f8f8f8;
@@ -3136,12 +3171,35 @@ body {
 
 //产品列表
 .zs-product{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .banner{
     width: 100%;
     height: rem(700);
     background: url("../images/product_banner.jpg") no-repeat center/cover;
+    .title{
+      font-size: rem(60);
+      font-weight: bold;
+      padding-top: rem(160);
+      text-align: center;
+    }
+    .sub-title{
+      font-size: rem(30);
+      margin-top: rem(20);
+      text-align: center;
+    }
     @media (max-width: 567px){
       height: rem(300);
+      .title{
+        padding-top: rem(30);
+        font-size: rem(30);
+      }
+      .sub-title{
+        font-size: rem(20);
+        margin-top: rem(5);
+      }
     }
   }
   .zs-product-content{
@@ -3354,6 +3412,7 @@ body {
             font-family: 'Impact';
             display: inline;
             height: rem(140);
+            text-align: center;
           }
           .avatar{
             display: flex;
@@ -3734,6 +3793,10 @@ body {
 
 //搜索结果页
 .zs-search{
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .content1{
     background-color: #f8f8f8;
     padding: rem(80) 0;
@@ -3845,5 +3908,20 @@ body {
         }
       }
     }
+  }
+}
+
+.pc-show{
+  display: block;
+}
+.mobile-show{
+  display: none;
+}
+@media (max-width: 567px) {
+  .pc-show{
+    display: none;
+  }
+  .mobile-show{
+    display: block;
   }
 }

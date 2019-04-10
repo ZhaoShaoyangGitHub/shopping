@@ -35,7 +35,7 @@
     <div class="zs-header">
         <div class="header">
             <div class="header-box d-flex align-items-center justify-content-between">
-                <div class="header-left float-left">
+                <div class="header-left clearfix">
                     <div class="catalog float-left">
                         <div class="icon iconfont iconmenu js-menu"></div>
                         <div class="title">目录</div>
@@ -46,15 +46,13 @@
                         </div>
                     </a>
                 </div>
-                <div class="header-center float-left"><a class="logo d-block" href="javascript:;"><img src="../images/logo.png"></a></div>
-                <div class="header-right float-right">
-                    <div class="search js-search float-right">
-                        <div class="iconfont iconsousuo"></div>
-                    </div>
+                <div class="header-center"><a class="logo d-block" href="index.html"><img src="../images/logo.png"></a></div>
+                <div class="header-right">
+                    <div class="search js-search float-right"><a class="iconfont iconsousuo" href="搜索结果页.html"></a></div>
                     <div class="user float-right"><a class="d-block" href="javascript:;">
                             <div class="iconfont iconzhuce"></div>
                         </a>
-                        <div class="user-text"><a class="login d-block" href="javascript:;">登录</a><a class="register d-block" href="javascript:;">注册</a></div>
+                        <div class="user-text"><a class="login d-block" href="登录.html">登录</a><a class="register d-block" href="注册.html">注册</a></div>
                     </div>
                 </div>
             </div>
@@ -113,16 +111,19 @@
     </div>
     <div class="header-menu">
         <div class="main">
+            <div class="line1 line"></div>
+            <div class="line2 line"></div>
+            <div class="line3 line"></div>
             <div class="nav">
                 <div class="nav-item"><a class="home-title" href="index.html">首页</a></div>
                 <div class="nav-item">
-                    <div class="nav-title">产品列表</div><a class="nav-link" href="javascript:;">墨域</a><a class="nav-link" href="javascript:;">墨工</a><a class="nav-link" href="javascript:;">墨韵</a><a class="nav-link" href="javascript:;">定制</a>
+                    <div class="nav-title">产品列表</div><a class="nav-link" href="mouyu.html">墨域</a><a class="nav-link" href="mogong.html">墨工</a><a class="nav-link" href="moyun.html">墨韵</a><a class="nav-link" href="custom.html">定制</a>
                 </div>
                 <div class="nav-item">
-                    <div class="nav-title">帮助中心</div><a class="nav-link" href="javascript:;">企业介绍</a><a class="nav-link" href="javascript:;">公司资质</a><a class="nav-link" href="javascript:;">新闻动态</a><a class="nav-link" href="javascript:;">人才招聘</a><a class="nav-link" href="javascript:;">联系我们</a>
+                    <div class="nav-title">帮助中心</div><a class="nav-link" href="企业介绍.html">企业介绍</a><a class="nav-link" href="公司资质.html">公司资质</a><a class="nav-link" href="新闻动态.html">新闻动态</a><a class="nav-link" href="人才招聘.html">人才招聘</a><a class="nav-link" href="联系我们.html">联系我们</a>
                 </div>
                 <div class="nav-item">
-                    <div class="nav-title">关于我们</div><a class="nav-link" href="javascript:;">线下门店 </a><a class="nav-link" href="javascript:;">防伪查询</a><a class="nav-link" href="javascript:;">购买说明</a><a class="nav-link" href="javascript:;">物流说明</a><a class="nav-link" href="javascript:;">售后服务</a>
+                    <div class="nav-title">关于我们</div><a class="nav-link" href="help.html">线下门店</a><a class="nav-link" href="help.html">防伪查询</a><a class="nav-link" href="help.html">购买说明</a><a class="nav-link" href="help.html">物流说明</a><a class="nav-link" href="help.html">售后服务</a>
                 </div>
             </div>
             <div class="close-menu text-center">
@@ -181,38 +182,40 @@
         </section>
         <div class="explore-section">
             <div class="title text-center">探索皂石</div>
-            <div class="main row">
-                <div class="col-md-8">
-                    <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_05.png" width="100%">
-                            <div class="bottom">
-                                <div class="b-title">墨域</div>
-                                <div class="more"><span>更多系列产品</span></div>
-                            </div>
-                        </a>
-                        <div class="tips"><a class="btn" href="javascript:;">炖锅</a><a class="btn" href="javascript:;">汤锅</a><a class="btn" href="javascript:;">炖锅</a></div>
-                        <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+            <div class="main">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_05.png" width="100%">
+                                <div class="bottom">
+                                    <div class="b-title">墨域</div>
+                                    <div class="more"><span>更多系列产品</span></div>
+                                </div>
+                            </a>
+                            <div class="tips"><a class="btn" href="javascript:;">炖锅</a><a class="btn" href="javascript:;">汤锅</a><a class="btn" href="javascript:;">炖锅</a></div>
+                            <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_06.png" width="100%">
-                            <div class="bottom">
-                                <div class="b-title">墨工</div>
-                                <div class="more"><span>更多系列产品</span></div>
-                            </div>
-                        </a>
-                        <div class="tips"><a class="btn" href="javascript:;">餐具</a><a class="btn" href="javascript:;">瓷盘</a><a class="btn" href="javascript:;">餐具</a></div>
-                        <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+                    <div class="col-md-8">
+                        <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_06.png" width="100%">
+                                <div class="bottom">
+                                    <div class="b-title">墨工</div>
+                                    <div class="more"><span>更多系列产品</span></div>
+                                </div>
+                            </a>
+                            <div class="tips"><a class="btn" href="javascript:;">餐具</a><a class="btn" href="javascript:;">瓷盘</a><a class="btn" href="javascript:;">餐具</a></div>
+                            <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_05.png" width="100%">
-                            <div class="bottom">
-                                <div class="b-title">墨韵</div>
-                                <div class="more"><span>更多系列产品</span></div>
-                            </div>
-                        </a>
-                        <div class="tips"><a class="btn" href="javascript:;">煎锅</a><a class="btn" href="javascript:;">奶锅</a><a class="btn" href="javascript:;">煎锅</a></div>
-                        <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+                    <div class="col-md-8">
+                        <div class="list-item"><a class="pro-content" href="javascript:;"><img src="images/img_05.png" width="100%">
+                                <div class="bottom">
+                                    <div class="b-title">墨韵</div>
+                                    <div class="more"><span>更多系列产品</span></div>
+                                </div>
+                            </a>
+                            <div class="tips"><a class="btn" href="javascript:;">煎锅</a><a class="btn" href="javascript:;">奶锅</a><a class="btn" href="javascript:;">煎锅</a></div>
+                            <div class="text-center"><a class="btn customized" href="javascript:;">定制</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,7 +241,7 @@
             </div>
         </div>
     </div>
-    <div class="video-layer" style="display:none"><video id="video" width="100%" controls src="/video/01.mp4" preload="auto" type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;" muted></video></div>
+    <div class="video-layer" style="display:none"><video id="video" width="100%" controls src="/video/01.mp4" preload="auto" type="video/mp4"></video></div>
     <footer class="footer">
         <div class="footer-top d-flex justify-content-between row">
             <div class="link-us">
@@ -281,16 +284,23 @@
     <script>
         $(function() {
             $(".js-menu").click(function() {
-                $(".header-menu").slideToggle()
+                $(".header-menu").slideToggle();
+                if ($("body").hasClass("active")) {
+                    $("body").removeClass("active");
+                } else {
+                    $("body").addClass("active");
+                }
             })
             $(".js-close").click(function() {
-                $(".header-menu").slideUp()
+                $(".header-menu").slideUp();
+                $("body").removeClass("active");
             })
         })
     </script>
     <script src="js/spark.min.js"></script>
     <script>
         $(function() {
+            var $video = $("#video");
             $(".js-play").click(function() {
                 layer.open({
                     title: "",
@@ -301,10 +311,10 @@
                         $(".layui-layer").css({
                             "background-color": "transparent"
                         })
-                        $("#video")[0].play(); // 播放
+                        $video[0].play(); // 播放
                     },
-                    close: function() {
-
+                    cancel: function() {
+                        $video[0].pause();
                     }
                 });
             })

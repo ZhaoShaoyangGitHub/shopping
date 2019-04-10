@@ -170,6 +170,10 @@
 
 .personal-center {
   background-color: #f8f8f8;
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .personal-top {
     padding: rem(50) 0 rem(20);
     border-bottom: 1px solid #bbbbbb;
@@ -1011,7 +1015,7 @@
               }
             }
           }
-          >.section {
+          .section {
             width: 100%;
             height: auto;
             >img {
