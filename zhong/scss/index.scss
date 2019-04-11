@@ -1483,10 +1483,15 @@ body {
               font-size: rem(18);
               color: #080808;
             }
+            .tap{
+              font-size: rem(14);
+              color: #101010;
+            }
           }
           .invoice-detail{
             padding: rem(25);
             background-color: #f0f0f0;
+            margin-bottom: rem(20);
             display: none;
             .title{
               font-size: rem(18);
@@ -1543,6 +1548,20 @@ body {
               }
             }
           }
+          .invoice-detail-zzs{
+            padding: rem(25);
+            background-color: #f0f0f0;
+            display: none;
+            .title{
+              font-size: rem(18);
+            }
+            .detail-main{
+              margin-top: rem(24);
+              .invoice-item{
+                background-color: #FFFFFF;
+              }
+            }
+          }
           .active{
             border: 2px #1d6650 solid;
           }
@@ -1557,6 +1576,11 @@ body {
               }
             }
             .invoice-detail{
+              .title{
+                font-size: rem(24);
+              }
+            }
+            .invoice-detail-zzs{
               .title{
                 font-size: rem(24);
               }

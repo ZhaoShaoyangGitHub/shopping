@@ -12,12 +12,20 @@
   color: #1c7acc;
   padding-right: rem(14);
   background: url("../images/icon_logout.png") no-repeat center right/rem(5);
+  @media (max-width: 567px) {
+    font-size: rem(20);
+    background: url("../images/icon_logout.png") no-repeat center right/rem(8);
+  }
 }
 
 .com-title {
   font-size: rem(30);
+  font-weight: bold;
   color: #080808;
   line-height: 1;
+  @media (max-width: 567px) {
+    font-size: rem(36);
+  }
 }
 
 .pagination {
@@ -214,6 +222,9 @@
       .more {
         @extend .com-more;
         line-height: rem(24);
+        @media (max-width: 567px) {
+          line-height: rem(30);
+        }
       }
     }
   }
@@ -238,6 +249,7 @@
     }
     .a-title {
       font-size: rem(18);
+      font-weight: bold;
       color: #080808;
       line-height: 1;
       margin-bottom: rem(24);
@@ -252,6 +264,26 @@
     }
     .info {
       padding-left: rem(20);
+    }
+    @media (max-width: 567px) {
+      .first {
+        >p {
+          font-size: rem(24);
+        }
+      }
+      .a-title{
+        font-size: rem(28);
+      }
+      .address {
+        .txt{
+          font-size: rem(24);
+        }
+      }
+      .info {
+        .txt{
+          font-size: rem(24);
+        }
+      }
     }
   }
   .password-security {

@@ -213,6 +213,24 @@
                                     <div class="form-group"><input class="form-control" type="text" name="tax" id="tax"> <label class="label">纳税人识别号 (可选)</label></div>
                                 </form>
                             </div>
+                            <div class="invoice-item js-use-zzs">
+                                <div class="use">增值税专用发票</div>
+                                <div class="tap">需要通过公司银行庄户转账付款</div>
+                            </div>
+                            <div class="invoice-detail-zzs">
+                                <form class="company-box d-block">
+                                    <div class="title">公司信息</div>
+                                    <div class="form-group"><input class="form-control" type="text" name="companysName" id="companysName"> <label class="label">公司注册名称</label></div>
+                                    <div class="form-group"><input class="form-control" type="text" name="taxzzs" id="taxzzs"> <label class="label">纳税人识别号</label></div>
+                                    <div class="form-group"><input class="form-control" type="text" name="detailAddress" id="detailAddress"> <label class="label">详细地址（包括省份/城镇/城市/区）</label></div>
+                                    <div class="form-group"><input class="form-control" type="text" name="companyPhone" id="companyPhone"> <label class="label">公司注册电话</label></div>
+                                </form>
+                                <form class="company-box d-block">
+                                    <div class="title">公司银行账户</div>
+                                    <div class="form-group"><input class="form-control" type="text" name="bankName" id="bankName"> <label class="label">开户行名称</label></div>
+                                    <div class="form-group"><input class="form-control" type="text" name="bankAccount" id="bankAccount"> <label class="label">银行账户</label></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -303,22 +321,34 @@
 
             var used = $(".js-use");
             var noUsed = $(".js-no-use");
+            var usedZzs = $(".js-use-zzs");
             var invoiceDetail = $(".invoice-detail");
+            var invoiceDetailZzs = $(".invoice-detail-zzs");
             if (used.hasClass('active')) {
                 invoiceDetail.show();
             } else {
                 invoiceDetail.hide();
             }
+            if (usedZzs.hasClass('active')) {
+                invoiceDetailZzs.show();
+            } else {
+                invoiceDetailZzs.hide();
+            }
 
             noUsed.click(function() {
-                $(this).addClass('active');
-                used.removeClass('active');
+                $(this).addClass('active').siblings().removeClass('active');
                 invoiceDetail.slideUp(500);
+                invoiceDetailZzs.slideUp(500);
             })
             used.click(function() {
-                $(this).addClass('active');
-                noUsed.removeClass('active');
+                $(this).addClass('active').siblings().removeClass('active');
                 invoiceDetail.slideDown(500);
+                invoiceDetailZzs.slideUp(500);
+            })
+            usedZzs.click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                invoiceDetailZzs.slideDown(500);
+                invoiceDetail.slideUp(500);
             })
 
             var other = $(".js-other");

@@ -84,6 +84,34 @@ block content-main
                                         label.label 纳税人识别号 (可选)
 
 
+                            .invoice-item.js-use-zzs
+                                .use 增值税专用发票
+                                .tap 需要通过公司银行庄户转账付款
+                            .invoice-detail-zzs
+                                form.company-box.d-block
+                                    .title 公司信息
+                                    .form-group
+                                        input.form-control(type="text" value="" name="companysName" id="companysName")
+                                        label.label 公司注册名称
+                                    .form-group
+                                        input.form-control(type="text" value="" name="taxzzs" id="taxzzs")
+                                        label.label 纳税人识别号
+                                    .form-group
+                                        input.form-control(type="text" value="" name="detailAddress" id="detailAddress")
+                                        label.label 详细地址（包括省份/城镇/城市/区）
+                                    .form-group
+                                        input.form-control(type="text" value="" name="companyPhone" id="companyPhone")
+                                        label.label 公司注册电话
+                                form.company-box.d-block
+                                    .title 公司银行账户
+                                    .form-group
+                                        input.form-control(type="text" value="" name="bankName" id="bankName")
+                                        label.label 开户行名称
+                                    .form-group
+                                        input.form-control(type="text" value="" name="bankAccount" id="bankAccount")
+                                        label.label 银行账户
+
+
                 .delivery-bottom.row
                     .btn-main.col-md-12
                         input.submit-btn(type="submit" value="继续支付订单")
@@ -118,22 +146,34 @@ block script-main
 
             var used = $(".js-use");
             var noUsed = $(".js-no-use");
+            var usedZzs = $(".js-use-zzs");
             var invoiceDetail = $(".invoice-detail");
+            var invoiceDetailZzs = $(".invoice-detail-zzs");
             if (used.hasClass('active')) {
                 invoiceDetail.show();
             } else {
                 invoiceDetail.hide();
             }
+            if (usedZzs.hasClass('active')) {
+                invoiceDetailZzs.show();
+            } else {
+                invoiceDetailZzs.hide();
+            }
 
             noUsed.click(function () {
-                $(this).addClass('active');
-                used.removeClass('active');
+                $(this).addClass('active').siblings().removeClass('active');
                 invoiceDetail.slideUp(500);
+                invoiceDetailZzs.slideUp(500);
             })
             used.click(function () {
-                $(this).addClass('active');
-                noUsed.removeClass('active');
+                $(this).addClass('active').siblings().removeClass('active');
                 invoiceDetail.slideDown(500);
+                invoiceDetailZzs.slideUp(500);
+            })
+            usedZzs.click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                invoiceDetailZzs.slideDown(500);
+                invoiceDetail.slideUp(500);
             })
 
             var other = $(".js-other");

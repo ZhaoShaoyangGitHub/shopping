@@ -29,7 +29,7 @@
   outline:0;-webkit-tap-highlight-color:transparent;
   z-index:999999;display:none;margin-bottom:20px
 }
-.city-select-tab{border-bottom:1px solid #ccc;font-size: 0.28rem}
+.city-select-tab{border-bottom:1px solid #ccc;}
 .city-select-tab>a{
   display:inline-block;
   padding: 0.4rem 1rem 0.2rem 0;
@@ -64,6 +64,7 @@
 .city-select a.active{
   font-weight: bold;
   font-size: 0.18rem;
+  border: none!important;
 }
 .city-picker-arrow{
   position: absolute;
@@ -71,4 +72,19 @@
   top: 0.28rem;
   font-size: 0.26rem;
   color: #999999;
+}
+
+@media (max-width: 567px) {
+  .city-picker-arrow{
+    top: 0.46rem;
+  }
+  .city-select-tab>a{
+    font-size: 0.28rem;
+  }
+  .city-select{
+    font-size: 0.22rem;
+  }
+  .city-select a.active{
+    font-size: 0.24rem;
+  }
 }
