@@ -8,18 +8,21 @@ block content-main
         section.spark-s1.dji-edit-module
             .mask-list
                 .mask-item.ga-data(data-target='0', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_01')
+                    .js-play-video.paly-btn(data-video="/video/01.mp4")
                     .mask
                     .bottom-text
                         h2.title 铸
                             img.title-icon(src="/images/icon_circular.png")
                         p.web-font 这就是皂石，探索全新的食器时代
                 .mask-item(data-target='1', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_02')
+                    .js-play-video.paly-btn(data-video="/video/02.mp4")
                     .mask
                     .bottom-text
                         h2.title 精
                             img.title-icon(src="/images/icon_circular.png")
                         p.web-font 我们检测天然皂石，并给出一份报告
                 .mask-item(data-target='2', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_03')
+                    .js-play-video.paly-btn(data-video="/video/03.mp4")
                     .mask
                     .bottom-text
                         h2.title 巧
@@ -92,7 +95,7 @@ block content-main
             img(src="images/img_08.jpg" width="100%")
             .main.text-center.fadeIn.js-fadeInUp
                 p 重新定义食器 · 皂石
-                .play-btn.js-play
+                .play-btn.js-play-video(data-video="/video/01.mp4")
         .home-contact-info
             .home-container.d-flex.justify-content-between
                 .logo
@@ -113,26 +116,31 @@ block content-main
                     span 提交
                     img(src="images/icon_submit.png")
     .video-layer(style="display:none")
-        video#video(width="100%" controls src='/video/01.mp4', preload='auto', type='video/mp4')
+        video#video(width="100%" controls src='', preload='auto', type='video/mp4')
 block script-main
     script(src='js/spark.min.js')
     script.
         $(function () {
             var $video = $("#video");
-            $(".js-play").click(function () {
+            $(".js-play-video").click(function () {
+                var videoSrc = $(this).data("video");
+                $video.attr('src', videoSrc);
                 layer.open({
                     title: "",
                     type: 1,
                     area: '60%',
+                    closeBtn: 0,
+                    shade: 0.6,
+                    shadeClose: true,
                     content: $(".video-layer"),
                     success: function () {
                         $(".layui-layer").css({
                             "background-color": "transparent"
                         })
-                        $video[0].play(); // 播放
                     },
                     cancel: function () {
                         $video[0].pause();
+                        $video.attr('src', '');
                     }
                 });
             })
