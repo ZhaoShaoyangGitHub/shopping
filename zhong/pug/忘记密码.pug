@@ -39,5 +39,15 @@ block script-main
                     $(this).removeClass("form-textbox-entered")
                 }
             })
+
+            $("input").each(function () {
+                var vl = $(this).val();
+                var _this = $(this);
+                if (vl != "") {
+                    _this.addClass("form-textbox-entered")
+                } else {
+                    _this.removeClass("form-textbox-entered")
+                }
+            })
         })
 

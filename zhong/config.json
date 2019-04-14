@@ -3,8 +3,6 @@
     {
       "target":"js/vendor.js",
       "items":[
-        "js/plugins/layer/layer.js",
-        "js/plugins/layer/layer.config.js",
         "js/plugins/swiper/js/swiper.js"
       ]
     }

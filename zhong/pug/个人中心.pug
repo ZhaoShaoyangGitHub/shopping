@@ -123,8 +123,18 @@ block script-main
                     }
                 })
             })
-            $("input").bind('blur', function () {
 
+            $("input").each(function () {
+                var vl = $(this).val();
+                var _this = $(this);
+                if (vl != "") {
+                    _this.addClass("form-textbox-entered")
+                } else {
+                    _this.removeClass("form-textbox-entered")
+                }
+            })
+
+            $("input").bind('blur', function () {
                 if($(this).val()) {
                     $(this).addClass("form-textbox-entered")
                 }else {
