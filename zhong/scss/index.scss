@@ -1002,6 +1002,13 @@ body {
       width: rem(81);
       margin-left: rem(-8);
     }
+    canvas {
+      width: rem(90);
+      height: rem(90);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }
 
