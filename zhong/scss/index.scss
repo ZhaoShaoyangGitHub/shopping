@@ -991,6 +991,7 @@ body {
   .submit {
     position: relative;
     z-index: 10;
+    width: rem(230);
     height: rem(90);
     font-size: rem(40);
     display: flex;
@@ -1082,6 +1083,47 @@ body {
 .zs-title{
   font-size: rem(40);
   color: #080808;
+}
+.stroke-box{
+}
+.stroke-btn{
+  position: absolute;
+  left: 1rem;
+  top: 0.45rem;
+  width: rem(10)!important;
+  height: rem(10);
+}
+#svgForStroke {
+  position: absolute;
+  top: rem(-15);
+  left: rem(30);
+  width: 100px;
+  height: 100px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  stroke: #fff;
+  fill: none;
+  -webkit-transform: rotate(-125deg);
+  -moz-transform: rotate(-125deg);
+  -ms-transform: rotate(-125deg);
+  -o-transform: rotate(-125deg);
+  transform: rotate(-125deg);
+}
+#svgstrokeLine{
+  position: absolute;
+  top: rem(-15);
+  left: rem(30);
+  width: 100px;
+  height: 100px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 70;
+  stroke: rgba(255,255,255,0.2);
+  fill: none;
+  -webkit-transform: rotate(-125deg);
+  -moz-transform: rotate(-125deg);
+  -ms-transform: rotate(-125deg);
+  -o-transform: rotate(-125deg);
+  transform: rotate(-125deg);
 }
 
 //帮助中心
@@ -3974,6 +4016,78 @@ body {
 .mobile-show{
   display: none;
 }
+
+//防伪查询页
+.zs-security{
+  margin-top: rem(150);
+  background-color: #f8f8f8;
+  padding: rem(50) 0 rem(20);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
+  .security-content1{
+    background-color: #FFFFFF;
+    padding: rem(50) rem(30);
+    margin-bottom: rem(50);
+    .result{
+      margin-bottom: rem(50);
+      h2{
+        font-size: rem(32);
+        font-weight: bold;
+        padding-bottom: rem(30);
+        position: relative;
+        &:before{
+          content: '';
+          width: rem(270);
+          height: rem(6);
+          background-color: $base-color;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .product-img{
+      width: 100%;
+      height: rem(380);
+      img{
+        height: rem(380);
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    .product-main{
+      margin-top: rem(80);
+      .name{
+        font-size: rem(36);
+        font-weight: bold;
+      }
+      .code{
+        font-size: rem(26);
+        margin-top: rem(10);
+        b{
+          font-family: 'Arial';
+        }
+      }
+    }
+    .text{
+      font-size: rem(24);
+      line-height: 1.6;
+      margin-top: rem(10);
+    }
+    .help{
+      font-size: rem(24);
+      line-height: 1.6;
+      a{
+        color: $base-color;
+        margin-left: rem(20);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 
 @media (max-width: 769px) {
   .zs-home {

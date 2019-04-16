@@ -1,0 +1,35 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "homePage"
+block style-main
+
+
+block content-main
+    .zs-security
+        .container
+            .security-content1
+                .result
+                    h2 防伪查询验证成功！
+                .product-img
+                    img(src="/images/product_img_01.png")
+                .product-main
+                    .name 产品名称
+                    .code
+                        b 954256zsffe4w5s5r4e5
+                        span （防伪编码）
+                    .text
+                        p 您购买的产品经皂石官方验证后，确认为正品，请放心使用！感谢您的支持！
+            .security-content1
+                .result
+                    h2 其他问题
+                .help
+                    p
+                        span 如有其他问题，可联系客服
+                        a(href="tel:400-800-1098") 400-800-1098
+
+
+block script-main
+    script.
+
+
+

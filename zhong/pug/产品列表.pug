@@ -21,7 +21,7 @@ block content-main
                         .nav-item
                             a(href="javascript:;") 墨工
                                 span.circle ·
-                        .nav-item
+                        .nav-item.active
                             a(href="javascript:;") 墨韵
                                 span.circle ·
                         .nav-item
@@ -92,7 +92,6 @@ block content-main
                     .swiper-button-content3-next.iconfont.iconarrow-right-copy-copy.swiper-btn
 
 
-
 block script-main
     script.
         $(function () {
@@ -129,6 +128,9 @@ block script-main
                     }
                 }
             })
+
+            $(".nav-box .nav-item")
+
         })
 
 
