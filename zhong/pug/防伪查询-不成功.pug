@@ -1,0 +1,25 @@
+extends ../public/pug/layouts/main
+block head-main
+    -var $active = "homePage"
+block style-main
+
+
+block content-main
+    .zs-security
+        .container
+            .security-content1
+                .result
+                    h2 防伪查询验证失败！
+                .result-main
+                    .text 非皂石官方产品，请核对编码是否输入正确后，再次尝试验证！
+                    .help
+                        p
+                            span 如需帮助，可联系客服
+                            a(href="tel:400-800-1098") 400-800-1098
+
+
+block script-main
+    script.
+
+
+
