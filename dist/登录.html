@@ -73,6 +73,7 @@
         </div>
     </div>
     <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/plugins/layer/layer.js"></script>
     <script src="js/vendor.js" merge="true"></script>
     <script src="js/plugins/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
@@ -101,6 +102,16 @@
                     $(this).addClass("form-textbox-entered")
                 } else {
                     $(this).removeClass("form-textbox-entered")
+                }
+            })
+
+            $("input").each(function() {
+                var vl = $(this).val();
+                var _this = $(this);
+                if (vl != "") {
+                    _this.addClass("form-textbox-entered")
+                } else {
+                    _this.removeClass("form-textbox-entered")
                 }
             })
         })
