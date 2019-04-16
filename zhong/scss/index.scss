@@ -1044,8 +1044,8 @@ body {
   .submit {
     position: relative;
     z-index: 10;
-    width: rem(230);
-    height: rem(90);
+    width: 200px;
+    height: 90px;
     font-size: rem(40);
     display: flex;
     align-items: center;
@@ -1137,19 +1137,19 @@ body {
   font-size: rem(40);
   color: #080808;
 }
-.stroke-box{
-}
+
+
 .stroke-btn{
   position: absolute;
-  left: 1rem;
-  top: 0.45rem;
+  left: 100px;
+  top: 45px;
   width: rem(10)!important;
   height: rem(10);
 }
 #svgForStroke {
   position: absolute;
-  top: rem(-15);
-  left: rem(30);
+  top: -5px;
+  left: 30px;
   width: 100px;
   height: 100px;
   stroke-dasharray: 200;
@@ -1164,8 +1164,8 @@ body {
 }
 #svgstrokeLine{
   position: absolute;
-  top: rem(-15);
-  left: rem(30);
+  top: -5px;
+  left: 30px;
   width: 100px;
   height: 100px;
   stroke-dasharray: 200;
@@ -3275,6 +3275,9 @@ body {
                 position: absolute;
                 left: rem(25);
                 bottom: rem(20);
+                @media (max-width: 567px) {
+                  font-size: rem(24);
+                }
               }
             }
             &:hover{
@@ -3282,7 +3285,6 @@ body {
                 display: block;
               }
             }
-
           }
         }
       }
@@ -3304,9 +3306,17 @@ body {
           color: $base-color;
           border-color: $base-color;
         }
+        @media (max-width: 567px) {
+          display: none;
+        }
       }
       .swiper-button-next{
         right: rem(-95);
+      }
+    }
+    .min-container{
+      @media (max-width: 567px) {
+        padding: 0 0 0 rem(20);
       }
     }
   }
