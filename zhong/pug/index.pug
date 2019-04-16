@@ -123,23 +123,7 @@ block script-main
     script.
         $(function () {
             function draw() {
-                var canvas = document.getElementById("canvas");
-                var ctx = canvas.getContext('2d');
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = "#484e47";
-                var l = 0;
-                var timer = setInterval(function () {
-                    l+=0.01;
-                    if(l<2) {
-                        ctx.beginPath();
-                        ctx.moveTo(50, 50);
-                        ctx.arc(50, 50, 45, 0, Math.PI * l, true);
-                        ctx.closePath();
-                    }else {
-                        clearInterval(timer)
-                    }
-                },200)
-                ctx.stroke();
+
             }
             var $video = $("#video");
             $(".js-play-video").click(function () {
