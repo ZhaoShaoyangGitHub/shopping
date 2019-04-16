@@ -1139,45 +1139,6 @@ body {
 }
 
 
-.stroke-btn{
-  position: absolute;
-  left: 100px;
-  top: 45px;
-  width: rem(10)!important;
-  height: rem(10);
-}
-#svgForStroke {
-  position: absolute;
-  top: -5px;
-  left: 30px;
-  width: 100px;
-  height: 100px;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  stroke: #fff;
-  fill: none;
-  -webkit-transform: rotate(-125deg);
-  -moz-transform: rotate(-125deg);
-  -ms-transform: rotate(-125deg);
-  -o-transform: rotate(-125deg);
-  transform: rotate(-125deg);
-}
-#svgstrokeLine{
-  position: absolute;
-  top: -5px;
-  left: 30px;
-  width: 100px;
-  height: 100px;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 70;
-  stroke: rgba(255,255,255,0.2);
-  fill: none;
-  -webkit-transform: rotate(-125deg);
-  -moz-transform: rotate(-125deg);
-  -ms-transform: rotate(-125deg);
-  -o-transform: rotate(-125deg);
-  transform: rotate(-125deg);
-}
 
 //帮助中心
 .zs-help{
@@ -4147,6 +4108,46 @@ body {
 }
 
 
+.stroke-btn{
+  position: absolute;
+  left: 95px;
+  top: 40px;
+  width: 8px!important;
+  height: 8px;
+}
+#svgForStroke {
+  position: absolute;
+  top: -5px;
+  left: 35px;
+  width: 100px;
+  height: 100px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  stroke: #fff;
+  fill: none;
+  -webkit-transform: rotate(-125deg);
+  -moz-transform: rotate(-125deg);
+  -ms-transform: rotate(-125deg);
+  -o-transform: rotate(-125deg);
+  transform: rotate(-125deg);
+}
+#svgstrokeLine{
+  position: absolute;
+  top: -5px;
+  left: 35px;
+  width: 100px;
+  height: 100px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 70;
+  stroke: rgba(255,255,255,0.2);
+  fill: none;
+  -webkit-transform: rotate(-125deg);
+  -moz-transform: rotate(-125deg);
+  -ms-transform: rotate(-125deg);
+  -o-transform: rotate(-125deg);
+  transform: rotate(-125deg);
+}
+
 @media (max-width: 769px) {
   .zs-home {
     padding-top: rem(120);
@@ -4273,6 +4274,23 @@ body {
         }
       }
     }
+    .submit{
+      padding-top: rem(100);
+    }
+  }
+  .stroke-btn{
+    left: 55px;
+    top: 65px;
+  }
+  #svgForStroke {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+  }
+  #svgstrokeLine{
+    position: absolute;
+    top: 20px;
+    left: 0px;
   }
 }
 
