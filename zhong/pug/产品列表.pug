@@ -15,7 +15,7 @@ block content-main
             .zs-product-content
                 .nav-main
                     .nav-box.row
-                        .nav-item.active
+                        .nav-item
                             a(href="javascript:;") 墨域
                                 span.circle ·
                         .nav-item
@@ -129,7 +129,12 @@ block script-main
                 }
             })
 
-            $(".nav-box .nav-item")
+            $(".nav-box .nav-item").each(function () {
+                var _this = $(this);
+                if(_this.hasClass('active')){
+                    _this.prev().find('.circle').hide();
+                }
+            })
 
         })
 
