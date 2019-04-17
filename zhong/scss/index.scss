@@ -139,6 +139,9 @@ body {
           img{
             max-width: rem(330);
           }
+          .img-off{
+            display: none;
+          }
         }
       }
       .header-right{
@@ -221,6 +224,16 @@ body {
             }
             .title {
               color: #FFFFFF;
+            }
+          }
+        }
+        .header-center{
+          .logo{
+            .img-on{
+              display: none;
+            }
+            .img-off{
+              display: block;
             }
           }
         }

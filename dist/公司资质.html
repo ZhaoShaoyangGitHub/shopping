@@ -46,7 +46,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="header-center"><a class="logo d-block" href="index.html"><img src="../images/logo.png"></a></div>
+                <div class="header-center"><a class="logo d-block" href="index.html"><img class="img-on" src="../images/logo.png"><img class="img-off" src="../images/logo_white.png"></a></div>
                 <div class="header-right">
                     <div class="search js-search float-right"><a class="iconfont iconsousuo" href="搜索结果页.html"></a></div>
                     <div class="user float-right"><a class="d-block" href="javascript:;">
@@ -283,12 +283,24 @@
     <script src="js/index.js"></script>
     <script>
         $(function() {
+            var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
+                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
                 } else {
                     $("body").addClass("active");
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
                 }
             })
             $(".js-close").click(function() {

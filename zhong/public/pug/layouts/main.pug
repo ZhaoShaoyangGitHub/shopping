@@ -174,7 +174,8 @@ block content
                                 .title 400-800-1098
                     .header-center
                         a.logo.d-block(href="index.html")
-                            img(src="../images/logo.png")
+                            img.img-on(src="../images/logo.png")
+                            img.img-off(src="../images/logo_white.png")
                     .header-right
                         .search.js-search.float-right
                             a.iconfont.iconsousuo(href="搜索结果页.html")
@@ -271,12 +272,24 @@ block script
     script(src='js/index.js')
     script.
         $(function () {
+            var $header = $(".zs-header");
             $(".js-menu").click(function () {
                $(".header-menu").slideToggle();
+                var beforeScrollTop = $(window).scrollTop();
                if($("body").hasClass("active")) {
                    $("body").removeClass("active");
+                   if (beforeScrollTop > 0) {
+                       $header.removeClass('opacity');
+                   } else {
+                       $header.addClass('opacity');
+                   }
                }else {
                    $("body").addClass("active");
+                   if (beforeScrollTop > 0) {
+                       $header.removeClass('opacity');
+                   } else {
+                       $header.removeClass('opacity');
+                   }
                }
             })
             $(".js-close").click(function () {

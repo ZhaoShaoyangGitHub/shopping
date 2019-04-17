@@ -88,12 +88,24 @@
     <script src="js/index.js"></script>
     <script>
         $(function() {
+            var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
+                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
                 } else {
                     $("body").addClass("active");
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
                 }
             })
             $(".js-close").click(function() {
