@@ -60,11 +60,6 @@ var common = {
         var beforeScrollTop = $(window).scrollTop();
         var $header = $(".zs-header");
         var height = parseInt($(window).height()/3);
-        if(beforeScrollTop>0) {
-            $header.removeClass('opacity');
-        }else {
-            $header.addClass('opacity');
-        }
         $(window).scroll(function () {
             var afterScrollTop = $(window).scrollTop();
             if(!$header.hasClass("none")) {
