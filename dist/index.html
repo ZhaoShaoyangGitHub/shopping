@@ -32,7 +32,7 @@
     <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-    <div class="zs-header opacity">
+    <div class="zs-header">
         <div class="header">
             <div class="header-box d-flex align-items-center justify-content-between">
                 <div class="header-left clearfix">
@@ -288,21 +288,10 @@
             var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
-                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.addClass('opacity');
-                    }
                 } else {
                     $("body").addClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.removeClass('opacity');
-                    }
                 }
             })
             $(".js-close").click(function() {
@@ -314,6 +303,7 @@
     <script src="js/spark.min.js"></script>
     <script>
         $(function() {
+            var scrollTop;
             var svgForStroke = $("#svgForStroke");
             svgForStroke.hover(function() {
                 var _this = $(this);
@@ -331,9 +321,55 @@
                 })
             })
 
-            function draw() {
-
+            function headerOpacity() {
+                scrollTop = $(window).scrollTop();
+                var $header = $(".zs-header");
+                if (scrollTop > 0) {
+                    $header.removeClass('opacity');
+                } else {
+                    $header.addClass('opacity');
+                }
             }
+            headerOpacity();
+            $(window).scroll(function() {
+                headerOpacity();
+            })
+
+            var $header = $(".zs-header");
+            $(".js-menu").click(function() {
+                var beforeScrollTop = $(window).scrollTop();
+                if ($("body").hasClass("active")) {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
+                } else {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
+                }
+            })
+
+            $(".js-close").click(function() {
+                var beforeScrollTop = $(window).scrollTop();
+                if ($("body").hasClass("active")) {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
+                } else {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
+                }
+            })
+
             var $video = $("#video");
             $(".js-play-video").click(function() {
                 var videoSrc = $(this).data("video");

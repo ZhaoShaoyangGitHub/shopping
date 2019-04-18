@@ -32,7 +32,7 @@
     <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-    <div class="zs-header opacity">
+    <div class="zs-header">
         <div class="header">
             <div class="header-box d-flex align-items-center justify-content-between">
                 <div class="header-left clearfix">
@@ -214,21 +214,10 @@
             var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
-                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.addClass('opacity');
-                    }
                 } else {
                     $("body").addClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.removeClass('opacity');
-                    }
                 }
             })
             $(".js-close").click(function() {

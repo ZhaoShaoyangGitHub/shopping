@@ -32,7 +32,7 @@
     <script src="js/plugins/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-    <div class="zs-header opacity">
+    <div class="zs-header">
         <div class="header">
             <div class="header-box d-flex align-items-center justify-content-between">
                 <div class="header-left clearfix">
@@ -128,7 +128,7 @@
         </div>
     </div>
     <div class="zs-product">
-        <div class="banner">
+        <div class="banner" style="background-image:url(../images/product_banner.jpg)">
             <div class="title">皂石·墨域系</div>
             <div class="sub-title">探索墨脱石锅</div>
         </div>
@@ -364,21 +364,10 @@
             var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
-                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.addClass('opacity');
-                    }
                 } else {
                     $("body").addClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.removeClass('opacity');
-                    }
                 }
             })
             $(".js-close").click(function() {
@@ -398,9 +387,10 @@
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.5,
                         slidesPerColumn: 1,
                         slidesPerGroup: 1,
+                        spaceBetween: 10,
                         autoplay: true
                     }
                 }
@@ -415,9 +405,10 @@
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.5,
                         slidesPerColumn: 1,
                         slidesPerGroup: 1,
+                        spaceBetween: 10,
                         autoplay: true
                     }
                 }

@@ -59,7 +59,9 @@
         <div class="zs-sign-content">
             <div class="sign-box">
                 <div class="row">
-                    <div class="left"><img src="/images/sign_bg_01.jpg" height="100%"></div>
+                    <div class="left"><img src="/images/sign_bg_01.jpg" height="100%">
+                        <div class="text">皂石食器·成就食物之美</div>
+                    </div>
                     <div class="right"><a class="logo" href="index.html"><img src="images/sign_logo.png" width="100%"></a>
                         <form class="form">
                             <div class="form-group"><input class="form-control" type="text" name="phone" id="phone"> <label class="label">手机号</label>
@@ -88,21 +90,10 @@
             var $header = $(".zs-header");
             $(".js-menu").click(function() {
                 $(".header-menu").slideToggle();
-                var beforeScrollTop = $(window).scrollTop();
                 if ($("body").hasClass("active")) {
                     $("body").removeClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.addClass('opacity');
-                    }
                 } else {
                     $("body").addClass("active");
-                    if (beforeScrollTop > 0) {
-                        $header.removeClass('opacity');
-                    } else {
-                        $header.removeClass('opacity');
-                    }
                 }
             })
             $(".js-close").click(function() {

@@ -153,6 +153,42 @@ block script-main
             $(window).scroll(function () {
                 headerOpacity();
             })
+
+            var $header = $(".zs-header");
+            $(".js-menu").click(function () {
+                var beforeScrollTop = $(window).scrollTop();
+                if ($("body").hasClass("active")) {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
+                } else {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
+                }
+            })
+
+            $(".js-close").click(function () {
+                var beforeScrollTop = $(window).scrollTop();
+                if ($("body").hasClass("active")) {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.removeClass('opacity');
+                    }
+                } else {
+                    if (beforeScrollTop > 0) {
+                        $header.removeClass('opacity');
+                    } else {
+                        $header.addClass('opacity');
+                    }
+                }
+            })
+
             var $video = $("#video");
             $(".js-play-video").click(function () {
                 var videoSrc = $(this).data("video");
