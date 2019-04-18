@@ -2,7 +2,10 @@ var common = {
     init: function () {
         lazyload();
         this.animationFun('fadeInUp');
-        this.scrollHeader();
+        var width = $(window).width();
+        if(width>768) {
+            this.scrollHeader();
+        }
         //返回顶部
         if ($('.js-backtop')) {
             $('.js-backtop').click(function () {
@@ -56,6 +59,7 @@ var common = {
     scrollHeader:  function () {
         var beforeScrollTop = $(window).scrollTop();
         var $header = $(".zs-header");
+        var height = parseInt($(window).height()/3);
         if(beforeScrollTop>0) {
             $header.removeClass('opacity');
         }else {
@@ -64,7 +68,7 @@ var common = {
         $(window).scroll(function () {
             var afterScrollTop = $(window).scrollTop();
             if(!$header.hasClass("none")) {
-                if(afterScrollTop-beforeScrollTop>0) {
+                if(afterScrollTop-beforeScrollTop>0 && afterScrollTop>height ) {
                     $header.addClass('active');
                 }else if(afterScrollTop-beforeScrollTop==0) {
                     return false
@@ -73,11 +77,6 @@ var common = {
                 }
             }
             beforeScrollTop = $(window).scrollTop();
-            if(beforeScrollTop>0) {
-                $header.removeClass('opacity');
-            }else {
-                $header.addClass('opacity');
-            }
         })
     }
 }

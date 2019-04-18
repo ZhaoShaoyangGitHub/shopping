@@ -126,6 +126,7 @@ block script-main
     script(src='js/spark.min.js')
     script.
         $(function () {
+            var scrollTop;
             var svgForStroke = $("#svgForStroke");
             svgForStroke.hover(function () {
                 var _this = $(this);
@@ -139,9 +140,18 @@ block script-main
                 })
             })
 
-            function draw() {
-
+            function headerOpacity() {
+                scrollTop = $(window).scrollTop();
+                var $header = $(".zs-header");
+                if (scrollTop > 0) {
+                    $header.removeClass('opacity');
+                } else {
+                    $header.addClass('opacity');
+                }
             }
+            $(window).scroll(function () {
+                headerOpacity();
+            })
             var $video = $("#video");
             $(".js-play-video").click(function () {
                 var videoSrc = $(this).data("video");
