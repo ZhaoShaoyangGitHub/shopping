@@ -8,7 +8,7 @@ block style-main
 
 block content-main
     .zs-product
-        .banner
+        .banner(style="background-image: url('../images/product_banner.jpg')")
             .title 皂石·墨域系
             .sub-title 探索墨脱石锅
         .content1
@@ -104,9 +104,10 @@ block script-main
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.5,
                         slidesPerColumn: 1,
                         slidesPerGroup: 1,
+                        spaceBetween: 10,
                         autoplay: true
                     }
                 }
@@ -121,9 +122,10 @@ block script-main
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.5,
                         slidesPerColumn: 1,
                         slidesPerGroup: 1,
+                        spaceBetween: 10,
                         autoplay: true
                     }
                 }

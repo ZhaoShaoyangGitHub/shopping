@@ -1030,6 +1030,28 @@
     .product-top {
       position: fixed;
       top: 1.2rem;
+      .product-top-r {
+        >a {
+          font-size: rem(20);
+          color: #999999;
+          margin-left: rem(40);
+          line-height: rem(20);
+          padding: rem(5) 0;
+          display: block;
+          &:first-child {
+            color: #080808;
+            margin-left: 0;
+          }
+          &.now-buy {
+            padding: rem(10) rem(12);
+            color: #FFFFFF;
+            background-color: $base-color;
+            border-radius: rem(20);
+            font-size: rem(20);
+            border: 0;
+          }
+        }
+      }
     }
     .product-wrapper {
       height: auto;

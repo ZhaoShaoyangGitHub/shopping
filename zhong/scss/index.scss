@@ -606,7 +606,7 @@ body {
     position: relative;
   }
   .spark-s1{
-    height: rem(930);
+    height: 100vh;
     position: relative;
     overflow: hidden;
     font-family: "思源黑体";
@@ -3304,7 +3304,9 @@ body {
   .banner{
     width: 100%;
     height: rem(700);
-    background: url("../images/product_banner.jpg") no-repeat center/cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     .title{
       font-size: rem(60);
       font-weight: bold;
@@ -3490,6 +3492,11 @@ body {
           padding: rem(60) rem(50);
           .item-left{
             padding-right: 0;
+            .title-box{
+              .sub-title{
+                display: none;
+              }
+            }
             .text{
               p{
                 font-size: rem(24);
@@ -3530,6 +3537,8 @@ body {
             font-size: rem(18);
             line-height: 1.8;
             text-align: center;
+            max-height: rem(290);
+            overflow: hidden;
           }
           .fuhao{
             font-size: rem(170);
@@ -3581,8 +3590,10 @@ body {
       @media (max-width: 567px) {
         .swiper-container-content2{
           .item-box{
+            padding: rem(30) rem(20) rem(30);
             .content2-title{
               font-size: rem(28);
+              line-height: 1.5;
             }
             .avatar{
               .name{
@@ -3595,7 +3606,6 @@ body {
           display: none;
         }
       }
-
     }
   }
   .content3{
@@ -3666,6 +3676,9 @@ body {
               .text{
                 font-size: rem(24);
               }
+            }
+            .item-img{
+              height: rem(260);
             }
           }
         }
