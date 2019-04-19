@@ -89,7 +89,6 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  transition:backgroundc-color 0.2s, opacity 300ms 100ms,visibility .1ms,transform .5s,-webkit-transform .5s;;
   .header{
     height: rem(150);
     .header-box{
@@ -262,6 +261,9 @@ body {
     transform: translateY(rem(-150));
     transition: transform .7s;
   }
+}
+.header-transition{
+  transition:backgroundc-color 0.2s, opacity 300ms 100ms,visibility .1ms,transform .5s,-webkit-transform .5s;;
 }
 .backtop{
   width: rem(45);

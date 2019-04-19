@@ -189,6 +189,11 @@ block script-main
                 }
             })
 
+            var width = $(window).width();
+            if (width > 768) {
+                scrollHeader();
+            }
+
             var $video = $("#video");
             $(".js-play-video").click(function () {
                 var videoSrc = $(this).data("video");
@@ -213,4 +218,23 @@ block script-main
                 });
             })
         })
+
+        function scrollHeader() {
+            var beforeScrollTop = $(window).scrollTop();
+            var $header = $(".zs-header");
+            var height = parseInt($(window).height() / 3);
+            $(window).scroll(function () {
+                var afterScrollTop = $(window).scrollTop();
+                if (!$header.hasClass("none")) {
+                    if (afterScrollTop - beforeScrollTop > 0 && afterScrollTop > height) {
+                        $header.addClass('active');
+                    } else if (afterScrollTop - beforeScrollTop == 0) {
+                        return false
+                    } else {
+                        $header.removeClass('active');
+                    }
+                }
+                beforeScrollTop = $(window).scrollTop();
+            })
+        }
 

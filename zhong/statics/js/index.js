@@ -2,10 +2,7 @@ var common = {
     init: function () {
         lazyload();
         this.animationFun('fadeInUp');
-        var width = $(window).width();
-        if(width>768) {
-            this.scrollHeader();
-        }
+
         //返回顶部
         if ($('.js-backtop')) {
             $('.js-backtop').click(function () {
