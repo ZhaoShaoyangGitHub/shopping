@@ -311,6 +311,10 @@
 .personal-orderList {
   background-color: #f8f8f8;
   padding: rem(80) 0 rem(100);
+  margin-top: rem(150);
+  @media (max-width: 576px) {
+    margin-top: rem(120);
+  }
   .title {
     font-size: rem(40);
     line-height: 1;
@@ -350,6 +354,10 @@
   background-color: #f8f8f8;
   padding: rem(80) 0 rem(60);
   line-height: rem(26);
+  margin-top: rem(150);
+  @media (max-width: 567px) {
+    margin-top: rem(120);
+  }
   .title {
     font-size: rem(40);
     color: #080808;

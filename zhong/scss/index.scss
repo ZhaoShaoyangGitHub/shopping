@@ -1155,6 +1155,7 @@ body {
 
 //帮助中心
 .zs-help{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -1361,6 +1362,7 @@ body {
 .zs-delivery{
   background-color: #f8f8f8;
   padding: rem(40) 0 rem(100);
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -1843,6 +1845,7 @@ body {
 .zs-payment-order{
   background-color: #f8f8f8;
   padding: rem(40) 0 rem(100);
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -2290,6 +2293,7 @@ body {
 
 //新闻动态
 .zs-news{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -2554,6 +2558,7 @@ body {
 .zs-news-detail{
   background-color: #f8f8f8;
   padding-bottom: rem(100);
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -2710,6 +2715,7 @@ body {
 
 //人才招聘
 .zs-join{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -2866,6 +2872,7 @@ body {
 
 //联系我们
 .zs-contact{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -3013,6 +3020,7 @@ body {
 .zs-company-introduce{
   padding-bottom: rem(145);
   background-color: #f8f8f8;
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -3212,6 +3220,7 @@ body {
 
 //公司资质
 .zs-aptitude{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
@@ -3298,36 +3307,27 @@ body {
 
 //产品列表
 .zs-product{
+  margin-top: rem(150);
   @media (max-width: 567px) {
     margin-top: rem(120);
   }
   .banner{
     width: 100%;
-    height: rem(700);
+    height: rem(500);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     .title{
       font-size: rem(60);
+      line-height: 1;
       font-weight: bold;
-      padding-top: rem(160);
+      padding-top: rem(80);
       text-align: center;
     }
     .sub-title{
       font-size: rem(30);
       margin-top: rem(20);
       text-align: center;
-    }
-    @media (max-width: 567px){
-      height: rem(300);
-      .title{
-        padding-top: rem(30);
-        font-size: rem(30);
-      }
-      .sub-title{
-        font-size: rem(20);
-        margin-top: rem(5);
-      }
     }
   }
   .zs-product-content{
