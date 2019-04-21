@@ -3859,9 +3859,10 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        width: 18px;
+        width: 24px;
         height: 18px;
         opacity: 0;
+        z-index: 6;
         &:checked ~ .icon {
           background: url("../images/icon_checked.png") no-repeat center/contain;
         }
