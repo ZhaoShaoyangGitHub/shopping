@@ -19,6 +19,16 @@ block content-main
                         span （防伪编码）
                     .text
                         p 您购买的产品经皂石官方验证后，确认为正品，请放心使用！感谢您的支持！
+                .source-main
+                    .name 溯源信息
+                    .source-list
+                        each $val in [1,2,3,4,5,6]
+                            .list-item.row
+                                .left.col-10(style="background-image: url('/images/product_img_01.png')")
+                                .right.col-14
+                                    .date 2019-04-20
+                                    .text 您购买的产品经皂石官方验证后，确认为正品，请放心使用
+
             .security-content1
                 .result
                     h2 其他问题

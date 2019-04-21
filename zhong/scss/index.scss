@@ -4118,6 +4118,37 @@ body {
         }
       }
     }
+    .source-main{
+      margin-top: 0.5rem;
+      &:before{
+        content: '';
+      }
+      .name{
+        font-size: rem(36);
+        font-weight: bold;
+      }
+      .source-list{
+        .list-item{
+          padding: 0.25rem 0;
+          .left{
+            height: 1.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          .right{
+            .date{
+              font-size: rem(24);
+              font-weight: bold;
+            }
+            .text{
+              font-size: rem(20);
+              color: #666666;
+            }
+          }
+        }
+      }
+    }
     .text{
       font-size: rem(24);
       line-height: 1.6;
