@@ -125,9 +125,10 @@ block script-main
             })
 
             $("input").each(function () {
-                var vl = $(this).val();
                 var _this = $(this);
-                if (vl != "") {
+                var vl = _this.val();
+                var pl = _this.attr('placeholder');
+                if (vl != "" || pl != "") {
                     _this.addClass("form-textbox-entered")
                 } else {
                     _this.removeClass("form-textbox-entered")
