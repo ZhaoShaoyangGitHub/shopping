@@ -180,6 +180,7 @@
                     <div class="video-bg"><video src="/video/03.mp4" preload="auto" loop type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;" muted></video></div>
                 </div>
             </div>
+            <div class="dropdown-btn iconfont iconGroup js-mouse"></div>
         </section>
         <div class="explore-section">
             <div class="title text-center">探索皂石</div>
@@ -309,6 +310,15 @@
     <script src="js/spark.min.js"></script>
     <script>
         $(function() {
+            var mouse = $(".js-mouse");
+            mouse.click(function() {
+                var height = $(window).height();
+                var t = $(window).scrollTop();
+                $('body,html').animate({
+                    'scrollTop': t + height
+                }, 1000)
+            });
+
             var scrollTop;
             var svgForStroke = $("#svgForStroke");
             svgForStroke.hover(function() {

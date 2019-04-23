@@ -1153,6 +1153,26 @@ body {
   color: #080808;
 }
 
+@keyframes mouseMove {
+  0%,100%{
+    bottom: 0.1rem;
+  }
+  50%{
+    bottom: 0.2rem;
+  }
+}
+.dropdown-btn{
+  position: absolute;
+  left: 50%;
+  bottom: 0.1rem;
+  z-index: 9;
+  font-size: 0.4rem;
+  color: $base-color;
+  transform: translateX(-50%);
+  cursor: pointer;
+  animation:mouseMove 1.5s infinite;
+  -webkit-animation:mouseMove 1.5s infinite;
+}
 
 
 //帮助中心

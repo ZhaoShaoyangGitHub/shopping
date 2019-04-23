@@ -45,6 +45,7 @@ block content-main
                 .video-item(data-target='2', style='opacity: 0;')
                     .video-bg
                         video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+            .dropdown-btn.iconfont.iconGroup.js-mouse
         .explore-section
             .title.text-center 探索皂石
             .main
@@ -126,6 +127,13 @@ block script-main
     script(src='js/spark.min.js')
     script.
         $(function () {
+            var mouse = $(".js-mouse");
+            mouse.click(function () {
+                var height = $(window).height();
+                var t = $(window).scrollTop();
+                $('body,html').animate({'scrollTop': t + height}, 1000)
+            });
+
             var scrollTop;
             var svgForStroke = $("#svgForStroke");
             svgForStroke.hover(function () {
