@@ -32,19 +32,21 @@ block content-main
                 .zs-product-main
                     each $val in [1,2,3,4]
                         .zs-product-item.row
-                            .item-left.col-md-16
+                            .item-left.col-md-18
                                 .top
                                     .title-box
                                         .title 墨脱石锅产品名
-                                        .sub-title / 墨域
+                                        .sub-title / RMB 3600.00
                                     .text
                                         p 墨脱石锅历史悠久，源于新石器时代，古人以石为锅，烹煮食物，容器、炊具、汤勺都就地取材。墨脱石锅质地绵软，颜色以灰白色或灰褐色，具有传热快、不粘锅不变色等优点。
+                                    .play-btn.js-play-video(data-video="/video/01.mp4") 观看视频
+                                        .icon
                                 .bottom.row
                                     a.d-block.buy-btn(href="javascript:;") 立即购买
                                     a.d-block.read-more(href="javascript:;")
                                         span 了解更多
                                         span.iconfont.iconarrow-right-copy-copy
-                            .item-right.col-md-8
+                            .item-right.col-md-6
                                 img.prd-img(src="/images/product_img_01.png")
 
                 .pagination-box
@@ -90,6 +92,8 @@ block content-main
                                                 span.iconfont.iconarrow-right-copy-copy
                     .swiper-button-content3-prev.iconfont.iconarrow-right-copy-copy.swiper-btn
                     .swiper-button-content3-next.iconfont.iconarrow-right-copy-copy.swiper-btn
+    .video-layer(style="display:none")
+        video#video(width="100%" controls src='', preload='auto', type='video/mp4')
 
 
 block script-main
@@ -136,6 +140,30 @@ block script-main
                 if(_this.hasClass('active')){
                     _this.prev().find('.circle').hide();
                 }
+            })
+
+            var $video = $("#video");
+            $(".js-play-video").click(function () {
+                var videoSrc = $(this).data("video");
+                $video.attr('src', videoSrc);
+                layer.open({
+                    title: "",
+                    type: 1,
+                    area: '60%',
+                    closeBtn: 0,
+                    shade: 0.6,
+                    shadeClose: true,
+                    content: $(".video-layer"),
+                    success: function () {
+                        $(".layui-layer").css({
+                            "background-color": "transparent"
+                        })
+                    },
+                    cancel: function () {
+                        $video[0].pause();
+                        $video.attr('src', '');
+                    }
+                });
             })
 
         })

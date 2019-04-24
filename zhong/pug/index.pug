@@ -5,7 +5,7 @@ block style-main
 
 block content-main
     .zs-home
-        section.spark-s1.dji-edit-module
+        section.spark-s1.dji-edit-module.pc-show
             .mask-list
                 .mask-item.ga-data(data-target='0', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_01')
                     .js-play-video.paly-btn(data-video="/video/01.mp4")
@@ -14,6 +14,7 @@ block content-main
                         h2.title 铸
                             img.title-icon(src="/images/icon_circular.png")
                         p.web-font 这就是皂石，探索全新的食器时代
+                        a(href="http://www.baidu.com") 查看详情
                 .mask-item(data-target='1', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_02')
                     .js-play-video.paly-btn(data-video="/video/02.mp4")
                     .mask
@@ -21,6 +22,7 @@ block content-main
                         h2.title 精
                             img.title-icon(src="/images/icon_circular.png")
                         p.web-font 我们检测天然皂石，并给出一份报告
+                        a(href="http://www.baidu.com") 查看详情
                 .mask-item(data-target='2', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_03')
                     .js-play-video.paly-btn(data-video="/video/03.mp4")
                     .mask
@@ -28,6 +30,7 @@ block content-main
                         h2.title 巧
                             img.title-icon(src="/images/icon_circular.png")
                         p.web-font 皂石食器，成就食物之美
+                        a(href="http://www.baidu.com") 查看详情
             .video-cover-list
                 .video-cover-item(data-target='0', style='width: 33.33%; opacity: 1;')
                     .section-bg(style='background-image: url("/images/home_banner_01.jpg"); opacity: 1;')
@@ -46,6 +49,49 @@ block content-main
                     .video-bg
                         video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
             .dropdown-btn.iconfont.iconGroup.js-mouse
+        section.spark-s1.dji-edit-module.mobile-show
+            .mask-list
+                .mask-item.ga-data(data-target='0', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_01')
+                    .js-play-video.paly-btn(data-video="/video/01.mp4")
+                    .mask
+                    .bottom-text
+                        h2.title 铸
+                            img.title-icon(src="/images/icon_circular.png")
+                        p.web-font 这就是皂石，探索全新的食器时代
+                        a(href="http://www.baidu.com") 查看详情
+                .mask-item(data-target='1', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_02')
+                    .js-play-video.paly-btn(data-video="/video/02.mp4")
+                    .mask
+                    .bottom-text
+                        h2.title 精
+                            img.title-icon(src="/images/icon_circular.png")
+                        p.web-font 我们检测天然皂石，并给出一份报告
+                        a(href="http://www.baidu.com") 查看详情
+                .mask-item(data-target='2', data-ga-category='spark_detail', data-ga-action='mouseenter', data-ga-label='s1_pipeline_03')
+                    .js-play-video.paly-btn(data-video="/video/03.mp4")
+                    .mask
+                    .bottom-text
+                        h2.title 巧
+                            img.title-icon(src="/images/icon_circular.png")
+                        p.web-font 皂石食器，成就食物之美
+                        a(href="http://www.baidu.com") 查看详情
+            .video-cover-list
+                .video-cover-item(data-target='0', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/home_banner_01.jpg"); opacity: 1;')
+                .video-cover-item(data-target='1', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/home_banner_02.jpg"); opacity: 1;background-position: right;')
+                .video-cover-item(data-target='2', style='width: 33.33%; opacity: 1;')
+                    .section-bg(style='background-image: url("/images/home_banner_03.jpg"); opacity: 1;background-position: left;')
+            .video-list
+                .video-item(data-target='0', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/01.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+                .video-item(data-target='1', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/02.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
+                .video-item(data-target='2', style='opacity: 0;')
+                    .video-bg
+                        video(src='/video/03.mp4', preload='auto', loop='loop', type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"', muted='muted')
         .explore-section
             .title.text-center 探索皂石
             .main
@@ -92,11 +138,17 @@ block content-main
                                 a(href="javascript:;").btn 煎锅
                             .text-center
                                 a.btn.customized(href="javascript:;") 定制
-        .home-video
-            img(src="images/img_08.jpg" width="100%")
-            .main.text-center.fadeIn.js-fadeInUp
-                p 重新定义食器 · 皂石
-                .play-btn.js-play-video(data-video="/video/01.mp4")
+        .swiper-container.swiper-container-video
+            .swiper-wrapper
+                each $val in [1,2,3,4]
+                    .swiper-slide
+                        .home-video
+                            img(src="images/img_08.jpg" width="100%")
+                            .main.text-center.fadeIn.js-fadeInUp
+                                p 重新定义食器 · 皂石
+                                .play-btn.js-play-video(data-video="/video/0" + $val + ".mp4")
+            .swiper-button-prev.iconfont.iconarrow-right-copy-copy
+            .swiper-button-next.iconfont.iconarrow-right-copy-copy
         .home-contact-info
             .home-container.d-flex.justify-content-between
                 .logo
@@ -201,6 +253,15 @@ block script-main
             if (width > 768) {
                 scrollHeader();
             }
+
+
+            var videoSwiper = new Swiper('.swiper-container-video', {
+                autoplay: 5000,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            })
 
             var $video = $("#video");
             $(".js-play-video").click(function () {

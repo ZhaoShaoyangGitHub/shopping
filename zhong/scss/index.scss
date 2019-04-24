@@ -759,12 +759,17 @@ body {
   }
 
   .spark-s1 .mask-list .mask-item .bottom-text .title {
-    font-size: rem(50);
-    margin-bottom: rem(20);
-    line-height: 1;
+     font-size: rem(50);
+     margin-bottom: rem(20);
+     line-height: 1;
+     color: #fff;
+     text-align: left;
+     text-transform: uppercase;
+   }
+
+  .spark-s1 .mask-list .mask-item .bottom-text a {
+    font-size: rem(20);
     color: #fff;
-    text-align: left;
-    text-transform: uppercase;
   }
 
   .spark-s1 .mask-list .mask-item .video-tip {
@@ -1081,6 +1086,21 @@ body {
   }
 }
 
+.swiper-container-video{
+  .swiper-button-next,.swiper-button-prev{
+    background-image: none;
+  }
+  .iconarrow-right-copy-copy{
+    font-size: 0.6rem;
+    color: #FFFFFF;
+    right: 0.5rem;
+  }
+  .swiper-button-prev{
+    transform: rotate(180deg);
+    left: 0.5rem;
+    margin-top: 0.15rem;
+  }
+}
 .home-video {
   position: relative;
   .main {
@@ -1155,16 +1175,16 @@ body {
 
 @keyframes mouseMove {
   0%,100%{
-    bottom: 0.1rem;
+    bottom: 0.7rem;
   }
   50%{
-    bottom: 0.2rem;
+    bottom: 0.8rem;
   }
 }
 .dropdown-btn{
   position: absolute;
   left: 50%;
-  bottom: 0.1rem;
+  bottom: 0.7rem;
   z-index: 9;
   font-size: 0.4rem;
   color: $base-color;
@@ -3428,11 +3448,11 @@ body {
     .zs-product-main{
       margin-top: rem(50);
       .zs-product-item{
-        padding: rem(57) rem(100);
+        padding: rem(70) rem(70) rem(60);
         background-color: #FFFFFF;
         margin-bottom: rem(40);
         .item-left{
-          padding-right: rem(100);
+          padding-right: rem(155);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -3443,20 +3463,52 @@ body {
             .title{
               font-size: rem(40);
               font-weight: bold;
-              line-height: 1;
+              line-height: 1.25;
             }
             .sub-title{
-              font-size: rem(20);
+              font-size: rem(30);
+              line-height: 1;
+              font-weight: bold;
               color: #999999;
               margin-left: rem(25);
+              font-family: 'Arial';
             }
           }
           .text{
-            margin-top: rem(45);
+            margin-top: rem(25);
             p{
               font-size: rem(14);
               color: #666666;
               line-height: 1.8;
+            }
+          }
+          .play-btn{
+            margin-top: rem(35);
+            font-size: rem(24);
+            color: $base-color;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .icon {
+              width: rem(23);
+              height: rem(23);
+              border: 2px solid $base-color;
+              border-radius: 100%;
+              text-align: center;
+              margin-left: rem(20);
+              position: relative;
+              &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: rem(-5) 0 0 rem(-3);
+                border-left: rem(8) solid $base-color;
+                border-top: rem(5) solid transparent;
+                border-bottom: rem(5) solid transparent;
+              }
             }
           }
           .bottom{
