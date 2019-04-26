@@ -3568,9 +3568,9 @@ body {
           padding: rem(60) rem(50);
           .item-left{
             padding-right: 0;
-            .title-box{
-              .sub-title{
-                display: none;
+            .play-btn{
+              .icon {
+                border: 1px solid $base-color;
               }
             }
             .text{
