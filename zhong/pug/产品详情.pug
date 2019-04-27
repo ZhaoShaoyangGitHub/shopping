@@ -3,7 +3,7 @@ block head-main
     -var $active = "homePage"
 block style-main
 block content-main
-    .product-detail
+    .product-detail#container
         .product-top.js-fixed-top
             .container.d-flex.align-items-center.justify-content-between
                 .product-name 墨域·天然皂石新食器
@@ -73,6 +73,22 @@ block content-main
 block script-main
     script.
         $(function () {
+            $('#container').imagesLoaded()
+                .always(function (instance) {
+                    console.log('all images loaded');
+                    pcScroll();
+                })
+                .done(function (instance) {
+                    console.log('all images successfully loaded');
+                })
+                .fail(function () {
+                    console.log('all images loaded, at least one is broken');
+                })
+                .progress(function (instance, image) {
+                    var result = image.isLoaded ? 'loaded' : 'broken';
+                    console.log('image is ' + result + ' for ' + image.img.src);
+                });
+
             var $windowWidth = $(window).width();
             var $windowHeight = $(window).height();
             var $video = $("#video");
@@ -191,7 +207,7 @@ block script-main
                     })
                 }
             }
-            pcScroll();
+
             $(window).resize(function () {
                 pcScroll();
             })

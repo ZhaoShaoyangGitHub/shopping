@@ -3515,6 +3515,8 @@ body {
           }
           .bottom{
             align-items: center;
+            position: relative;
+            z-index: 9;
             .buy-btn{
               width: rem(200);
               height: rem(60);

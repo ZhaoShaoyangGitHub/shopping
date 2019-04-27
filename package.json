@@ -58,5 +58,8 @@
     "minimist": "^1.2.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "imagesloaded": "^4.1.4"
   }
 }
