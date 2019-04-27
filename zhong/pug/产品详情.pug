@@ -73,22 +73,6 @@ block content-main
 block script-main
     script.
         $(function () {
-            $('#container').imagesLoaded()
-                .always(function (instance) {
-                    console.log('all images loaded');
-                    pcScroll();
-                })
-                .done(function (instance) {
-                    console.log('all images successfully loaded');
-                })
-                .fail(function () {
-                    console.log('all images loaded, at least one is broken');
-                })
-                .progress(function (instance, image) {
-                    var result = image.isLoaded ? 'loaded' : 'broken';
-                    console.log('image is ' + result + ' for ' + image.img.src);
-                });
-
             var $windowWidth = $(window).width();
             var $windowHeight = $(window).height();
             var $video = $("#video");
@@ -207,6 +191,11 @@ block script-main
                     })
                 }
             }
+
+            $('#container').imagesLoaded()
+                .always(function (instance) {
+                    pcScroll();
+                })
 
             $(window).resize(function () {
                 pcScroll();
