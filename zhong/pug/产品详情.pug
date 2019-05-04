@@ -195,6 +195,7 @@ block script-main
             $('#container').imagesLoaded()
                 .always(function (instance) {
                     pcScroll();
+                    $product.update();
                 })
 
             $(window).resize(function () {
