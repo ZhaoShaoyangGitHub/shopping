@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>产品详情</title>
     <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
     <script src="js/plugins/adaptive.js"></script>
     <script>
         var windowwidth = document.documentElement.offsetWidth || document.body.offsetWidth;
@@ -299,6 +300,9 @@
                     return false
                 } else {
                     var $proImgWidth = parseInt($swiper.find('img').width())
+                    if ($proImgWidth == 0) {
+                        $proImgWidth = 1337
+                    }
                     $swiper.css({
                         flex: '0 0' + $proImgWidth + 'px',
                         width: $proImgWidth,

@@ -12,7 +12,6 @@
       "target":"css/vendor.css",
       "items":[
         "js/plugins/swiper/css/swiper.css",
-        "iconfont/iconfont.css",
         "css/index.css",
         "css/zhao.css",
         "css/citys-picker.css"

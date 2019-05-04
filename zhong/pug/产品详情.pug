@@ -126,6 +126,9 @@ block script-main
                     return false
                 }else {
                     var $proImgWidth = parseInt($swiper.find('img').width())
+                    if($proImgWidth == 0){
+                        $proImgWidth = 1337
+                    }
                     $swiper.css({
                         flex: '0 0' + $proImgWidth + 'px',
                         width: $proImgWidth,
