@@ -300,8 +300,11 @@
                     return false
                 } else {
                     var $proImgWidth = parseInt($swiper.find('img').width())
+                    var $proport = 840 / 1920;
+                    var $docHeight = parseInt($(window).height() - $fixedTop.height());
+                    var $resultHeight = parseInt($docHeight / $proport);
                     if ($proImgWidth == 0) {
-                        $proImgWidth = 1337
+                        $proImgWidth = $resultHeight - 2
                     }
                     $swiper.css({
                         flex: '0 0' + $proImgWidth + 'px',
@@ -373,6 +376,7 @@
             $('#container').imagesLoaded()
                 .always(function(instance) {
                     pcScroll();
+                    $product.update();
                 })
 
             $(window).resize(function() {
